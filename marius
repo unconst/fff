@@ -343,7 +343,7 @@ def start( config ):
                 else: logger.success('<blue>{}</blue>: Script running', name)
 
             elif 'command' in config.machines[droplet.name]:
-                command = config.machines[droplet.name].script
+                command = config.machines[droplet.name].command
 
                 if not utils.can_connect( connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
                 else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
