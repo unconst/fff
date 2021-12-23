@@ -1,0 +1,8 @@
+README.md
+marius
+setup.py
+marius.egg-info/PKG-INFO
+marius.egg-info/SOURCES.txt
+marius.egg-info/dependency_links.txt
+marius.egg-info/requires.txt
+marius.egg-info/top_level.txt

@@ -1,0 +1,6 @@
+paramiko
+fabric
+python-digitalocean
+tqdm
+loguru
+rich

@@ -1,0 +1,438 @@
+# The MIT License (MIT)
+# Copyright © 2021 Yuma Rao
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
+# documentation files (the “Software”), to deal in the Software without restriction, including without limitation 
+# the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
+# and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all copies or substantial portions of 
+# the Software.
+
+# THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+# THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+# THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
+# OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+# DEALINGS IN THE SOFTWARE.
+
+#!/usr/bin/env python3
+import os
+import sys
+from bittensor._subtensor import subtensor
+import yaml
+import random
+import bittensor
+import argparse
+from rich.console import Console
+from rich.table import Table
+from rich.prompt import Confirm
+from tqdm import tqdm
+from concurrent.futures import ThreadPoolExecutor
+import utils
+
+from loguru import logger
+logger = logger.opt(colors=True)
+
+def status( config ):      
+    total_stake = 0.0
+    total_rank = 0.0
+    total_trust = 0.0
+    total_consensus = 0.0
+    total_incentive = 0.0
+    total_dividends = 0.0
+    total_emission = 0.0  
+    def get_row( droplet ): 
+        connection = utils.connection_for_droplet( config, droplet )
+        can_connect_bool = utils.can_connect( connection ) 
+        subtensor = bittensor.subtensor()
+        connect_str = '[bold green] YES' if can_connect_bool else '[bold red] NO'
+        hotkey_str = '[yellow] None'
+        coldkeypub_str = '[yellow] None'
+        branch_str = '[yellow] None'
+        is_installed_str = '[bold red] No'
+        is_running_str = '[bold red] No'
+        is_registered_str = '[bold red] No'
+        is_running = False
+        installed = False
+        nonlocal total_stake
+        nonlocal total_rank
+        nonlocal total_trust
+        nonlocal total_consensus
+        nonlocal total_incentive
+        nonlocal total_dividends
+        nonlocal total_emission  
+        is_registered = False
+        if can_connect_bool:
+            try:
+                hotkey = utils.get_hotkey( connection ); hotkey_str = hotkey if hotkey != None else '[yellow] None'
+            except Exception as e:
+                hotkey_str = '[yellow] None'; logger.error('{}: Failed to pull hotkey error = {}', droplet.name, e )
+        if can_connect_bool:
+            try:
+                coldkeypub = utils.get_coldkeypub( connection )
+                coldkeypub_str = coldkeypub if coldkeypub != None else '[yellow] None'
+            except Exception as e:
+                logger.error('{}: Failed to pull coldkey error = {}', droplet.name, e )
+        if can_connect_bool:
+            try:
+                branch = utils.get_branch( connection )
+                branch_str = branch if branch != None else '[yellow] None'
+            except Exception as e:
+                logger.error('{}: Failed to pull branch error = {}', droplet.name, e )
+        if can_connect_bool and branch != None:
+            try:
+                installed = utils.is_installed( connection )
+                is_installed_str =  '[bold green] Yes' if installed else '[bold red] No'
+            except Exception as e:
+                logger.error('{}: Failed to pull install status error = {}', droplet.name, e)
+        if can_connect_bool and installed:
+            try:
+                is_running = utils.is_script_running( connection )
+                is_running_str =  '[bold green] Yes' if is_running else '[bold red] No'
+            except Exception as e:
+                logger.error('{}: Failed to pull running status: error = {}', droplet.name, e )
+        try:
+            neuron = subtensor.neuron_for_pubkey( hotkey_str )
+            is_registered = True
+            is_registered_str =  '[bold green] Yes' if is_registered else '[bold red] No'
+        except:
+            pass
+
+        if is_registered:
+            metrics = [
+                str( neuron.uid ), 
+                '{:.5f}'.format( neuron.stake),
+                '{:.5f}'.format( neuron.rank), 
+                '{:.5f}'.format( neuron.trust), 
+                '{:.5f}'.format( neuron.consensus), 
+                '{:.5f}'.format( neuron.incentive),
+                '{:.5f}'.format( neuron.dividends),
+                '{:.5f}'.format( neuron.emission),
+                str(neuron.last_update),
+                str( neuron.active ), 
+            ]
+            total_stake += neuron.stake
+            total_rank += neuron.rank
+            total_trust += neuron.trust
+            total_consensus += neuron.consensus
+            total_incentive += neuron.incentive
+            total_dividends += neuron.dividends
+            total_emission += neuron.emission
+        else:
+            metrics = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
+
+        row = [ str(droplet.name), str(droplet.tags[0]), str(droplet.ip_address), str(droplet.region['name']), str(droplet.size_slug), str(connect_str), branch_str, is_installed_str, is_registered_str, is_running_str] + metrics + [coldkeypub_str[0:10], hotkey_str[0:10]] 
+        connection.close()
+        return row
+       
+    droplets = utils.get_droplets( config )
+    TABLE_DATA = []
+    with ThreadPoolExecutor(max_workers=config.max_threads) as executor:
+        TABLE_DATA = list(tqdm(executor.map(get_row, droplets), total=len(droplets)))
+
+    TABLE_DATA = [row for row in TABLE_DATA if row != None ]
+    TABLE_DATA.sort(key = lambda TABLE_DATA: TABLE_DATA[0])
+
+    table = Table(show_footer=False)
+    table.title = (
+        "[bold white]Marius" 
+    )
+    table.add_column("[overline white]Name",  str(len(config.machines)), footer_style = "overline white", style='white')
+    table.add_column("[overline white]TAG", style='white')
+    table.add_column("[overline white]IP", style='blue')
+    table.add_column("[overline white]Location", style='yellow')
+    table.add_column("[overline white]Size", style='green')
+    table.add_column("[overline white]Connected", style='green')
+    table.add_column("[overline white]Branch", style='bold purple')
+    table.add_column("[overline white]Installed")
+    table.add_column("[overline white]Registered")
+    table.add_column("[overline white]Running")
+
+    table.add_column("[overline white]Uid", footer_style = "overline white", style='yellow')
+    table.add_column("[overline white]Stake", '{:.5f}'.format(total_stake), footer_style = "overline white", justify='right', style='green', no_wrap=True)
+    table.add_column("[overline white]Rank", '{:.5f}'.format(total_rank), footer_style = "overline white", justify='right', style='green', no_wrap=True)
+    table.add_column("[overline white]Trust", '{:.5f}'.format(total_trust), footer_style = "overline white", justify='right', style='green', no_wrap=True)
+    table.add_column("[overline white]Consensus", '{:.5f}'.format(total_consensus), footer_style = "overline white", justify='right', style='green', no_wrap=True)
+    table.add_column("[overline white]Incentive", '{:.5f}'.format(total_incentive), footer_style = "overline white", justify='right', style='green', no_wrap=True)
+    table.add_column("[overline white]Dividends", '{:.5f}'.format(total_dividends), footer_style = "overline white", justify='right', style='green', no_wrap=True)
+    table.add_column("[overline white]Emission", '{:.5f}'.format(total_emission), footer_style = "overline white", justify='right', style='green', no_wrap=True)
+    table.add_column("[overline white]Lastupdate (blocks)", justify='right', no_wrap=True)
+    table.add_column("[overline white]Active", justify='right', style='green', no_wrap=True)
+
+    table.add_column("[overline white]Coldkey", style='bold blue', no_wrap=False)
+    table.add_column("[overline white]Hotkey", style='blue', no_wrap=False)
+    table.show_footer = True
+
+    for row in TABLE_DATA:
+        table.add_row(*row)
+    table.box = None
+    table.pad_edge = False
+    table.width = None
+    console = Console()
+    console.print(table)
+
+def create ( config ):
+    droplets = utils.get_droplets ( config )
+    existing_droplets = [droplet.name for droplet in droplets]
+    to_create = config.machines
+    if config.names != None:
+        to_create = config.names
+    for name in to_create:
+        try:
+            if name not in existing_droplets:
+                if not utils.create_droplet(config, name): logger.error('<blue>{}</blue>: Failed to create droplet with name.', name); return
+                else: logger.success('<blue>{}</blue>: Created droplet.', name)
+            else:
+                logger.success('<blue>{}</blue>: Droplet already exists.', name)
+        except Exception as e:
+            logger.exception( e )
+        finally:
+            logger.success('<blue>{}</blue>: DONE CREATE', name)
+
+def checkout ( config ):
+    def _checkout ( droplet ):
+        try:
+            name = droplet.name
+            branch = config.machines[name].branch
+            connection = utils.connection_for_droplet( config, droplet )
+
+            if not utils.can_connect( connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
+            else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
+
+            if utils.make_bittensor_dir( connection ).failed: logger.error('<blue>{}</blue>: Failed to make bittensor dirs.', name); return
+            else: logger.success('<blue>{}</blue>: Made bittensor dirs.', name)
+
+            if utils.remove_bittensor_installation( connection ).failed: logger.error('<blue>{}</blue>: Failed to remove previous bittensor installation', name); return
+            else: logger.success('<blue>{}</blue>: Remove previous bittensor installation', name)
+
+            if utils.git_clone_bittensor( connection ).failed: logger.error('<blue>{}</blue>: Failed to clone bittensor', name); return
+            else: logger.success('<blue>{}</blue>: Cloned bittensor', name)
+
+            if utils.git_checkout_bittensor( connection, branch ).failed: logger.error('<blue>{}</blue>: Failed to checkout bittensor branch: {}', name, branch); return
+            else: logger.success('<blue>{}</blue>: Checked out bittensor branch', name)
+
+            branch_result = utils.git_branch_bittensor( connection )
+            if branch_result.failed: logger.error("{}: Failed to get branch", name); return
+            else: logger.success('<blue>{}</blue>: Branch set to: {}', name,  branch_result.stdout.strip())
+
+        except Exception as e:
+            logger.exception( e )
+        finally:
+            logger.success('<blue>{}</blue>: DONE CHECKOUT ', name)
+            connection.close()
+
+    droplets = utils.get_droplets ( config )
+    with ThreadPoolExecutor(max_workers=config.max_threads) as executor:
+        tqdm(executor.map(_checkout, droplets), total=len(droplets))
+
+def wallet( config ):
+    def _wallet(droplet):
+        try:
+            name = droplet.name
+            wallet = bittensor.wallet( name = config.coldkey, hotkey = name )
+            connection = utils.connection_for_droplet( config, droplet )
+
+            if not wallet.hotkey_file.exists_on_device():
+                wallet.create_new_hotkey( use_password=False, overwrite=False )
+            
+            if not utils.can_connect( connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
+            else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
+
+            if not wallet.hotkey_file.exists_on_device(): logger.error('<blue>{}</blue>: Wallet does not have hotkey: {}', name, wallet.hotkey_file.path); return
+            else: logger.success('<blue>{}</blue>: Found hotkey: {}', name, name)
+
+            if not wallet.coldkeypub_file.exists_on_device(): logger.error('<blue>{}</blue>: Wallet does not have coldkeypub: {}', name, wallet.coldkeypub_file.path); return
+            else: logger.success('<blue>{}</blue>: Found coldkeypub: {}', name, wallet.coldkeypub_file.path)
+            
+            if utils.make_wallet_dirs( connection ).failed: logger.error('<blue>{}</blue>: Error creating wallet dirs', name); return
+            else: logger.success('<blue>{}</blue>: Created wallet directories', name)
+
+            if utils.copy_hotkey( connection, wallet ).failed: logger.error('<blue>{}</blue>: Error coping hotkey.', name); return
+            else: logger.success('<blue>{}</blue>: Copied hotkey to dir: {}', name, '/root/.bittensor/wallets/default/hotkeys/default')
+
+            if utils.copy_coldkeypub(connection, wallet).failed: logger.error('<blue>{}</blue>: Error copy coldkey', name); return
+            else: logger.success('<blue>{}</blue>: Copied coldkey to dir: {}', name, '/root/.bittensor/wallets/default/coldkeypub.txt')
+
+            if utils.get_hotkey( connection ) == None: logger.error('<blue>{}</blue>: Failed to retrieve hotkey from {}', name, connection.host); return
+            else: logger.success('<blue>{}</blue>: Could retrieve hotkey: {}', name, utils.get_hotkey( connection ) )
+
+            if utils.get_coldkeypub( connection ) == None: logger.error('<blue>{}</blue>: Failed to retrieve coldkeypub from {}', name, connection.host); return
+            else: logger.success('<blue>{}</blue>: Could retrieve coldkeypub: {}', name, utils.get_coldkeypub( connection ) )
+
+            if utils.register( connection ) == None: logger.error('<blue>{}</blue>: Failed to register miner', name ); return
+            else: logger.success('<blue>{}</blue>: Registered miner', name )
+
+        except Exception as e:
+            logger.exception( e )
+        finally:
+            logger.success('<blue>{}</blue>: DONE WALLET ', name)
+            connection.close()
+
+    droplets = utils.get_droplets ( config )
+    with ThreadPoolExecutor(max_workers=config.max_threads) as executor:
+        tqdm(executor.map(_wallet, droplets), total=len(droplets))
+
+def install( config ):
+    def _install( droplet ):
+        try:
+            name = droplet.name
+            connection = utils.connection_for_droplet( config, droplet )
+
+            if not utils.can_connect( connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
+            else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
+
+            if utils.install_swapspace(connection).failed: logger.success('<blue>{}</blue>: Swapspace already installed', name)
+            else: logger.success('<blue>{}</blue>: Installed swapspace.', name)
+
+            if utils.install_python_deps( connection ).failed: logger.error('<blue>{}</blue>: Failed to install python deps', name); return
+            else: logger.success('<blue>{}</blue>: Python deps installation successful.', name)
+
+            if utils.install_npm(connection).failed: logger.error('<blue>{}</blue> Failed to install npm', name); return
+            else: logger.success('<blue>{}</blue>: Installed npm.', name)
+
+            if utils.install_pm2(connection).failed: logger.error('<blue>{}</blue>: Failed to install pm2', name); return
+            else: logger.success('<blue>{}</blue>: Installed pm2.', name)
+
+            if utils.install_python( connection ).failed: logger.error('<blue>{}</blue>: Failed to install python', name); return
+            else: logger.success('<blue>{}</blue>: Python installation successful.', name)
+
+            if utils.install_bittensor_deps(connection).failed: logger.error('<blue>{}</blue>: Failed to install bittensor deps', name); return
+            else: logger.success('<blue>{}</blue>: Bittensor deps installation successful.', name)
+
+            if utils.install_bittensor(connection).failed: logger.error('<blue>{}</blue>: Failed to install bittensor', name); return
+            else: logger.success('<blue>{}</blue>: Bittensor installation successful.', name)
+
+            if not utils.is_installed( connection ): logger.error('<blue>{}</blue>: Bittensor is not installed', name); return
+            else: logger.success('<blue>{}</blue>: Bittensor is installed.', name)
+        except Exception as e:
+            logger.exception( e )
+        finally:
+            logger.success('<blue>{}</blue>: DONE INSTALLING ', name)
+            connection.close()
+
+    droplets = utils.get_droplets ( config )
+    with ThreadPoolExecutor(max_workers=config.max_threads) as executor:
+        tqdm(executor.map(_install, droplets), total=len(droplets))
+
+
+def start( config ):
+    droplets = utils.get_droplets ( config )
+
+    def _start(droplet):
+        try:
+            name = droplet.name
+            script = config.machines[droplet.name].script
+            args = config.machines[droplet.name].args
+            script_path = os.path.dirname(os.path.realpath(__file__)) + "/" + script 
+            connection = utils.connection_for_droplet( config, droplet )
+        
+            if not utils.can_connect( connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
+            else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
+
+            utils.copy_script( connection, script_path )
+            logger.success('<blue>{}</blue>: Copied script to dir: {}', name, '/root/.py')
+
+            if utils.get_script( connection, script) == None: logger.error('<blue>{}</blue>: Failed to retrieve script from {}', name, connection.host); return
+            else: logger.debug('<blue>{}</blue>: Could retrieve script: \n{}', name, utils.get_script( connection, script))
+
+            if utils.stop_script(connection).failed: pass
+            else: logger.success('<blue>{}</blue>: Stopped miner.', name)
+
+            if utils.start_script( connection, name, args ).failed: logger.error('<blue>{}</blue>: Failed to start miner', name); return
+            else: logger.success('<blue>{}</blue>: Started miner with args {}', name, args)
+
+            if not utils.is_script_running( connection ): logger.error('Failed to start miner, script not running', name); return
+            else: logger.success('<blue>{}</blue>: Script running', name)
+
+        except Exception as e:
+            logger.exception( e )
+        finally:
+            logger.success('<blue>{}</blue>: DONE STARTING ', name)
+            connection.close()
+
+    droplets = utils.get_droplets ( config )
+    with ThreadPoolExecutor(max_workers=config.max_threads) as executor:
+        tqdm(executor.map(_start, droplets), total=len(droplets))
+    
+def get_config(): 
+    parser = argparse.ArgumentParser(description="marius", usage="marius <command> <command args>", add_help=True)
+    parser._positionals.title = "commands"
+    command_parsers = parser.add_subparsers( dest='command' )
+    parser.add_argument ('--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    parser.add_argument ("--names", type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+    
+    create_parser = command_parsers.add_parser('create', help='''Create miners''')
+    create_parser.add_argument ('--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    create_parser.add_argument ("--names", type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+    
+    status_parser = command_parsers.add_parser('status', help='''Show mining overview''')
+    status_parser.add_argument ('--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    status_parser.add_argument ("--names", type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+    
+    install_parser = command_parsers.add_parser('install', help='''install''')
+    install_parser.add_argument ('--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    install_parser.add_argument ("--names", type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+    
+    start_parser = command_parsers.add_parser('start', help='''start''')
+    start_parser.add_argument ('--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    start_parser.add_argument ("--names", type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+    config = bittensor.config( parser ); 
+
+    with open("config.yaml", "r") as config_file:
+        yaml_config = yaml.safe_load(config_file)
+    yaml_config = bittensor.Config.fromDict(yaml_config)
+    config.update(yaml_config)
+    return config
+
+def configure_logging( config ):
+    logger.remove()
+    if config.debug == True:
+        logger.add(sys.stderr, level="TRACE")
+    else:
+        logger.add(sys.stderr, level="INFO")
+
+def main( config ):
+    configure_logging( config )
+
+    # Create coldkey if need be.
+    the_wallet = bittensor.wallet( name = config.coldkey )
+    if not the_wallet.coldkey_file.exists_on_device():
+        the_wallet.create_new_coldkey( overwrite=False, use_password=True)
+
+    # Display status.
+    if config.command == 'status':
+        status(config)
+
+    # Create the cluster
+    elif config.command == 'create':
+        create(config)
+        
+    # Install cluster.
+    elif config.command == 'install':
+        checkout ( config )
+        install ( config )
+        wallet ( config )
+        if Confirm.ask("Show Status"):
+            status( config )
+
+    # Start cluster.
+    elif config.command == 'start':
+        start( config )
+        if Confirm.ask("Show Status"):
+            status( config )
+    
+    # Run all.
+    else:
+        checkout(config)
+        install ( config )
+        wallet ( config )
+        start( config )
+        status( config )
+
+if __name__ == "__main__":
+    config = get_config()
+    print ( config )
+    main( config )
+
+
+
