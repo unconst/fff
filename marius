@@ -321,28 +321,44 @@ def start( config ):
     def _start(droplet):
         try:
             name = droplet.name
-            script = config.machines[droplet.name].script
             args = config.machines[droplet.name].args
-            script_path = os.path.dirname(os.path.realpath(__file__)) + "/" + script 
             connection = utils.connection_for_droplet( config, droplet )
-        
-            if not utils.can_connect( connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
-            else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
 
-            utils.copy_script( connection, script_path )
-            logger.success('<blue>{}</blue>: Copied script to dir: {}', name, '/root/.py')
+            if 'script' in config.machines[droplet.name]:
+                script = config.machines[droplet.name].script
+                script_path = os.path.dirname(os.path.realpath(__file__)) + "/" + script 
+                utils.copy_script( connection, script_path )
+                logger.success('<blue>{}</blue>: Copied script to dir: {}', name, '/root/.py')
 
-            if utils.get_script( connection, script) == None: logger.error('<blue>{}</blue>: Failed to retrieve script from {}', name, connection.host); return
-            else: logger.debug('<blue>{}</blue>: Could retrieve script: \n{}', name, utils.get_script( connection, script))
+                if utils.get_script( connection, script) == None: logger.error('<blue>{}</blue>: Failed to retrieve script from {}', name, connection.host); return
+                else: logger.debug('<blue>{}</blue>: Could retrieve script: \n{}', name, utils.get_script( connection, script))
 
-            if utils.stop_script(connection).failed: pass
-            else: logger.success('<blue>{}</blue>: Stopped miner.', name)
+                if utils.stop_script(connection).failed: pass
+                else: logger.success('<blue>{}</blue>: Stopped miner.', name)
 
-            if utils.start_script( connection, name, args ).failed: logger.error('<blue>{}</blue>: Failed to start miner', name); return
-            else: logger.success('<blue>{}</blue>: Started miner with args {}', name, args)
+                if utils.start_script( connection, name, args ).failed: logger.error('<blue>{}</blue>: Failed to start miner', name); return
+                else: logger.success('<blue>{}</blue>: Started miner with args {}', name, args)
 
-            if not utils.is_script_running( connection ): logger.error('Failed to start miner, script not running', name); return
-            else: logger.success('<blue>{}</blue>: Script running', name)
+                if not utils.is_script_running( connection ): logger.error('Failed to start miner, script not running', name); return
+                else: logger.success('<blue>{}</blue>: Script running', name)
+
+            elif 'command' in config.machines[droplet.name]:
+                command = config.machines[droplet.name].script
+
+                if not utils.can_connect( connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
+                else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
+
+                if utils.stop_script(connection).failed: pass
+                else: logger.success('<blue>{}</blue>: Stopped miner.', name)
+
+                if utils.start_command( connection, name, command, args ).failed: logger.error('<blue>{}</blue>: Failed to start miner', name); return
+                else: logger.success('<blue>{}</blue>: Started miner with args {}', name, args)
+
+                if not utils.is_script_running( connection ): logger.error('Failed to start miner, script not running', name); return
+                else: logger.success('<blue>{}</blue>: Script running', name)
+
+            else:
+                logger.error('No command or script', name); return
 
         except Exception as e:
             logger.exception( e )

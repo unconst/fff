@@ -291,6 +291,15 @@ def start_script( connection, name, args ):
     logger.debug( start_script_result )
     return start_script_result
 
+
+def start_command( connection, name, command, args ):
+    args = args.replace("$NAME", name)
+    start_script_command = "pm2 start {} --name script --time --interpreter python3 -- {}".format( command, args )
+    logger.debug("Starting script: {}", start_script_command)
+    start_script_result = connection.run(start_script_command, warn=True, hide=True, pty=False)
+    logger.debug( start_script_result )
+    return start_script_result
+
 def stop_script( connection ):
     stop_script_command = "pm2 delete script"
     logger.debug("Stopping script: {}", stop_script_command)
