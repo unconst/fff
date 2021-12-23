@@ -1,6 +1,6 @@
 
 cluster: marius
-token: 73747bb7c61632155d00e0baf628211a79efb8feee7d0928810feaaddac8874e
+token: <do token>
 sshkey: /Users/thebes/.ssh/marius
 max_threads: 10
 coldkey: marius
@@ -11,7 +11,7 @@ machines:
     image: ubuntu-20-04-x64
     branch: metagraph_sync_fix
     script: "server.py"
-    args: "--subtensor.network nakamoto --wandb.api_key 40177b21a9f074650eff24ebbb085daa066ddb97 --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilgpt2 --neuron.no_training"
+    args: "--subtensor.network nakamoto --wandb.api_key <wandb token> --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilgpt2 --neuron.no_training"
 
   M1:
     region: nyc1
@@ -19,7 +19,7 @@ machines:
     image: ubuntu-20-04-x64    
     branch: metagraph_sync_fix
     script: "server.py"
-    args: "--subtensor.network nakamoto --wandb.api_key 40177b21a9f074650eff24ebbb085daa066ddb97 --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilgpt2 --neuron.no_training"
+    args: "--subtensor.network nakamoto --wandb.api_key <wandb token> --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilgpt2 --neuron.no_training"
 
   M2:
     region: nyc1
@@ -27,7 +27,7 @@ machines:
     image: ubuntu-20-04-x64
     branch: metagraph_sync_fix
     script: "server.py"
-    args: "--subtensor.network nakamoto --wandb.api_key 40177b21a9f074650eff24ebbb085daa066ddb97 --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name gpt2-medium --neuron.no_backward --neuron.no_training"
+    args: "--subtensor.network nakamoto --wandb.api_key <wandb token> --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name gpt2-medium --neuron.no_backward --neuron.no_training"
 
   M3:
     region: nyc1
@@ -35,7 +35,7 @@ machines:
     image: ubuntu-20-04-x64
     branch: metagraph_sync_fix
     script: "server.py"
-    args: "--subtensor.network nakamoto --wandb.api_key 40177b21a9f074650eff24ebbb085daa066ddb97 --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilgpt2"
+    args: "--subtensor.network nakamoto --wandb.api_key <wandb token> --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilgpt2"
   
   M4:
     region: nyc1
@@ -43,7 +43,7 @@ machines:
     image: ubuntu-20-04-x64
     branch: metagraph_sync_fix
     script: "server.py"
-    args: "--subtensor.network nakamoto --wandb.api_key 40177b21a9f074650eff24ebbb085daa066ddb97 --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilgpt2"
+    args: "--subtensor.network nakamoto --wandb.api_key <wandb token> --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilgpt2"
 
   M5:
     region: nyc1
@@ -51,7 +51,7 @@ machines:
     image: ubuntu-20-04-x64
     branch: metagraph_sync_fix
     script: "server.py"
-    args: "--subtensor.network nakamoto --wandb.api_key 40177b21a9f074650eff24ebbb085daa066ddb97 --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilgpt2"
+    args: "--subtensor.network nakamoto --wandb.api_key <wandb token> --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilgpt2"
 
   M6:
     region: nyc1
@@ -59,7 +59,7 @@ machines:
     image: ubuntu-20-04-x64
     branch: metagraph_sync_fix
     script: "server.py"
-    args: "--subtensor.network nakamoto --wandb.api_key 40177b21a9f074650eff24ebbb085daa066ddb97 --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilgpt2 --neuron.no_training"
+    args: "--subtensor.network nakamoto --wandb.api_key <wandb token> --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilgpt2 --neuron.no_training"
 
   M7:
     region: nyc1
@@ -67,7 +67,7 @@ machines:
     image: ubuntu-20-04-x64
     branch: metagraph_sync_fix
     script: "server.py"
-    args: "--subtensor.network nakamoto --wandb.api_key 40177b21a9f074650eff24ebbb085daa066ddb97 --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilbert-base-uncased --neuron.no_backward"
+    args: "--subtensor.network nakamoto --wandb.api_key <wandb token> --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilbert-base-uncased --neuron.no_backward"
 
   M8:
     region: nyc1
@@ -75,7 +75,7 @@ machines:
     image: ubuntu-20-04-x64
     branch: metagraph_sync_fix
     script: "server.py"
-    args: "--subtensor.network nakamoto --wandb.api_key 40177b21a9f074650eff24ebbb085daa066ddb97 --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name gpt2-medium --neuron.no_training --neuron.no_backward"
+    args: "--subtensor.network nakamoto --wandb.api_key <wandb token> --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name gpt2-medium --neuron.no_training --neuron.no_backward"
 
   M9:
     region: nyc1
@@ -83,7 +83,7 @@ machines:
     image: ubuntu-20-04-x64
     branch: metagraph_sync_fix
     script: "server.py"
-    args: "--subtensor.network nakamoto --wandb.api_key 40177b21a9f074650eff24ebbb085daa066ddb97 --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilbert-base-uncased"
+    args: "--subtensor.network nakamoto --wandb.api_key <wandb token> --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilbert-base-uncased"
 
   M10:
     region: nyc1
@@ -91,7 +91,7 @@ machines:
     image: ubuntu-20-04-x64
     branch: metagraph_sync_fix
     script: "server.py"
-    args: "--subtensor.network nakamoto --wandb.api_key 40177b21a9f074650eff24ebbb085daa066ddb97 --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilbert-base-uncased"
+    args: "--subtensor.network nakamoto --wandb.api_key <wandb token> --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilbert-base-uncased"
 
   
   M11:
@@ -100,7 +100,7 @@ machines:
     image: ubuntu-20-04-x64
     branch: metagraph_sync_fix
     script: "server.py"
-    args: "--subtensor.network nakamoto --wandb.api_key 40177b21a9f074650eff24ebbb085daa066ddb97 --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilbert-base-uncased --neuron.no_backward"
+    args: "--subtensor.network nakamoto --wandb.api_key <wandb token> --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilbert-base-uncased --neuron.no_backward"
 
   M12:
     region: nyc1
@@ -108,7 +108,7 @@ machines:
     image: ubuntu-20-04-x64
     branch: metagraph_sync_fix
     script: "server.py"
-    args: "--subtensor.network nakamoto --wandb.api_key 40177b21a9f074650eff24ebbb085daa066ddb97 --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilbert-base-uncased --neuron.no_training --neuron.no_backward"
+    args: "--subtensor.network nakamoto --wandb.api_key <wandb token> --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilbert-base-uncased --neuron.no_training --neuron.no_backward"
 
   M13:
     region: nyc1
@@ -116,5 +116,5 @@ machines:
     image: ubuntu-20-04-x64
     branch: metagraph_sync_fix
     script: "server.py"
-    args: "--subtensor.network nakamoto --wandb.api_key 40177b21a9f074650eff24ebbb085daa066ddb97 --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilbert-base-uncased --neuron.no_training"
+    args: "--subtensor.network nakamoto --wandb.api_key <wandb token> --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project marius --wandb.run_group $NAME --neuron.model_name distilbert-base-uncased --neuron.no_training"
       
