@@ -1,0 +1,26 @@
+token: MARIUS_DOTOKEN
+sshkey: MARIUS_SSH_KEY
+wandb_key: MARIUS_WANDB_KEY
+
+cluster: marius
+coldkey: marius
+max_threads: 10
+
+machines:
+  M0:
+    region: nyc1
+    slug: s-4vcpu-8gb
+    image: ubuntu-20-04-x64
+    branch: master
+    command: /root/.bittensor/bittensor/bittensor/_neuron/text/advanced_server/main.py
+    extra_args: '--logging.debug'
+    args: 
+      subtensor: 
+        network: local
+      neuron:
+        model_name: distilgpt2
+      wandb:
+        api_key: $WANDBKEY
+        project: $CLUSTER
+        run_group: $NAME
+        name: $NAME

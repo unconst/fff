@@ -43,7 +43,7 @@ def status( config ):
     total_emission = 0.0  
     def get_row( droplet ): 
         connection = utils.connection_for_droplet( config, droplet )
-        can_connect_bool = utils.can_connect( connection ) 
+        can_connect_bool = utils.can_connect( config, connection ) 
         subtensor = bittensor.subtensor()
         connect_str = '[bold green] YES' if can_connect_bool else '[bold red] NO'
         hotkey_str = '[yellow] None'
@@ -64,30 +64,30 @@ def status( config ):
         is_registered = False
         if can_connect_bool:
             try:
-                hotkey = utils.get_hotkey( connection ); hotkey_str = hotkey if hotkey != None else '[yellow] None'
+                hotkey = utils.get_hotkey( config, connection ); hotkey_str = hotkey if hotkey != None else '[yellow] None'
             except Exception as e:
                 hotkey_str = '[yellow] None'; logger.error('{}: Failed to pull hotkey error = {}', droplet.name, e )
         if can_connect_bool:
             try:
-                coldkeypub = utils.get_coldkeypub( connection )
+                coldkeypub = utils.get_coldkeypub( config, connection )
                 coldkeypub_str = coldkeypub if coldkeypub != None else '[yellow] None'
             except Exception as e:
                 logger.error('{}: Failed to pull coldkey error = {}', droplet.name, e )
         if can_connect_bool:
             try:
-                branch = utils.get_branch( connection )
+                branch = utils.get_branch( config, connection )
                 branch_str = branch if branch != None else '[yellow] None'
             except Exception as e:
                 logger.error('{}: Failed to pull branch error = {}', droplet.name, e )
         if can_connect_bool and branch != None:
             try:
-                installed = utils.is_installed( connection )
+                installed = utils.is_installed( config, connection )
                 is_installed_str =  '[bold green] Yes' if installed else '[bold red] No'
             except Exception as e:
                 logger.error('{}: Failed to pull install status error = {}', droplet.name, e)
         if can_connect_bool and installed:
             try:
-                is_running = utils.is_script_running( connection )
+                is_running = utils.is_script_running( config, connection )
                 is_running_str =  '[bold green] Yes' if is_running else '[bold red] No'
             except Exception as e:
                 logger.error('{}: Failed to pull running status: error = {}', droplet.name, e )
@@ -196,19 +196,19 @@ def checkout ( config ):
             branch = config.machines[name].branch
             connection = utils.connection_for_droplet( config, droplet )
 
-            if not utils.can_connect( connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
+            if not utils.can_connect( config, connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
             else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
 
-            if utils.make_bittensor_dir( connection ).failed: logger.error('<blue>{}</blue>: Failed to make bittensor dirs.', name); return
+            if utils.make_bittensor_dir( config, connection ).failed: logger.error('<blue>{}</blue>: Failed to make bittensor dirs.', name); return
             else: logger.success('<blue>{}</blue>: Made bittensor dirs.', name)
 
-            if utils.remove_bittensor_installation( connection ).failed: logger.error('<blue>{}</blue>: Failed to remove previous bittensor installation', name); return
+            if utils.remove_bittensor_installation( config, connection ).failed: logger.error('<blue>{}</blue>: Failed to remove previous bittensor installation', name); return
             else: logger.success('<blue>{}</blue>: Remove previous bittensor installation', name)
 
-            if utils.git_clone_bittensor( connection ).failed: logger.error('<blue>{}</blue>: Failed to clone bittensor', name); return
+            if utils.git_clone_bittensor( config, connection ).failed: logger.error('<blue>{}</blue>: Failed to clone bittensor', name); return
             else: logger.success('<blue>{}</blue>: Cloned bittensor', name)
 
-            if utils.git_checkout_bittensor( connection, branch ).failed: logger.error('<blue>{}</blue>: Failed to checkout bittensor branch: {}', name, branch); return
+            if utils.git_checkout_bittensor( config, connection, branch ).failed: logger.error('<blue>{}</blue>: Failed to checkout bittensor branch: {}', name, branch); return
             else: logger.success('<blue>{}</blue>: Checked out bittensor branch', name)
 
             branch_result = utils.git_branch_bittensor( connection )
@@ -235,7 +235,7 @@ def wallet( config ):
             if not wallet.hotkey_file.exists_on_device():
                 wallet.create_new_hotkey( use_password=False, overwrite=False )
             
-            if not utils.can_connect( connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
+            if not utils.can_connect( config, connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
             else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
 
             if not wallet.hotkey_file.exists_on_device(): logger.error('<blue>{}</blue>: Wallet does not have hotkey: {}', name, wallet.hotkey_file.path); return
@@ -244,22 +244,22 @@ def wallet( config ):
             if not wallet.coldkeypub_file.exists_on_device(): logger.error('<blue>{}</blue>: Wallet does not have coldkeypub: {}', name, wallet.coldkeypub_file.path); return
             else: logger.success('<blue>{}</blue>: Found coldkeypub: {}', name, wallet.coldkeypub_file.path)
             
-            if utils.make_wallet_dirs( connection ).failed: logger.error('<blue>{}</blue>: Error creating wallet dirs', name); return
+            if utils.make_wallet_dirs( config, connection ).failed: logger.error('<blue>{}</blue>: Error creating wallet dirs', name); return
             else: logger.success('<blue>{}</blue>: Created wallet directories', name)
 
-            if utils.copy_hotkey( connection, wallet ).failed: logger.error('<blue>{}</blue>: Error coping hotkey.', name); return
+            if utils.copy_hotkey( config, connection, wallet ).failed: logger.error('<blue>{}</blue>: Error coping hotkey.', name); return
             else: logger.success('<blue>{}</blue>: Copied hotkey to dir: {}', name, '/root/.bittensor/wallets/default/hotkeys/default')
 
-            if utils.copy_coldkeypub(connection, wallet).failed: logger.error('<blue>{}</blue>: Error copy coldkey', name); return
+            if utils.copy_coldkeypub(config, connection, wallet).failed: logger.error('<blue>{}</blue>: Error copy coldkey', name); return
             else: logger.success('<blue>{}</blue>: Copied coldkey to dir: {}', name, '/root/.bittensor/wallets/default/coldkeypub.txt')
 
-            if utils.get_hotkey( connection ) == None: logger.error('<blue>{}</blue>: Failed to retrieve hotkey from {}', name, connection.host); return
+            if utils.get_hotkey( config, connection ) == None: logger.error('<blue>{}</blue>: Failed to retrieve hotkey from {}', name, connection.host); return
             else: logger.success('<blue>{}</blue>: Could retrieve hotkey: {}', name, utils.get_hotkey( connection ) )
 
-            if utils.get_coldkeypub( connection ) == None: logger.error('<blue>{}</blue>: Failed to retrieve coldkeypub from {}', name, connection.host); return
+            if utils.get_coldkeypub( config, connection ) == None: logger.error('<blue>{}</blue>: Failed to retrieve coldkeypub from {}', name, connection.host); return
             else: logger.success('<blue>{}</blue>: Could retrieve coldkeypub: {}', name, utils.get_coldkeypub( connection ) )
 
-            if utils.register( connection ) == None: logger.error('<blue>{}</blue>: Failed to register miner', name ); return
+            if utils.register( config, connection ) == None: logger.error('<blue>{}</blue>: Failed to register miner', name ); return
             else: logger.success('<blue>{}</blue>: Registered miner', name )
 
         except Exception as e:
@@ -278,32 +278,36 @@ def install( config ):
             name = droplet.name
             connection = utils.connection_for_droplet( config, droplet )
 
-            if not utils.can_connect( connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
+            if not utils.can_connect( config, connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
             else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
 
-            if utils.install_swapspace(connection).failed: logger.success('<blue>{}</blue>: Swapspace already installed', name)
+            if utils.install_swapspace(config, connection ).failed: logger.success('<blue>{}</blue>: Swapspace already installed', name)
             else: logger.success('<blue>{}</blue>: Installed swapspace.', name)
 
-            if utils.install_python_deps( connection ).failed: logger.error('<blue>{}</blue>: Failed to install python deps', name); return
+            if utils.install_python_deps( config, connection ).failed: logger.error('<blue>{}</blue>: Failed to install python deps', name); return
             else: logger.success('<blue>{}</blue>: Python deps installation successful.', name)
 
-            if utils.install_npm(connection).failed: logger.error('<blue>{}</blue> Failed to install npm', name); return
+            if utils.install_npm(config, connection ).failed: logger.error('<blue>{}</blue> Failed to install npm', name); return
             else: logger.success('<blue>{}</blue>: Installed npm.', name)
 
-            if utils.install_pm2(connection).failed: logger.error('<blue>{}</blue>: Failed to install pm2', name); return
+            if utils.install_pm2(config, connection ).failed: logger.error('<blue>{}</blue>: Failed to install pm2', name); return
             else: logger.success('<blue>{}</blue>: Installed pm2.', name)
 
-            if utils.install_python( connection ).failed: logger.error('<blue>{}</blue>: Failed to install python', name); return
+            if utils.install_python( config, connection ).failed: logger.error('<blue>{}</blue>: Failed to install python', name); return
             else: logger.success('<blue>{}</blue>: Python installation successful.', name)
 
-            if utils.install_bittensor_deps(connection).failed: logger.error('<blue>{}</blue>: Failed to install bittensor deps', name); return
+            if utils.install_bittensor_deps( config, connection ).failed: logger.error('<blue>{}</blue>: Failed to install bittensor deps', name); return
             else: logger.success('<blue>{}</blue>: Bittensor deps installation successful.', name)
 
-            if utils.install_bittensor(connection).failed: logger.error('<blue>{}</blue>: Failed to install bittensor', name); return
+            if utils.install_bittensor( config, connection ).failed: logger.error('<blue>{}</blue>: Failed to install bittensor', name)
             else: logger.success('<blue>{}</blue>: Bittensor installation successful.', name)
 
-            if not utils.is_installed( connection ): logger.error('<blue>{}</blue>: Bittensor is not installed', name); return
+            if not utils.is_installed( config, connection ): logger.error('<blue>{}</blue>: Bittensor is not installed', name); return
             else: logger.success('<blue>{}</blue>: Bittensor is installed.', name)
+
+            if not utils.start_subtensor( config, connection ): logger.error('<blue>{}</blue>: Subtensor failed to start', name); return
+            else: logger.success('<blue>{}</blue>: Local Subtensor is running.', name)
+
         except Exception as e:
             logger.exception( e )
         finally:
@@ -314,6 +318,25 @@ def install( config ):
     with ThreadPoolExecutor(max_workers=config.max_threads) as executor:
         tqdm(executor.map(_install, droplets), total=len(droplets))
 
+def logs( config ):
+    def _logs( droplet ):
+        try:
+            name = droplet.name
+            connection = utils.connection_for_droplet( config, droplet )
+
+            if not utils.can_connect( config, connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
+            else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
+
+            logger.success( "{}: {}".format( name, utils.get_logs( config, connection ) ) )
+        except Exception as e:
+            logger.exception( e )
+        finally:
+            logger.success('<blue>{}</blue>: DONE LOGS ', name)
+            connection.close()
+
+    droplets = utils.get_droplets ( config )
+    with ThreadPoolExecutor( max_workers=config.max_threads ) as executor:
+        tqdm(executor.map(_logs, droplets), total=len(droplets))
 
 def start( config ):
     droplets = utils.get_droplets ( config )
@@ -321,40 +344,40 @@ def start( config ):
     def _start(droplet):
         try:
             name = droplet.name
-            args = config.machines[droplet.name].args
             connection = utils.connection_for_droplet( config, droplet )
+
+            if not utils.can_connect( config, connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
+            else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
 
             if 'script' in config.machines[droplet.name]:
                 script = config.machines[droplet.name].script
                 script_path = os.path.dirname(os.path.realpath(__file__)) + "/" + script 
+
                 utils.copy_script( connection, script_path )
                 logger.success('<blue>{}</blue>: Copied script to dir: {}', name, '/root/.py')
 
-                if utils.get_script( connection, script) == None: logger.error('<blue>{}</blue>: Failed to retrieve script from {}', name, connection.host); return
+                if utils.get_script( config, connection, script ) == None: logger.error('<blue>{}</blue>: Failed to retrieve script from {}', name, connection.host); return
                 else: logger.debug('<blue>{}</blue>: Could retrieve script: \n{}', name, utils.get_script( connection, script))
 
-                if utils.stop_script(connection).failed: pass
+                if utils.stop_script( config, connection ).failed: pass
                 else: logger.success('<blue>{}</blue>: Stopped miner.', name)
 
-                if utils.start_script( connection, name, args ).failed: logger.error('<blue>{}</blue>: Failed to start miner', name); return
-                else: logger.success('<blue>{}</blue>: Started miner with args {}', name, args)
+                if utils.start_script( config, connection, name).failed: logger.error('<blue>{}</blue>: Failed to start miner', name); return
+                else: logger.success('<blue>{}</blue>: Started miner with args {}', name)
 
-                if not utils.is_script_running( connection ): logger.error('Failed to start miner, script not running', name); return
+                if not utils.is_script_running( config, connection ): logger.error('Failed to start miner, script not running', name); return
                 else: logger.success('<blue>{}</blue>: Script running', name)
 
             elif 'command' in config.machines[droplet.name]:
                 command = config.machines[droplet.name].command
 
-                if not utils.can_connect( connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
-                else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
-
-                if utils.stop_script(connection).failed: pass
+                if utils.stop_script( config, connection ).failed: pass
                 else: logger.success('<blue>{}</blue>: Stopped miner.', name)
 
-                if utils.start_command( connection, name, command, args ).failed: logger.error('<blue>{}</blue>: Failed to start miner', name); return
-                else: logger.success('<blue>{}</blue>: Started miner with args {}', name, args)
+                if utils.start_command( config, connection, name, command ).failed: logger.error('<blue>{}</blue>: Failed to start miner', name); return
+                else: logger.success('<blue>{}</blue>: Started miner', name)
 
-                if not utils.is_script_running( connection ): logger.error('Failed to start miner, script not running', name); return
+                if not utils.is_script_running( config, connection ): logger.error('Failed to start miner, script not running', name); return
                 else: logger.success('<blue>{}</blue>: Script running', name)
 
             else:
@@ -374,30 +397,59 @@ def get_config():
     parser = argparse.ArgumentParser(description="marius", usage="marius <command> <command args>", add_help=True)
     parser._positionals.title = "commands"
     command_parsers = parser.add_subparsers( dest='command' )
-    parser.add_argument ('--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
-    parser.add_argument ("--names", type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+    parser.add_argument ("-c", '--config', dest='config', type=str, required=False, help="Config file to use", default='config.yaml')
+    parser.add_argument ('-d', '--debug',  dest='debug', action='store_true', help='''Set debug''', default=False)
+    parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
     
+    deploy_parser = command_parsers.add_parser('deploy', help='''Deploy entire cluster''')
+    deploy_parser.add_argument ("-c", '--config', dest='config', type=str, required=False, help="Config file to use", default='config.yaml')
+    deploy_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    deploy_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+
     create_parser = command_parsers.add_parser('create', help='''Create miners''')
-    create_parser.add_argument ('--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
-    create_parser.add_argument ("--names", type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+    create_parser.add_argument ("-c", '--config', dest='config', type=str, required=False, help="Config file to use", default='config.yaml')
+    create_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    create_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
     
     status_parser = command_parsers.add_parser('status', help='''Show mining overview''')
-    status_parser.add_argument ('--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
-    status_parser.add_argument ("--names", type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+    status_parser.add_argument ("-c", '--config', dest='config',type=str, required=False, help="Config file to use", default='config.yaml')
+    status_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    status_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
     
     install_parser = command_parsers.add_parser('install', help='''install''')
-    install_parser.add_argument ('--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
-    install_parser.add_argument ("--names", type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
-    
+    install_parser.add_argument ("-c", '--config', dest='config',type=str, required=False, help="Config file to use", default='config.yaml')
+    install_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    install_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+
+    logs_parser = command_parsers.add_parser('logs', help='''install''')
+    logs_parser.add_argument ("-c", '--config', dest='config', type=str, required=False, help="Config file to use", default='config.yaml')
+    logs_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    logs_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+    logs_parser.add_argument ('-l', "--lines", dest='lines', type=int, required=False, help="Number of lines to show", default=25)
+
     start_parser = command_parsers.add_parser('start', help='''start''')
-    start_parser.add_argument ('--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
-    start_parser.add_argument ("--names", type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+    start_parser.add_argument ("-c", '--config', dest='config', type=str, required=False, help="Config file to use", default='config.yaml')
+    start_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    start_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
     config = bittensor.config( parser ); 
 
-    with open("config.yaml", "r") as config_file:
+    with open(config.config, "r") as config_file:
         yaml_config = yaml.safe_load(config_file)
     yaml_config = bittensor.Config.fromDict(yaml_config)
     config.update(yaml_config)
+
+    token = os.getenv( config.token )
+    if token == None: logger.critical('Marius tool requires you set the {} enviroment variable', config.token ); sys.exit(0)
+    else: config.token = token
+
+    sshkey = os.getenv( config.sshkey )
+    if sshkey == None: logger.critical('Marius tool requires you set the {} enviroment variable', config.sshkey ); sys.exit(0)
+    else: config.sshkey = sshkey
+
+    wandb_key = os.getenv( config.wandb_key )
+    if wandb_key == None: logger.critical('Marius tool requires you set the {} enviroment variable', config.wandb_key ); sys.exit(0)
+    else: config.wandb_key = wandb_key
+
     return config
 
 def configure_logging( config ):
@@ -422,6 +474,10 @@ def main( config ):
     # Create the cluster
     elif config.command == 'create':
         create(config)
+
+    # Show latest logs from cluster
+    elif config.command == 'logs':
+        logs(config)
         
     # Install cluster.
     elif config.command == 'install':
@@ -437,6 +493,15 @@ def main( config ):
         if Confirm.ask("Show Status"):
             status( config )
     
+    # Fully deploy cluster
+    elif config.command == 'deploy':
+        create( config )
+        checkout( config )
+        install ( config )
+        wallet ( config )
+        start( config )
+        status( config )
+
     # Run all.
     else:
         create( config )

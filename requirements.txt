@@ -1,3 +1,4 @@
+bittensor
 paramiko
 fabric
 python-digitalocean
