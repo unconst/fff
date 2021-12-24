@@ -29,25 +29,63 @@ $ export MARIUS_WANDB_KEY=<a wandb api key used to create telemety>
 ## Config Yaml
 Edit this config file to create your cluster
 ```bash
-cluster: marius # Name of the cluster
-coldkey: marius # Coldkey on this device to run the cluster
+# You must set this env var with your digital ocean api key i.e. export MARIUS_DOTOKEN=0830jj2190j290j138183j12j092e
+token: MARIUS_DOTOKEN 
 
-token: MARIUS_DO_TOKEN # ENV var where your digital ocean token is stored
-sshkey: MARIUS_SSH_KEY # ENV var with path to your ssh key.
-wandb_key: MARIUS_WANDB_KEY # ENV var where your wandb key is stored.
+# You must create an ssh key and pass the path i.e. export MARIUS_SSH_KEY=~/.ssh/marius
+sshkey: MARIUS_SSH_KEY 
 
-max_threads: 10 # Threads this tool uses 
+# You must create a wandb account and create this env var i.e. export MARIUS_WANDB_KEY=2082308183802182302
+wandb_key: MARIUS_WANDB_KEY
 
-machines: # Your machines are defined below.
+# The name of the cluster to switch between different clusters clone this config, change this file and use the -c command line arg
+cluster: marius 
 
-  M0: # Name of the droplet.
-    region: nyc1 # Datacenter Location 
-    slug: s-4vcpu-8gb # Save of droplet, see https://slugs.do-api.dev/ for a full list
-    image: ubuntu-20-04-x64 # Image name
-    branch: master # Bittensor branch to install on this device.
-    command: /root/.bittensor/bittensor/bittensor/_neuron/text/advanced_server/main.py # Command to run.
-    args: "--subtensor.network local --wandb.api_key $WANDBKEY --logging.debug --neuron.name $NAME --wandb.name $NAME --wandb.project $CLUSTER --wandb.run_group $NAME --neuron.model_name distilgpt2" # passed args.
+# The name of the coldkey used to control this cluster. You should create this key using btcli before running
+# i.e. btcli new_coldkey --wallet.name marius
+coldkey: marius
 
+# Number of processing threads used to run this tool.
+max_threads: 10
+
+
+# Below list all you machines.
+machines:
+
+  # The name of your machine
+  M0:
+    # Machine region.
+    region: nyc1
+
+    # Size of droplet, see https://slugs.do-api.dev/ for a full list
+    slug: s-4vcpu-8gb
+
+    # Probably dont change this.
+    image: ubuntu-20-04-x64
+
+    # Bittensor branch.
+    branch: master
+
+    # The command to run on the machine when you run marius start.
+    command: /root/.bittensor/bittensor/bittensor/_neuron/text/advanced_server/main.py
+
+    # Custom string arguments to pass into the command.
+    extra_args: '--logging.debug'
+
+    # Arguments as a nested yaml. These are unfolded and passed to the command.
+    args: 
+    
+      subtensor: 
+        network: local
+
+      neuron:
+        model_name: distilgpt2
+
+      wandb:
+        api_key: $WANDBKEY # This is filled using the wandb key from above.
+        project: $CLUSTER # Special arg is filled with the cluster name
+        run_group: $NAME # Special arg is filled using the machine name.
+        name: $NAME
 ```
 
 
