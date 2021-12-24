@@ -86,6 +86,10 @@ machines:
         project: $CLUSTER # Special arg is filled with the cluster name
         run_group: $NAME # Special arg is filled using the machine name.
         name: $NAME
+
+    # Optionally add more machines below this point
+    # M2
+    # ...
 ```
 
 

@@ -43,7 +43,7 @@ machines:
 
     # Arguments as a nested yaml. These are unfolded and passed to the command.
     args: 
-    
+
       subtensor: 
         network: local
 
@@ -55,3 +55,7 @@ machines:
         project: $CLUSTER # Special arg is filled with the cluster name
         run_group: $NAME # Special arg is filled using the machine name.
         name: $NAME
+
+    # Optionally add more machines below this point
+    # M2
+    # ...
