@@ -302,7 +302,10 @@ def args_to_string( args ):
     args_as_string = ""
     for key_1 in args:
         for key_2 in args[key_1]:
-            args_as_string += ' --{}.{} {} '.format( key_1, key_2, args[key_1][key_2] )
+            if args[key_1][key_2] != None:
+                args_as_string += ' --{}.{} {} '.format( key_1, key_2, args[key_1][key_2] )
+            else:
+                args_as_string += ' --{}.{}'.format( key_1, key_2 )
     return args_as_string
 
 def start_command( config, connection, name, command ):
