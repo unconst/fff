@@ -439,7 +439,8 @@ def main( config ):
     
     # Run all.
     else:
-        checkout(config)
+        create( config )
+        checkout( config )
         install ( config )
         wallet ( config )
         start( config )
