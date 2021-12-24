@@ -27,7 +27,12 @@ $ export MARIUS_WANDB_KEY=<a wandb api key used to create telemety>
 ```
 
 ## Config Yaml
-Edit this config file to create your cluster
+First, copy the template into your own config.yaml.
+```bash
+$ cp config_template.yaml config.yaml # to create your config.
+```
+
+Next, Edit this config file to define the cluster.
 ```bash
 # You must set this env var with your digital ocean api key i.e. export MARIUS_DOTOKEN=0830jj2190j290j138183j12j092e
 token: MARIUS_DOTOKEN 
