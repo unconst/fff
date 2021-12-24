@@ -17,6 +17,7 @@
 
 import os
 import json
+import time
 import paramiko
 import digitalocean
 import fabric
@@ -67,7 +68,14 @@ def create_droplet( config, name ) -> bool:
         if p.name == config.cluster:
             p.assign_resource(["do:droplet:{}".format(droplet.id)])
             break
-    
+
+    start_time = time.time()
+    while True:
+        if droplet.status != 'active':
+            time.sleep(3)
+        if time.time() - start_time > 120:
+            return False
+            
     return True
 
 
