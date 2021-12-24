@@ -63,7 +63,7 @@ machines: # Your machines are defined below.
 ## Deploy
 Create, Install and Deploy Cluster
 ```bash
-$ cluster  # Deploy entire cluster 
+$ cluster -d # Deploy entire cluster with debug 
 or
 $ clsuter --config <config name> --debug --names ...
 or

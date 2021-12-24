@@ -18,9 +18,7 @@
 #!/usr/bin/env python3
 import os
 import sys
-from bittensor._subtensor import subtensor
 import yaml
-import random
 import bittensor
 import argparse
 from rich.console import Console
@@ -211,7 +209,7 @@ def checkout ( config ):
             if utils.git_checkout_bittensor( config, connection, branch ).failed: logger.error('<blue>{}</blue>: Failed to checkout bittensor branch: {}', name, branch); return
             else: logger.success('<blue>{}</blue>: Checked out bittensor branch', name)
 
-            branch_result = utils.git_branch_bittensor( connection )
+            branch_result = utils.git_branch_bittensor( config, connection )
             if branch_result.failed: logger.error("{}: Failed to get branch", name); return
             else: logger.success('<blue>{}</blue>: Branch set to: {}', name,  branch_result.stdout.strip())
 
@@ -465,7 +463,11 @@ def main( config ):
     # Create coldkey if need be.
     the_wallet = bittensor.wallet( name = config.coldkey )
     if not the_wallet.coldkey_file.exists_on_device():
-        the_wallet.create_new_coldkey( overwrite=False, use_password=True)
+        logger.critical('You have not created a coldkey with name {}, this is required to run the mMrius tool'.format(config.coldkey))
+        if Confirm.ask("Would you like to create this key"):
+            the_wallet.create_new_coldkey( overwrite=False, use_password=True )
+        else:
+            sys.exit(0)
 
     # Display status.
     if config.command == 'status':
