@@ -18,6 +18,7 @@
 #!/usr/bin/env python3
 import os
 import sys
+from bittensor._subtensor.subtensor_impl import Subtensor
 import yaml
 import bittensor
 import argparse
@@ -257,9 +258,6 @@ def wallet( config ):
             if utils.get_coldkeypub( config, connection ) == None: logger.error('<blue>{}</blue>: Failed to retrieve coldkeypub from {}', name, connection.host); return
             else: logger.success('<blue>{}</blue>: Could retrieve coldkeypub: {}', name, utils.get_coldkeypub( connection ) )
 
-            if utils.register( config, connection ) == None: logger.error('<blue>{}</blue>: Failed to register miner', name ); return
-            else: logger.success('<blue>{}</blue>: Registered miner', name )
-
         except Exception as e:
             logger.exception( e )
         finally:
@@ -335,6 +333,42 @@ def logs( config ):
     droplets = utils.get_droplets ( config )
     with ThreadPoolExecutor( max_workers=config.max_threads ) as executor:
         tqdm(executor.map(_logs, droplets), total=len(droplets))
+
+def register( config ):
+    logger.success('Registering droplets. ')
+
+    is_registered = {}
+    droplets = utils.get_droplets ( config )
+    for drop in droplets:
+        is_registered[drop.name] = False
+
+    def all_registered():
+        for key in is_registered:
+            if not is_registered[key]:
+                return False
+        return True
+
+    def do_register( droplet ):
+        name = droplet.name
+        logger.success('<blue>{}</blue>: Registering ', name)
+        subtensor = bittensor.subtensor( network='nakamoto' )
+        wallet = bittensor.wallet( name = config.coldkey, hotkey = name )
+        if wallet.is_registered():
+            is_registered[name] = True
+            logger.success('<blue>{}</blue>: Already Registered ', name)
+
+        subtensor.register( wallet, wait_for_finalization=True )
+        if wallet.is_registered():
+            is_registered[name] = True
+            logger.success('<blue>{}</blue>: Registered ', name)
+
+    while not all_registered():
+        for drop in droplets:
+            if not is_registered[drop.name]:
+                do_register( drop )
+
+    logger.success('<blue>{}</blue>: All Registered ')
+
 
 def start( config ):
     droplets = utils.get_droplets ( config )
@@ -419,6 +453,11 @@ def get_config():
     install_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
     install_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
 
+    register_parser = command_parsers.add_parser('register', help='''register''')
+    register_parser.add_argument ("-c", '--config', dest='config',type=str, required=False, help="Config file to use", default='config.yaml')
+    register_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    register_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+
     logs_parser = command_parsers.add_parser('logs', help='''install''')
     logs_parser.add_argument ("-c", '--config', dest='config', type=str, required=False, help="Config file to use", default='config.yaml')
     logs_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
@@ -453,9 +492,9 @@ def get_config():
 def configure_logging( config ):
     logger.remove()
     if config.debug == True:
-        logger.add(sys.stderr, level="TRACE")
+        logger.add(sys.stderr, level="TRACE", enqueue=True)
     else:
-        logger.add(sys.stderr, level="INFO")
+        logger.add(sys.stderr, level="INFO", enqueue=True)
 
 def main( config ):
     configure_logging( config )
@@ -486,6 +525,13 @@ def main( config ):
         checkout ( config )
         install ( config )
         wallet ( config )
+        register ( config )
+        if Confirm.ask("Show Status"):
+            status( config )
+
+    # Register register.
+    elif config.command == 'register':
+        register ( config )
         if Confirm.ask("Show Status"):
             status( config )
 
@@ -510,6 +556,7 @@ def main( config ):
         checkout( config )
         install ( config )
         wallet ( config )
+        register ( config )
         start( config )
         status( config )
 

@@ -104,11 +104,12 @@ machines:
 - [Status](#status)
 - [Create](#create)
 - [Install](#install)
+- [Register](#register)
 - [Start](#start)
 - [Logs](#logs)
 
 ## Deploy
-Create, Install and Deploy Cluster
+Create, Install, Register and Deploy your Cluster.
 ```bash
 $ cluster -d # Deploy entire cluster with debug 
 or
@@ -175,6 +176,25 @@ $ cluster create --config <config name> --debug --names ...
 Installs Bittensor and starts a subtensor instance running on your droplets.
 ```bash
 $ cluster install --config <config name> --debug --names ...
+```
+#### Args:
+```bash
+    -c --config: optional, default config.yaml
+        Which config file to use.
+
+    -n --names: optional, default: All instances.
+        Install requirements on these droplets.
+
+    -d --debug: optional, default False
+        Sets debug to True
+```
+---
+---
+
+## Register
+Register the keys on your droplet.
+```bash
+$ cluster register --config <config name> --debug --names ...
 ```
 #### Args:
 ```bash
