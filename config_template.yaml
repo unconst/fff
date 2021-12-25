@@ -17,7 +17,6 @@ coldkey: marius
 # Number of processing threads used to run this tool.
 max_threads: 10
 
-
 # Below list all you machines.
 machines:
 
@@ -36,8 +35,9 @@ machines:
     branch: master
 
     # The command to run on the machine when you run marius start.
+    # script: i.e. server.py # alternatively we can pass a script which exists in the local dir. This will replace the command argument.
     command: /root/.bittensor/bittensor/bittensor/_neuron/text/advanced_server/main.py
-
+    
     # Custom string arguments to pass into the command.
     extra_args: '--logging.debug'
 
@@ -54,7 +54,7 @@ machines:
         api_key: $WANDBKEY # This is filled using the wandb key from above.
         project: $CLUSTER # Special arg is filled with the cluster name
         run_group: $NAME # Special arg is filled using the machine name.
-        name: $NAME
+        name: $NAME # Special arg is filled using the machine name.
 
     # Optionally add more machines below this point
     # M2
