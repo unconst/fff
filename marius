@@ -349,18 +349,24 @@ def register( config ):
         return True
 
     def do_register( droplet ):
-        name = droplet.name
-        logger.success('<blue>{}</blue>: Registering ', name)
-        subtensor = bittensor.subtensor( network='nakamoto' )
-        wallet = bittensor.wallet( name = config.coldkey, hotkey = name )
-        if wallet.is_registered():
-            is_registered[name] = True
-            logger.success('<blue>{}</blue>: Already Registered ', name)
+        try:
+            name = droplet.name
+            logger.success('<blue>{}</blue>: Registering ', name)
+            subtensor = bittensor.subtensor( network='nakamoto' )
+            wallet = bittensor.wallet( name = config.coldkey, hotkey = name )
+            if wallet.is_registered():
+                is_registered[name] = True
+                logger.success('<blue>{}</blue>: Already Registered ', name)
+                return 
 
-        subtensor.register( wallet, wait_for_finalization=True )
-        if wallet.is_registered():
-            is_registered[name] = True
-            logger.success('<blue>{}</blue>: Registered ', name)
+            subtensor.register( wallet, wait_for_finalization=True )
+            if wallet.is_registered():
+                is_registered[name] = True
+                logger.success('<blue>{}</blue>: Registered ', name)
+                return
+                
+        except:
+            return
 
     while not all_registered():
         for drop in droplets:
