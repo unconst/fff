@@ -92,8 +92,9 @@ def status( config ):
                 logger.error('{}: Failed to pull running status: error = {}', droplet.name, e )
         try:
             neuron = subtensor.neuron_for_pubkey( hotkey_str )
-            is_registered = True
-            is_registered_str =  '[bold green] Yes' if is_registered else '[bold red] No'
+            if not neuron.is_null:
+                is_registered = True
+                is_registered_str =  '[bold green] Yes' if is_registered else '[bold red] No'
         except:
             pass
 
@@ -253,10 +254,10 @@ def wallet( config ):
             else: logger.success('<blue>{}</blue>: Copied coldkey to dir: {}', name, '/root/.bittensor/wallets/default/coldkeypub.txt')
 
             if utils.get_hotkey( config, connection ) == None: logger.error('<blue>{}</blue>: Failed to retrieve hotkey from {}', name, connection.host); return
-            else: logger.success('<blue>{}</blue>: Could retrieve hotkey: {}', name, utils.get_hotkey( connection ) )
+            else: logger.success('<blue>{}</blue>: Could retrieve hotkey: {}', name, utils.get_hotkey( config, connection ) )
 
             if utils.get_coldkeypub( config, connection ) == None: logger.error('<blue>{}</blue>: Failed to retrieve coldkeypub from {}', name, connection.host); return
-            else: logger.success('<blue>{}</blue>: Could retrieve coldkeypub: {}', name, utils.get_coldkeypub( connection ) )
+            else: logger.success('<blue>{}</blue>: Could retrieve coldkeypub: {}', name, utils.get_coldkeypub( config, connection ) )
 
         except Exception as e:
             logger.exception( e )
@@ -354,17 +355,18 @@ def register( config ):
             logger.success('<blue>{}</blue>: Registering ', name)
             subtensor = bittensor.subtensor( network='nakamoto' )
             wallet = bittensor.wallet( name = config.coldkey, hotkey = name )
-            if wallet.is_registered():
+            neuron = wallet.neuron
+            if not neuron.is_null:
                 is_registered[name] = True
                 logger.success('<blue>{}</blue>: Already Registered ', name)
                 return 
 
             subtensor.register( wallet, wait_for_finalization=True )
-            if wallet.is_registered():
+            if not neuron.is_null:
                 is_registered[name] = True
                 logger.success('<blue>{}</blue>: Registered ', name)
                 return
-                
+
         except:
             return
 
@@ -373,7 +375,7 @@ def register( config ):
             if not is_registered[drop.name]:
                 do_register( drop )
 
-    logger.success('<blue>{}</blue>: All Registered ')
+    logger.success('<blue>!!</blue>: All Registered ')
 
 
 def start( config ):
