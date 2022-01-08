@@ -26,10 +26,10 @@ $ export MARIUS_SSH_KEY=<an ssh key used to communicate with your droplets>
 $ export MARIUS_WANDB_KEY=<a wandb api key used to create telemety>
 ```
 
-## Config Yaml
+## Config Setup
 First, copy the template into your own config.yaml.
 ```bash
-$ cp config_template.yaml config.yaml # to create your config.
+$ cp configs/config_template.yaml configs/default.yaml # to create your config.
 ```
 
 Next, Edit this config file to define the cluster.
@@ -121,7 +121,7 @@ $ clsuter deploy --config <config name> --debug --names ...
 #### Args:
 ```bash
     -c --config: optional, default config.yaml
-        Which config file to use.
+        Which config file to use from configs/
 
     -n --names: optional, default: All instances.
         Get status for DO droplets with these names only.
@@ -142,7 +142,7 @@ $ clsuter status --config <config name> --debug --names ...
 #### Args:
 ```bash
     -c --config: optional, default config.yaml
-        Which config file to use.
+        Which config file to use configs/
 
     -n --names: optional, default: All instances.
         Get status for DO droplets with these names only.
@@ -161,7 +161,7 @@ $ cluster create --config <config name> --debug --names ...
 #### Args:
 ```bash
     -c --config: optional, default config.yaml
-        Which config file to use.
+        Which config file to use configs/
 
     -n --names: optional, default: All instances.
         Create all machines with these names.
@@ -180,7 +180,7 @@ $ cluster install --config <config name> --debug --names ...
 #### Args:
 ```bash
     -c --config: optional, default config.yaml
-        Which config file to use.
+        Which config file to use configs/
 
     -n --names: optional, default: All instances.
         Install requirements on these droplets.
@@ -199,7 +199,7 @@ $ cluster register --config <config name> --debug --names ...
 #### Args:
 ```bash
     -c --config: optional, default config.yaml
-        Which config file to use.
+        Which config file to use configs/
 
     -n --names: optional, default: All instances.
         Install requirements on these droplets.
@@ -219,7 +219,7 @@ $ cluster start --config <config name> --debug --names ...
 ```bash
 
     -c --config: optional, default config.yaml
-        Which config file to use.
+        Which config file to use configs/
 
     -n --names: optional, default: All instances.
         Start command on these droplets.
@@ -238,7 +238,7 @@ $ cluster logs --config <config name> --debug --names ...
 #### Args:
 ```bash
     -c --config: optional, default config.yaml
-        Which config file to use.
+        Which config file to use configs/
 
     -n --names: optional, default: All instances.
         Get logs from these droplets.

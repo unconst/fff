@@ -437,64 +437,74 @@ def get_config():
     parser = argparse.ArgumentParser(description="marius", usage="marius <command> <command args>", add_help=True)
     parser._positionals.title = "commands"
     command_parsers = parser.add_subparsers( dest='command' )
-    parser.add_argument ("-c", '--config', dest='config', type=str, required=False, help="Config file to use", default='config.yaml')
+    parser.add_argument ("-c", '--config', dest='config_file', type=str, required=False, help="Config file to use", default='default')
     parser.add_argument ('-d', '--debug',  dest='debug', action='store_true', help='''Set debug''', default=False)
     parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
     
     deploy_parser = command_parsers.add_parser('deploy', help='''Deploy entire cluster''')
-    deploy_parser.add_argument ("-c", '--config', dest='config', type=str, required=False, help="Config file to use", default='config.yaml')
+    deploy_parser.add_argument ("-c", '--config', dest='config_file', type=str, required=False, help="Config file to use", default='default')
     deploy_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
     deploy_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
 
     create_parser = command_parsers.add_parser('create', help='''Create miners''')
-    create_parser.add_argument ("-c", '--config', dest='config', type=str, required=False, help="Config file to use", default='config.yaml')
+    create_parser.add_argument ("-c", '--config', dest='config_file', type=str, required=False, help="Config file to use", default='default')
     create_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
     create_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
     
     status_parser = command_parsers.add_parser('status', help='''Show mining overview''')
-    status_parser.add_argument ("-c", '--config', dest='config',type=str, required=False, help="Config file to use", default='config.yaml')
+    status_parser.add_argument ("-c", '--config', dest='config_file',type=str, required=False, help="Config file to use", default='default')
     status_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
     status_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
     
     install_parser = command_parsers.add_parser('install', help='''install''')
-    install_parser.add_argument ("-c", '--config', dest='config',type=str, required=False, help="Config file to use", default='config.yaml')
+    install_parser.add_argument ("-c", '--config', dest='config_file',type=str, required=False, help="Config file to use", default='default')
     install_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
     install_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
 
     register_parser = command_parsers.add_parser('register', help='''register''')
-    register_parser.add_argument ("-c", '--config', dest='config',type=str, required=False, help="Config file to use", default='config.yaml')
+    register_parser.add_argument ("-c", '--config', dest='config_file',type=str, required=False, help="Config file to use", default='default')
     register_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
     register_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
 
     logs_parser = command_parsers.add_parser('logs', help='''install''')
-    logs_parser.add_argument ("-c", '--config', dest='config', type=str, required=False, help="Config file to use", default='config.yaml')
+    logs_parser.add_argument ("-c", '--config', dest='config_file', type=str, required=False, help="Config file to use", default='default')
     logs_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
     logs_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
     logs_parser.add_argument ('-l', "--lines", dest='lines', type=int, required=False, help="Number of lines to show", default=25)
 
     start_parser = command_parsers.add_parser('start', help='''start''')
-    start_parser.add_argument ("-c", '--config', dest='config', type=str, required=False, help="Config file to use", default='config.yaml')
+    start_parser.add_argument ("-c", '--config', dest='config_file', type=str, required=False, help="Config file to use", default='default')
     start_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
     start_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
     config = bittensor.config( parser ); 
 
-    with open(config.config, "r") as config_file:
-        yaml_config = yaml.safe_load(config_file)
+    # Try to load without yaml extension.
+    try:
+        with open( 'configs/' + config.config_file + '.yaml', "r") as config_file:
+            yaml_config = yaml.safe_load(config_file)
+    except:
+        print('\nMarius tool requires the config file {}, but it does not exist.\n\nTry: $ cp configs/config_template.yaml configs/{} '.format(str(os.getcwd()) + '/configs/' + config.config_file + '.yaml', config.config_file ))
+        sys.exit(0)
+
     yaml_config = bittensor.Config.fromDict(yaml_config)
     config.update(yaml_config)
 
-    token = os.getenv( config.token )
-    if token == None: logger.critical('Marius tool requires you set the {} enviroment variable', config.token ); sys.exit(0)
-    else: config.token = token
-
-    sshkey = os.getenv( config.sshkey )
-    if sshkey == None: logger.critical('Marius tool requires you set the {} enviroment variable', config.sshkey ); sys.exit(0)
-    else: config.sshkey = sshkey
-
-    wandb_key = os.getenv( config.wandb_key )
-    if wandb_key == None: logger.critical('Marius tool requires you set the {} enviroment variable', config.wandb_key ); sys.exit(0)
-    else: config.wandb_key = wandb_key
-
+    # Parse config and replace enviroment variables.
+    def parse_env_vars( c ):
+        for k in c:
+            if isinstance( c[k], type(c) ):
+                parse_env_vars( c[k] )
+            else:
+                var = str(c[k])
+                if len(var.split('ENV')) > 1:
+                    env_var = ''.join( var.split('ENV_')[1:] )
+                    env_val = os.getenv( env_var )
+                    if env_val == None: 
+                        print('\nMarius tool requires you set the {} enviroment variable\n\nTry: export {}=<variable value>'.format(env_var, env_var))
+                        sys.exit(0)
+                    else: 
+                        c[k] = env_val
+    parse_env_vars( config )
     return config
 
 def configure_logging( config ):
@@ -506,6 +516,8 @@ def configure_logging( config ):
 
 def main( config ):
     configure_logging( config )
+    if config.debug:
+        print (config)
 
     # Create coldkey if need be.
     the_wallet = bittensor.wallet( name = config.coldkey )
@@ -570,7 +582,7 @@ def main( config ):
 
 if __name__ == "__main__":
     config = get_config()
-    print ( config )
+    #print ( config )
     main( config )
 
 
