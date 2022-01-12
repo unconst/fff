@@ -109,11 +109,11 @@ machines:
 ## Deploy
 Create, Install, Register and Deploy your Cluster.
 ```bash
-$ cluster -d # Deploy entire cluster with debug 
+$ marius -d # Deploy entire cluster with debug 
 or
-$ clsuter --config <config name> --debug --names ...
+$ marius --config <config name> --debug --names ...
 or
-$ clsuter deploy --config <config name> --debug --names ...
+$ marius deploy --config <config name> --debug --names ...
 ```
 
 #### Args:
@@ -132,9 +132,9 @@ $ clsuter deploy --config <config name> --debug --names ...
 
 
 ## Status
-Shows cluster status and exits.
+Shows marius status and exits.
 ```bash
-$ clsuter status --config <config name> --debug --names ...
+$ marius status --config <config name> --debug --names ...
 ```
 
 #### Args:
@@ -152,9 +152,9 @@ $ clsuter status --config <config name> --debug --names ...
 ---
 
 ## Create
-Creates cluster from yaml file.
+Creates marius from yaml file.
 ```bash
-$ cluster create --config <config name> --debug --names ...
+$ marius create --config <config name> --debug --names ...
 ```
 #### Args:
 ```bash
@@ -173,7 +173,7 @@ $ cluster create --config <config name> --debug --names ...
 ## Install
 Installs Bittensor and starts a subtensor instance running on your droplets.
 ```bash
-$ cluster install --config <config name> --debug --names ...
+$ marius install --config <config name> --debug --names ...
 ```
 #### Args:
 ```bash
@@ -192,7 +192,7 @@ $ cluster install --config <config name> --debug --names ...
 ## Register
 Register the keys on your droplet.
 ```bash
-$ cluster register --config <config name> --debug --names ...
+$ marius register --config <config name> --debug --names ...
 ```
 #### Args:
 ```bash
@@ -211,7 +211,7 @@ $ cluster register --config <config name> --debug --names ...
 ## Start
 Starts the run command on droplets
 ```bash
-$ cluster start --config <config name> --debug --names ...
+$ marius start --config <config name> --debug --names ...
 ```
 #### Args:
 ```bash
@@ -231,7 +231,7 @@ $ cluster start --config <config name> --debug --names ...
 ## Logs
 Gets logs from droplsts
 ```bash
-$ cluster logs --config <config name> --debug --names ...
+$ marius logs --config <config name> --debug --names ...
 ```
 #### Args:
 ```bash
