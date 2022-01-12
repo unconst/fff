@@ -73,7 +73,9 @@ def create_droplet( config, name ) -> bool:
     while True:
         if droplet.status != 'active':
             time.sleep(3)
-        if time.time() - start_time > 120:
+        if droplet.status == 'active':
+            return True
+        if time.time() - start_time > 240:
             return False
             
     return True

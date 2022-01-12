@@ -177,7 +177,8 @@ def create ( config ):
     to_create = config.machines
     if config.names != None:
         to_create = config.names
-    for name in to_create:
+
+    def _create(name):
         try:
             if name not in existing_droplets:
                 if not utils.create_droplet(config, name): logger.error('<blue>{}</blue>: Failed to create droplet with name.', name); return
@@ -188,6 +189,9 @@ def create ( config ):
             logger.exception( e )
         finally:
             logger.success('<blue>{}</blue>: DONE CREATE', name)
+
+    with ThreadPoolExecutor(max_workers=config.max_threads) as executor:
+        tqdm(executor.map(_create, to_create), total=len(to_create))
 
 def checkout ( config ):
     def _checkout ( droplet ):

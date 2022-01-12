@@ -97,8 +97,6 @@ machines:
     # ...
 ```
 
-
-
 # Commands
 - [Deploy](#deploy)
 - [Status](#status)
