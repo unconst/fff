@@ -1,3 +1,5 @@
 config.yaml
 configs/*
 !configs/config_template.yaml
+
+*.ipynb

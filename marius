@@ -41,7 +41,7 @@ def status( config ):
     total_dividends = 0.0
     total_emission = 0.0  
     def get_row( droplet ): 
-        connection = utils.connection_for_droplet( config, droplet )
+        connection = utils.connection_for_machine( config, droplet )
         can_connect_bool = utils.can_connect( config, connection ) 
         subtensor = bittensor.subtensor()
         connect_str = '[bold green] YES' if can_connect_bool else '[bold red] NO'
@@ -69,7 +69,7 @@ def status( config ):
         if can_connect_bool:
             try:
                 coldkeypub = utils.get_coldkeypub( config, connection )
-                coldkeypub_str = coldkeypub if coldkeypub != None else '[yellow] None'
+                coldkeypub_str = coldkeypub[0:10] if coldkeypub != None else '[yellow] None'
             except Exception as e:
                 logger.error('{}: Failed to pull coldkey error = {}', droplet.name, e )
         if can_connect_bool:
@@ -121,11 +121,11 @@ def status( config ):
         else:
             metrics = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
 
-        row = [ str(droplet.name), str(droplet.tags[0]), str(droplet.ip_address), str(droplet.region['name']), str(droplet.size_slug), str(connect_str), branch_str, is_installed_str, is_registered_str, is_running_str] + metrics + [coldkeypub_str[0:10], hotkey_str[0:10]] 
+        row = [ str(droplet.name), str(droplet.tags[0]), str(droplet.ip_address), str(droplet.region['name']), str(droplet.size_slug), str(connect_str), branch_str, is_installed_str, is_registered_str, is_running_str] + metrics + [coldkeypub_str, hotkey_str] 
         connection.close()
         return row
        
-    droplets = utils.get_droplets( config )
+    droplets = utils.get_machines( config )
     TABLE_DATA = []
     with ThreadPoolExecutor(max_workers=config.max_threads) as executor:
         TABLE_DATA = list(tqdm(executor.map(get_row, droplets), total=len(droplets)))
@@ -172,7 +172,7 @@ def status( config ):
     console.print(table)
 
 def create ( config ):
-    droplets = utils.get_droplets ( config )
+    droplets = utils.get_machines ( config )
     existing_droplets = [droplet.name for droplet in droplets]
     to_create = config.machines
     if config.names != None:
@@ -198,7 +198,7 @@ def checkout ( config ):
         try:
             name = droplet.name
             branch = config.machines[name].branch
-            connection = utils.connection_for_droplet( config, droplet )
+            connection = utils.connection_for_machine( config, droplet )
 
             if not utils.can_connect( config, connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
             else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
@@ -225,7 +225,7 @@ def checkout ( config ):
             logger.success('<blue>{}</blue>: DONE CHECKOUT ', name)
             connection.close()
 
-    droplets = utils.get_droplets ( config )
+    droplets = utils.get_machines ( config )
     with ThreadPoolExecutor(max_workers=config.max_threads) as executor:
         tqdm(executor.map(_checkout, droplets), total=len(droplets))
 
@@ -234,7 +234,7 @@ def wallet( config ):
         try:
             name = droplet.name
             wallet = bittensor.wallet( name = config.coldkey, hotkey = name )
-            connection = utils.connection_for_droplet( config, droplet )
+            connection = utils.connection_for_machine( config, droplet )
 
             if not wallet.hotkey_file.exists_on_device():
                 wallet.create_new_hotkey( use_password=False, overwrite=False )
@@ -269,7 +269,7 @@ def wallet( config ):
             logger.success('<blue>{}</blue>: DONE WALLET ', name)
             connection.close()
 
-    droplets = utils.get_droplets ( config )
+    droplets = utils.get_machines ( config )
     with ThreadPoolExecutor(max_workers=config.max_threads) as executor:
         tqdm(executor.map(_wallet, droplets), total=len(droplets))
 
@@ -277,7 +277,7 @@ def install( config ):
     def _install( droplet ):
         try:
             name = droplet.name
-            connection = utils.connection_for_droplet( config, droplet )
+            connection = utils.connection_for_machine( config, droplet )
 
             if not utils.can_connect( config, connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
             else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
@@ -315,7 +315,7 @@ def install( config ):
             logger.success('<blue>{}</blue>: DONE INSTALLING ', name)
             connection.close()
 
-    droplets = utils.get_droplets ( config )
+    droplets = utils.get_machines ( config )
     with ThreadPoolExecutor(max_workers=config.max_threads) as executor:
         tqdm(executor.map(_install, droplets), total=len(droplets))
 
@@ -323,7 +323,7 @@ def logs( config ):
     def _logs( droplet ):
         try:
             name = droplet.name
-            connection = utils.connection_for_droplet( config, droplet )
+            connection = utils.connection_for_machine( config, droplet )
 
             if not utils.can_connect( config, connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
             else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
@@ -335,7 +335,7 @@ def logs( config ):
             logger.success('<blue>{}</blue>: DONE LOGS ', name)
             connection.close()
 
-    droplets = utils.get_droplets ( config )
+    droplets = utils.get_machines ( config )
     with ThreadPoolExecutor( max_workers=config.max_threads ) as executor:
         tqdm(executor.map(_logs, droplets), total=len(droplets))
 
@@ -343,7 +343,7 @@ def register( config ):
     logger.success('Registering droplets. ')
 
     is_registered = {}
-    droplets = utils.get_droplets ( config )
+    droplets = utils.get_machines ( config )
     for drop in droplets:
         is_registered[drop.name] = False
 
@@ -383,12 +383,12 @@ def register( config ):
 
 
 def start( config ):
-    droplets = utils.get_droplets ( config )
+    droplets = utils.get_machines ( config )
 
     def _start(droplet):
         try:
             name = droplet.name
-            connection = utils.connection_for_droplet( config, droplet )
+            connection = utils.connection_for_machine( config, droplet )
 
             if not utils.can_connect( config, connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
             else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
@@ -433,7 +433,7 @@ def start( config ):
             logger.success('<blue>{}</blue>: DONE STARTING ', name)
             connection.close()
 
-    droplets = utils.get_droplets ( config )
+    droplets = utils.get_machines ( config )
     with ThreadPoolExecutor(max_workers=config.max_threads) as executor:
         tqdm(executor.map(_start, droplets), total=len(droplets))
     
@@ -571,6 +571,7 @@ def main( config ):
         checkout( config )
         install ( config )
         wallet ( config )
+        register ( config )
         start( config )
         status( config )
 

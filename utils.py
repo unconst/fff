@@ -18,6 +18,7 @@
 import os
 import json
 import time
+from types import SimpleNamespace
 import paramiko
 import digitalocean
 import fabric
@@ -25,20 +26,42 @@ from fabric import Connection
 from loguru import logger
 logger = logger.opt(colors=True)
 
-def get_droplets ( config ):
-    manager = digitalocean.Manager( token = config.token )
-    droplets = manager.get_all_droplets( tag_name = [ config.cluster ])
-    droplets = [drop for drop in droplets if drop.name in config.machines]
-    if config.names != None:
-        droplets = [drop for drop in droplets if drop.name in config.names]
+def get_machines( config ):
+    if 'digital_ocean' in config:
+        manager = digitalocean.Manager( token = config.token )
+        droplets = manager.get_all_droplets( tag_name = [ config.cluster ])
+        droplets = [drop for drop in droplets if drop.name in config.machines]
+        if config.names != None:
+            droplets = [drop for drop in droplets if drop.name in config.names]
+
+    if 'contabo' in config:
+        droplets = []
+        for machine in config.machines:
+            if config.names == None or machine in config.names:
+                droplet = SimpleNamespace()
+                droplet.name = machine
+                droplet.ip_address = config.machines[machine].ip
+                droplet.region = {'name': 'contabo'}
+                droplet.tags = ['contabo']
+                droplet.size_slug = 'None'
+                droplet.user = config.machines[machine].user
+                droplets.append( droplet )
     return droplets
 
-def connection_for_droplet( config, droplet ) -> Connection:
-    try:
-        key = paramiko.RSAKey.from_private_key_file( os.path.expanduser( config.sshkey ) )
-        con = Connection( droplet.ip_address, user='root', connect_kwargs={ "pkey" : key })
-    except:
-        con = Connection( droplet.ip_address, user='root', connect_kwargs={ "key_filename" : os.path.expanduser( config.sshkey )})
+def connection_for_machine( config, machine ) -> Connection:
+    if 'contabo' not in config:
+        try:
+            key = paramiko.RSAKey.from_private_key_file( os.path.expanduser( config.sshkey ) )
+            con = Connection( machine.ip_address, user='root', connect_kwargs={ "pkey" : key })
+        except:
+            con = Connection( machine.ip_address, user='root', connect_kwargs={ "key_filename" : os.path.expanduser( config.sshkey )})
+    if 'contabo' in config:
+        try:
+            key = paramiko.RSAKey.from_private_key_file( os.path.expanduser( config.sshkey ) )
+            con = Connection( machine.ip_address, user = machine.user, connect_kwargs={ "pkey" : key })
+        except:
+            con = Connection( machine.ip_address, user = machine.user, connect_kwargs={ "key_filename" : os.path.expanduser( config.sshkey )})
+
     return con
 
 def can_connect( config, connection ) -> bool:
@@ -200,7 +223,7 @@ def get_branch( config, connection ) -> str:
     return branch_name
 
 def make_wallet_dirs( config, connection ):
-    mkdirs_command = 'mkdir -p /root/.bittensor/wallets/default/hotkeys'
+    mkdirs_command = 'mkdir -p ~/.bittensor/wallets/default/hotkeys'
     logger.debug("Making wallet dirs: {}", mkdirs_command)
     mkdir_result = connection.run( mkdirs_command, warn=True, hide=not config.debug )
     logger.debug(mkdir_result)
@@ -208,7 +231,7 @@ def make_wallet_dirs( config, connection ):
 
 def copy_hotkey( config, connection, wallet ):
     hotkey_str = open(wallet.hotkey_file.path, 'r').read()
-    copy_hotkey_command = "echo '%s' > /root/.bittensor/wallets/default/hotkeys/default" % hotkey_str
+    copy_hotkey_command = "echo '%s' > ~/.bittensor/wallets/default/hotkeys/default" % hotkey_str
     logger.debug("Copying hotkey: {}", copy_hotkey_command)
     copy_hotkey_result = connection.run( copy_hotkey_command, warn=True, hide=not config.debug )
     logger.debug(copy_hotkey_result)
@@ -216,24 +239,24 @@ def copy_hotkey( config, connection, wallet ):
 
 def copy_coldkeypub( config, connection, wallet ):
     coldkeypub_str = open(wallet.coldkeypub_file.path, 'r').read()
-    copy_coldkeypub_command = "echo '%s' > /root/.bittensor/wallets/default/coldkeypub.txt" % coldkeypub_str
+    copy_coldkeypub_command = "echo '%s' > ~/.bittensor/wallets/default/coldkeypub.txt" % coldkeypub_str
     logger.debug("Copying coldkeypub: {}", copy_coldkeypub_command)
     copy_coldkey_result = connection.run( copy_coldkeypub_command, warn=True, hide=not config.debug )
     logger.debug(copy_coldkey_result)
     return copy_coldkey_result
 
 def copy_script( config, connection, script_path ):
-    rm_script_command = "rm /root/main.py"
+    rm_script_command = "rm ~/main.py"
     logger.debug("rm script: {}", rm_script_command)
     rm_script_result = connection.run(rm_script_command, warn=True, hide=not config.debug)
     logger.debug(rm_script_result)
     transfer_object = fabric.transfer.Transfer( config, connection )
-    copy_script_result = transfer_object.put( script_path, "/root/main.py", preserve_mode = True )
+    copy_script_result = transfer_object.put( script_path, "~/main.py", preserve_mode = True )
     logger.debug(copy_script_result)
     return copy_script_result
 
 def get_script( config, connection, script) -> str:
-    cat_script_command = "cat /root/main.py".format(script)
+    cat_script_command = "cat ~/main.py".format(script)
     logger.debug("Getting script: {}", cat_script_command)
     cat_script_result = connection.run(cat_script_command, warn=True, hide = not config.debug)
     if cat_script_result.failed:
@@ -241,7 +264,7 @@ def get_script( config, connection, script) -> str:
     return cat_script_result.stdout
 
 def get_hotkey( config, connection ) -> str:
-    cat_hotkey_command = "cat /root/.bittensor/wallets/default/hotkeys/default"
+    cat_hotkey_command = "cat ~/.bittensor/wallets/default/hotkeys/default"
     logger.debug("Getting hotkey: {}", cat_hotkey_command)
     cat_hotkey_result = connection.run(cat_hotkey_command, warn=True, hide=not config.debug)
     if cat_hotkey_result.failed:
@@ -250,7 +273,7 @@ def get_hotkey( config, connection ) -> str:
     return hotkey_info['ss58Address']
 
 def get_coldkeypub( config, connection ) -> str:
-    cat_coldkey_command = "cat /root/.bittensor/wallets/default/coldkeypub.txt"
+    cat_coldkey_command = "cat ~/.bittensor/wallets/default/coldkeypub.txt"
     logger.debug("Getting coldkey: {}", cat_coldkey_command)
     cat_coldkey_result = connection.run(cat_coldkey_command, warn=True, hide=not config.debug)
     if cat_coldkey_result.failed:
@@ -276,17 +299,17 @@ def is_script_running( config, connection ) -> bool:
         return False
 
 def copy_script( config, connection, script_path ):
-    rm_script_command = "rm /root/main.py"
+    rm_script_command = "rm ~/main.py"
     logger.debug("rm script: {}", rm_script_command)
     rm_script_result = connection.run(rm_script_command, warn=True, hide=not config.debug)
     logger.debug(rm_script_result)
     transfer_object = fabric.transfer.Transfer( config, connection )
-    copy_script_result = transfer_object.put( script_path, "/root/main.py", preserve_mode = True )
+    copy_script_result = transfer_object.put( script_path, "~/main.py", preserve_mode = True )
     logger.debug(copy_script_result)
     return copy_script_result
 
 def get_script( config, connection, script ) -> str:
-    cat_script_command = "cat /root/main.py".format(script)
+    cat_script_command = "cat ~/main.py".format(script)
     logger.debug("Getting script: {}", cat_script_command)
     cat_script_result = connection.run(cat_script_command, warn=True, hide=not config.debug)
     if cat_script_result.failed:
@@ -302,7 +325,7 @@ def start_subtensor( config, connection, ):
 
 def start_script( config, connection, name, args ):
     args = args.replace("$NAME", name)
-    start_script_command = "pm2 start /root/main.py --name script --time --interpreter python3 -- {}".format( args )
+    start_script_command = "pm2 start ~/main.py --name script --time --interpreter python3 -- {}".format( args )
     logger.debug("Starting script: {}", start_script_command)
     start_script_result = connection.run(start_script_command, warn=True, hide=not config.debug, pty=False)
     logger.debug( start_script_result )
