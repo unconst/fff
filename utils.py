@@ -27,7 +27,7 @@ from loguru import logger
 logger = logger.opt(colors=True)
 
 def get_machines( config ):
-    if 'digital_ocean' in config:
+    if 'contabo' not in config:
         manager = digitalocean.Manager( token = config.token )
         droplets = manager.get_all_droplets( tag_name = [ config.cluster ])
         droplets = [drop for drop in droplets if drop.name in config.machines]
