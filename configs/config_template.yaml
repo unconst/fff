@@ -47,9 +47,10 @@ machines:
     args: 
 
       subtensor: 
-        network: local
+        network: nakamoto
 
       neuron:
+        # Full list: https://huggingface.co/transformers/v3.3.1/pretrained_models.html 
         model_name: distilgpt2
 
       wandb:

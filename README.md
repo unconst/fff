@@ -21,7 +21,7 @@ $ python3 -m pip install -e .
 Marius requires various enviroment variables to run.
 ```bash
 $ cp config_template.yaml config.yaml # to create your config.
-$ export MARIUS_DO_TOKEN=<a digital ocean api token>
+$ export MARIUS_DOTOKEN=<a digital ocean api token>
 $ export MARIUS_SSH_KEY=<an ssh key used to communicate with your droplets>
 $ export MARIUS_WANDB_KEY=<a wandb api key used to create telemety>
 ```
@@ -35,13 +35,13 @@ $ cp configs/config_template.yaml configs/default.yaml # to create your config.
 Next, Edit this config file to define the cluster.
 ```bash
 # You must set this env var with your digital ocean api key i.e. export MARIUS_DOTOKEN=0830jj2190j290j138183j12j092e
-token: MARIUS_DOTOKEN 
+token: ENV_MARIUS_DOTOKEN 
 
 # You must create an ssh key and pass the path i.e. export MARIUS_SSH_KEY=~/.ssh/marius
-sshkey: MARIUS_SSH_KEY 
+sshkey: ENV_MARIUS_SSH_KEY 
 
 # You must create a wandb account and create this env var i.e. export MARIUS_WANDB_KEY=2082308183802182302
-wandb_key: MARIUS_WANDB_KEY
+wandb_key: ENV_MARIUS_WANDB_KEY
 
 # The name of the cluster to switch between different clusters clone this config, change this file and use the -c command line arg
 cluster: marius 
@@ -81,7 +81,7 @@ machines:
     args: 
     
       subtensor: 
-        network: local
+        network: nakamoto
 
       neuron:
         model_name: distilgpt2
