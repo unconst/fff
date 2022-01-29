@@ -92,15 +92,7 @@ def create_droplet( config, name ) -> bool:
             p.assign_resource(["do:droplet:{}".format(droplet.id)])
             break
 
-    start_time = time.time()
-    while True:
-        if droplet.status != 'active':
-            time.sleep(3)
-        if droplet.status == 'active':
-            return True
-        if time.time() - start_time > 240:
-            return False
-            
+    time.sleep(30)
     return True
 
 
