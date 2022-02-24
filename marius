@@ -381,6 +381,36 @@ def register( config ):
 
     logger.success('<blue>!!</blue>: All Registered ')
 
+def register_remote( config ):
+    logger.success('Registering droplets remote. ')
+
+    def _do_register( droplet ):
+        try:
+            name = droplet.name
+            logger.success('<blue>{}</blue>: Registering ', name)
+            connection = utils.connection_for_machine( config, droplet )
+
+            if not utils.can_connect( config, connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
+            else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
+
+            utils.copy_registration_tools( config, connection )
+
+            if utils.run_registration_tools( config, connection ).failed: logger.error('<blue>{}</blue>: Failed to run registration.', name); return
+            else: logger.success('<blue>{}</blue>: Registration successful', name)
+
+        except Exception as e:
+            logger.exception( e )
+
+        finally:
+            logger.success('<blue>{}</blue>: DONE Registering ', name)
+            connection.close()
+
+    droplets = utils.get_machines ( config )
+    with ThreadPoolExecutor( max_workers=config.max_threads ) as executor:
+        tqdm(executor.map( _do_register, droplets ), total=len(droplets))
+
+    logger.success('<blue>!!</blue>: All Registered ')
+
 
 def start( config ):
     droplets = utils.get_machines ( config )
@@ -465,6 +495,16 @@ def get_config():
     install_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
     install_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
 
+    checkout_parser = command_parsers.add_parser('checkout', help='''checkout''')
+    checkout_parser.add_argument ("-c", '--config', dest='config_file',type=str, required=False, help="Config file to use", default='default')
+    checkout_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    checkout_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+
+    wallet_parser = command_parsers.add_parser('wallet', help='''wallet''')
+    wallet_parser.add_argument ("-c", '--config', dest='config_file',type=str, required=False, help="Config file to use", default='default')
+    wallet_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    wallet_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+
     register_parser = command_parsers.add_parser('register', help='''register''')
     register_parser.add_argument ("-c", '--config', dest='config_file',type=str, required=False, help="Config file to use", default='default')
     register_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
@@ -486,8 +526,8 @@ def get_config():
     try:
         with open( 'configs/' + config.config_file + '.yaml', "r") as config_file:
             yaml_config = yaml.safe_load(config_file)
-    except:
-        print('\nMarius tool requires the config file {}, but it does not exist.\n\nTry: $ cp configs/config_template.yaml configs/{} '.format(str(os.getcwd()) + '/configs/' + config.config_file + '.yaml', config.config_file ))
+    except Exception as e:
+        print('\nMarius tool requires the config file {}, but it does not exist.\n\nTry: $ cp configs/config_template.yaml configs/{} \n\n error: {}'.format(str(os.getcwd()) + '/configs/' + config.config_file + '.yaml', config.config_file ), e)
         sys.exit(0)
 
     yaml_config = bittensor.Config.fromDict(yaml_config)
@@ -543,6 +583,22 @@ def main( config ):
     # Show latest logs from cluster
     elif config.command == 'logs':
         logs(config)
+
+    elif config.command == 'checkout':
+        checkout ( config )
+        if Confirm.ask("Show Status"):
+            status( config )
+
+    elif config.command == 'wallet':
+        wallet ( config )
+        if Confirm.ask("Show Status"):
+            status( config )
+
+    elif config.command == 'register':
+        print ('register_remote')
+        register_remote ( config )
+        if Confirm.ask("Show Status"):
+            status( config )
         
     # Install cluster.
     elif config.command == 'install':

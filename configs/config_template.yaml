@@ -19,7 +19,7 @@ coldkey: marius
 # Number of processing threads used to run this tool.
 max_threads: 10
 
-# Below list all you machines.
+# Below list all your machines.
 machines:
 
   # The name of your machine

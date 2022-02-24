@@ -22,6 +22,7 @@ from types import SimpleNamespace
 import paramiko
 import digitalocean
 import fabric
+from patchwork.transfers import rsync
 from fabric import Connection
 from loguru import logger
 logger = logger.opt(colors=True)
@@ -29,7 +30,10 @@ logger = logger.opt(colors=True)
 def get_machines( config ):
     if 'contabo' not in config:
         manager = digitalocean.Manager( token = config.token )
-        droplets = manager.get_all_droplets( tag_name = [ config.cluster ])
+        if config.cluster == 'all':
+            droplets = manager.get_all_droplets()
+        else:
+            droplets = manager.get_all_droplets( tag_name = [ config.cluster ])
         droplets = [drop for drop in droplets if drop.name in config.machines]
         if config.names != None:
             droplets = [drop for drop in droplets if drop.name in config.names]
@@ -363,3 +367,22 @@ def get_logs( config, connection ):
     if logs_command.failed:
         return "No logs, command failed"
     return logs_command.stdout
+
+def copy_registration_tools( config, connection ):
+    rm_script_command = "rm check.py && rm fast_register.sh && chmod +x ~/.bittensor/bittensor/bin/btcli"
+    rm_script_result = connection.run(rm_script_command, warn=True, hide=not config.debug)
+    transfer_object = fabric.transfer.Transfer( connection )
+    copy_script1_result = transfer_object.put(  "check.py" , "check.py", preserve_mode = True )
+    copy_script2_result = transfer_object.put(  "fast_register.sh" , "fast_register.sh", preserve_mode = True )
+    logger.debug(copy_script1_result)
+    logger.debug(copy_script2_result)
+    chmod_script_command = "chmod +x fast_register.sh "
+    chmod_script_command_result = connection.run(chmod_script_command, warn=True, hide=not config.debug)
+    logger.debug(chmod_script_command_result)
+    return True
+
+def run_registration_tools( config, connection ):
+    run_registration = "./fast_register.sh default default 10"
+    run_registration_result = connection.run(run_registration, warn=True, hide=not config.debug)
+    logger.debug(run_registration_result)
+    return run_registration_result

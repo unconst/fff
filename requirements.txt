@@ -1,6 +1,7 @@
 bittensor
 paramiko
 fabric
+patchwork
 python-digitalocean
 tqdm
 loguru
