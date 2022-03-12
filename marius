@@ -412,6 +412,102 @@ def register_remote( config ):
     logger.success('<blue>!!</blue>: All Registered ')
 
 
+def reboot( config ):
+    logger.success('Registering droplets remote. ')
+
+    def _do_reboot( droplet ):
+        try:
+            name = droplet.name
+            logger.success('<blue>{}</blue>: Rebooting ', name)
+            connection = utils.connection_for_machine( config, droplet )
+            if not utils.can_connect( config, connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
+            else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
+
+            if utils.stop_script( config, connection ).failed: pass
+            else: logger.success('<blue>{}</blue>: Stopped miner.', name)
+
+            if not utils.clear_cache( config, connection ): logger.error('<blue>{}</blue>: Failed to clear cache', name); return
+            else: logger.success('<blue>{}</blue>: Cleared cache', name)
+
+            if not utils.run_reboot( config, connection ): logger.error('<blue>{}</blue>: Failed to reboot droplet', name); return
+            else: logger.success('<blue>{}</blue>: Rebooted droplet', name)
+
+        except Exception as e:
+            logger.exception( e )
+
+        finally:
+            logger.success('<blue>{}</blue>: DONE Rebooting ', name)
+            connection.close()
+
+    droplets = utils.get_machines ( config )
+    with ThreadPoolExecutor( max_workers=config.max_threads ) as executor:
+        tqdm(executor.map( _do_reboot, droplets ), total=len(droplets))
+
+    logger.success('<blue>!!</blue>: All Rebooted ')
+
+
+
+def fast_register( config ):
+    def _do_register( droplet ):
+        try:
+            # Make connection.
+            name = droplet.name
+            wallet = bittensor.wallet( config )
+            logger.success('<blue>{}</blue>: Registering ', name)
+            connection = utils.connection_for_machine( config, droplet )
+            if not utils.can_connect( config, connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
+            else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
+
+            # Copy wallet.
+            if not wallet.hotkey_file.exists_on_device(): logger.error('<blue>{}</blue>: Wallet does not have hotkey: {}', name, wallet.hotkey_file.path); return
+            else: logger.success('<blue>{}</blue>: Found hotkey: {}', name, name)
+
+            if not wallet.coldkeypub_file.exists_on_device(): logger.error('<blue>{}</blue>: Wallet does not have coldkeypub: {}', name, wallet.coldkeypub_file.path); return
+            else: logger.success('<blue>{}</blue>: Found coldkeypub: {}', name, wallet.coldkeypub_file.path)
+            
+            if utils.make_fast_wallet_dirs( config, connection ).failed: logger.error('<blue>{}</blue>: Error creating wallet dirs', name); return
+            else: logger.success('<blue>{}</blue>: Created wallet directories', name)
+
+            if utils.copy_fast_hotkey( config, connection, wallet).failed: logger.error('<blue>{}</blue>: Error coping hotkey.', name); return
+            else: logger.success('<blue>{}</blue>: Copied hotkey to dir: {}', name, '/root/.bittensor/wallets/fast/hotkeys/fast')
+
+            if utils.copy_fast_coldkeypub(config, connection, wallet).failed: logger.error('<blue>{}</blue>: Error copy coldkey', name); return
+            else: logger.success('<blue>{}</blue>: Copied coldkey to dir: {}', name, '/root/.bittensor/wallets/fast/coldkeypub.txt')
+
+            if utils.get_fast_hotkey( config, connection ) == None: logger.error('<blue>{}</blue>: Failed to retrieve hotkey from {}', name, connection.host); return
+            else: logger.success('<blue>{}</blue>: Could retrieve hotkey: {}', name, utils.get_hotkey( config, connection ) )
+
+            if utils.get_fast_coldkeypub( config, connection ) == None: logger.error('<blue>{}</blue>: Failed to retrieve coldkeypub from {}', name, connection.host); return
+            else: logger.success('<blue>{}</blue>: Could retrieve coldkeypub: {}', name, utils.get_coldkeypub( config, connection ) )
+
+            # Copy speed registration tools.
+            utils.copy_registration_tools( config, connection )
+
+            # Kill previous.
+            utils.kill_fast_register( config, connection )
+            logger.success('<blue>{}</blue>: Killed previsou registration.', name)
+
+            # Run registration tool.
+            if utils.run_registration_tools( config, connection ).failed: logger.error('<blue>{}</blue>: Failed to run registration.', name); return
+            else: logger.success('<blue>{}</blue>: Registration successful', name)
+
+        except Exception as e:
+            logger.exception( e )
+
+        finally:
+
+            # Kill fast registration.
+            utils.kill_fast_register( config, connection )
+            logger.success('<blue>{}</blue>: Killed fast finalregister', name)
+
+            logger.success('<blue>{}</blue>: DONE Registering ', name)
+            connection.close()
+
+    droplets = utils.get_machines ( config )
+    with ThreadPoolExecutor( max_workers = len(droplets) * 2 ) as executor:
+        tqdm(executor.map( _do_register, droplets ), total=len(droplets))
+
+
 def start( config ):
     droplets = utils.get_machines ( config )
 
@@ -505,10 +601,23 @@ def get_config():
     wallet_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
     wallet_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
 
+    reboot_parser = command_parsers.add_parser('reboot', help='''reboot''')
+    reboot_parser.add_argument ("-c", '--config', dest='config_file',type=str, required=False, help="Config file to use", default='default')
+    reboot_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    reboot_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+
     register_parser = command_parsers.add_parser('register', help='''register''')
     register_parser.add_argument ("-c", '--config', dest='config_file',type=str, required=False, help="Config file to use", default='default')
     register_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
     register_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+
+    fast_register_parser = command_parsers.add_parser('fast_register', help='''register''')
+    fast_register_parser.add_argument ("-c", '--config', dest='config_file',type=str, required=False, help="Config file to use", default='default')
+    fast_register_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    fast_register_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+    fast_register_parser.add_argument ('-p', "--procs", dest='procs', type=int, required=False, help="A list of nodes (hostnames) the selected command should operate on", default=5)
+    fast_register_parser.add_argument ('-t', "--timeout", dest='timeout', type=int, required=False, help="Default registration timeout.", default=60*60*2)
+    bittensor.wallet.add_args( fast_register_parser )
 
     logs_parser = command_parsers.add_parser('logs', help='''install''')
     logs_parser.add_argument ("-c", '--config', dest='config_file', type=str, required=False, help="Config file to use", default='default')
@@ -594,11 +703,16 @@ def main( config ):
         if Confirm.ask("Show Status"):
             status( config )
 
+    elif config.command == 'reboot':
+        reboot ( config )
+
     elif config.command == 'register':
-        print ('register_remote')
         register_remote ( config )
         if Confirm.ask("Show Status"):
             status( config )
+
+    elif config.command == 'fast_register':
+        fast_register ( config )
         
     # Install cluster.
     elif config.command == 'install':

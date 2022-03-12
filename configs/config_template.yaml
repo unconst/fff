@@ -41,7 +41,7 @@ machines:
     command: /root/.bittensor/bittensor/bittensor/_neuron/text/advanced_server/main.py
     
     # Custom string arguments to pass into the command.
-    extra_args: '--logging.debug'
+    extra_args: '--logging.debug --neuron.blacklist.stake.backward 1000 --neuron.blacklist.stake.forward 1000'
 
     # Arguments as a nested yaml. These are unfolded and passed to the command.
     args: 

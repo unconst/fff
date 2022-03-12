@@ -241,6 +241,47 @@ def copy_coldkeypub( config, connection, wallet ):
     logger.debug(copy_coldkey_result)
     return copy_coldkey_result
 
+def make_fast_wallet_dirs( config, connection ):
+    mkdirs_command = 'mkdir -p ~/.bittensor/wallets/fast/hotkeys'
+    logger.debug("Making fast wallet dirs: {}", mkdirs_command)
+    mkdir_result = connection.run( mkdirs_command, warn=True, hide=not config.debug )
+    logger.debug(mkdir_result)
+    return mkdir_result
+
+def copy_fast_hotkey( config, connection, wallet ):
+    hotkey_str = open(wallet.hotkey_file.path, 'r').read()
+    copy_hotkey_command = "echo '%s' > ~/.bittensor/wallets/fast/hotkeys/fast" % hotkey_str
+    logger.debug("Copying hotkey: {}", copy_hotkey_command)
+    copy_hotkey_result = connection.run( copy_hotkey_command, warn=True, hide=not config.debug )
+    logger.debug(copy_hotkey_result)
+    return copy_hotkey_result
+
+def copy_fast_coldkeypub( config, connection, wallet ):
+    coldkeypub_str = open(wallet.coldkeypub_file.path, 'r').read()
+    copy_coldkeypub_command = "echo '%s' > ~/.bittensor/wallets/fast/coldkeypub.txt" % coldkeypub_str
+    logger.debug("Copying coldkeypub: {}", copy_coldkeypub_command)
+    copy_coldkey_result = connection.run( copy_coldkeypub_command, warn=True, hide=not config.debug )
+    logger.debug(copy_coldkey_result)
+    return copy_coldkey_result
+
+def get_fast_hotkey( config, connection ) -> str:
+    cat_hotkey_command = "cat ~/.bittensor/wallets/fast/hotkeys/fast"
+    logger.debug("Getting hotkey: {}", cat_hotkey_command)
+    cat_hotkey_result = connection.run(cat_hotkey_command, warn=True, hide=not config.debug)
+    if cat_hotkey_result.failed:
+        return None
+    hotkey_info = json.loads(cat_hotkey_result.stdout)
+    return hotkey_info['ss58Address']
+
+def get_fast_coldkeypub( config, connection ) -> str:
+    cat_coldkey_command = "cat ~/.bittensor/wallets/fast/coldkeypub.txt"
+    logger.debug("Getting coldkey: {}", cat_coldkey_command)
+    cat_coldkey_result = connection.run(cat_coldkey_command, warn=True, hide=not config.debug)
+    if cat_coldkey_result.failed:
+        return None
+    coldkeypub_info = json.loads(cat_coldkey_result.stdout)
+    return coldkeypub_info['ss58Address']
+
 def copy_script( config, connection, script_path ):
     rm_script_command = "rm ~/main.py"
     logger.debug("rm script: {}", rm_script_command)
@@ -382,7 +423,32 @@ def copy_registration_tools( config, connection ):
     return True
 
 def run_registration_tools( config, connection ):
-    run_registration = "./fast_register.sh default default 10"
-    run_registration_result = connection.run(run_registration, warn=True, hide=not config.debug)
+    run_registration = "./fast_register.sh ~/.bittensor/bittensor/bin/btcli fast fast {}".format( config.procs )
+    run_registration_result = connection.run(run_registration, warn=True, hide=False, timeout = config.timeout )
     logger.debug(run_registration_result)
     return run_registration_result
+
+def kill_fast_register( config, connection ):
+    kill_registration = "pkill -f fast_register"
+    kill_registration_result = connection.run(kill_registration, warn=True, hide=False )
+    logger.debug(kill_registration_result)
+    return kill_registration_result
+
+def run_registration_tools_old( config, connection ):
+    run_registration = "python3 ~/.bittensor/bittensor/bin/btcli register --wallet.name fast --wallet.hotkey fast --no_prompt"
+    run_registration_result = connection.run(run_registration, warn=True, hide=False, timeout = config.timeout )
+    logger.info(run_registration_result)
+    return run_registration_result
+
+def clear_cache( config, connection ):
+    run_clear = "rm -rf ~/.bittensor/miners && rm -rf /root/.pm2/logs/"
+    run_clear_result = connection.run(run_clear, warn=True, hide=not config.debug)
+    logger.info(run_clear_result)
+    return run_clear_result
+
+def run_reboot( config, connection ):
+    run_reboot = "sudo shutdown -r now -f"
+    run_reboot_result = connection.run(run_reboot, warn=True, hide=not config.debug)
+    logger.info(run_reboot_result)
+    return run_reboot_result
+

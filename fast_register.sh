@@ -13,13 +13,14 @@ cleanup() {
 # and set that function to run before we exit, or specifically when we get a SIGTERM
 trap cleanup EXIT TERM
 
-echo "Coldkey: $1";
-echo "Hotkey: $2";
-echo "NProcs: $3";
+echo "Script: $1";
+echo "Coldkey: $2";
+echo "Hotkey: $3";
+echo "NProcs: $4";
 
-python3 check.py $1 $2 & pids+=( "$!" )
-for i in $(seq $3); do
-    python3 ~/.bittensor/bittensor/bin/btcli register --no_prompt --wallet.name $1 --wallet.hotkey $2 & pids+=( "$!" )
+python3 check.py $2 $3 & pids+=( "$!" )
+for i in $(seq $4); do
+    python3 $1 register --no_prompt --wallet.name $2 --wallet.hotkey $3 & pids+=( "$!" )
 done
 
 wait # sleep until all background processes have exited, or a trap fires
