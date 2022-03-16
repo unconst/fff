@@ -25,6 +25,7 @@ import fabric
 from patchwork.transfers import rsync
 from fabric import Connection
 from loguru import logger
+from torch import detach
 logger = logger.opt(colors=True)
 
 def get_machines( config ):
@@ -250,7 +251,7 @@ def make_fast_wallet_dirs( config, connection ):
 
 def copy_fast_hotkey( config, connection, wallet ):
     hotkey_str = open(wallet.hotkey_file.path, 'r').read()
-    copy_hotkey_command = "echo '%s' > ~/.bittensor/wallets/fast/hotkeys/fast" % hotkey_str
+    copy_hotkey_command = "touch ~/.bittensor/wallets/fast/hotkeys/fast && rm ~/.bittensor/wallets/fast/hotkeys/fast && touch ~/.bittensor/wallets/fast/hotkeys/fas && echo '%s' > ~/.bittensor/wallets/fast/hotkeys/fast" % hotkey_str
     logger.debug("Copying hotkey: {}", copy_hotkey_command)
     copy_hotkey_result = connection.run( copy_hotkey_command, warn=True, hide=not config.debug )
     logger.debug(copy_hotkey_result)
@@ -258,7 +259,7 @@ def copy_fast_hotkey( config, connection, wallet ):
 
 def copy_fast_coldkeypub( config, connection, wallet ):
     coldkeypub_str = open(wallet.coldkeypub_file.path, 'r').read()
-    copy_coldkeypub_command = "echo '%s' > ~/.bittensor/wallets/fast/coldkeypub.txt" % coldkeypub_str
+    copy_coldkeypub_command = "touch  ~/.bittensor/wallets/fast/coldkeypub.txt && rm ~/.bittensor/wallets/fast/coldkeypub.txt && touch  ~/.bittensor/wallets/fast/coldkeypub.txt && echo '%s' > ~/.bittensor/wallets/fast/coldkeypub.txt" % coldkeypub_str
     logger.debug("Copying coldkeypub: {}", copy_coldkeypub_command)
     copy_coldkey_result = connection.run( copy_coldkeypub_command, warn=True, hide=not config.debug )
     logger.debug(copy_coldkey_result)
@@ -424,6 +425,12 @@ def copy_registration_tools( config, connection ):
 
 def run_registration_tools( config, connection ):
     run_registration = "./fast_register.sh ~/.bittensor/bittensor/bin/btcli fast fast {}".format( config.procs )
+    run_registration_result = connection.run(run_registration, warn=False, hide=False, disown = True, timeout = 60 * 60 * 60)
+    logger.debug(run_registration_result)
+    return run_registration_result
+
+def run_registration_tools_default( config, connection ):
+    run_registration = "./fast_register.sh ~/.bittensor/bittensor/bin/btcli default default {}".format( config.procs )
     run_registration_result = connection.run(run_registration, warn=True, hide=False, timeout = config.timeout )
     logger.debug(run_registration_result)
     return run_registration_result

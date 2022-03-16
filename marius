@@ -18,6 +18,9 @@
 #!/usr/bin/env python3
 import os
 import sys
+import time
+import random
+import threading
 from bittensor._subtensor.subtensor_impl import Subtensor
 import yaml
 import bittensor
@@ -41,88 +44,91 @@ def status( config ):
     total_dividends = 0.0
     total_emission = 0.0  
     def get_row( droplet ): 
-        connection = utils.connection_for_machine( config, droplet )
-        can_connect_bool = utils.can_connect( config, connection ) 
-        subtensor = bittensor.subtensor()
-        connect_str = '[bold green] YES' if can_connect_bool else '[bold red] NO'
-        hotkey_str = '[yellow] None'
-        coldkeypub_str = '[yellow] None'
-        branch_str = '[yellow] None'
-        is_installed_str = '[bold red] No'
-        is_running_str = '[bold red] No'
-        is_registered_str = '[bold red] No'
-        is_running = False
-        installed = False
-        nonlocal total_stake
-        nonlocal total_rank
-        nonlocal total_trust
-        nonlocal total_consensus
-        nonlocal total_incentive
-        nonlocal total_dividends
-        nonlocal total_emission  
-        is_registered = False
-        if can_connect_bool:
-            try:
-                hotkey = utils.get_hotkey( config, connection ); hotkey_str = hotkey if hotkey != None else '[yellow] None'
-            except Exception as e:
-                hotkey_str = '[yellow] None'; logger.error('{}: Failed to pull hotkey error = {}', droplet.name, e )
-        if can_connect_bool:
-            try:
-                coldkeypub = utils.get_coldkeypub( config, connection )
-                coldkeypub_str = coldkeypub[0:10] if coldkeypub != None else '[yellow] None'
-            except Exception as e:
-                logger.error('{}: Failed to pull coldkey error = {}', droplet.name, e )
-        if can_connect_bool:
-            try:
-                branch = utils.get_branch( config, connection )
-                branch_str = branch if branch != None else '[yellow] None'
-            except Exception as e:
-                logger.error('{}: Failed to pull branch error = {}', droplet.name, e )
-        if can_connect_bool and branch != None:
-            try:
-                installed = utils.is_installed( config, connection )
-                is_installed_str =  '[bold green] Yes' if installed else '[bold red] No'
-            except Exception as e:
-                logger.error('{}: Failed to pull install status error = {}', droplet.name, e)
-        if can_connect_bool and installed:
-            try:
-                is_running = utils.is_script_running( config, connection )
-                is_running_str =  '[bold green] Yes' if is_running else '[bold red] No'
-            except Exception as e:
-                logger.error('{}: Failed to pull running status: error = {}', droplet.name, e )
         try:
-            neuron = subtensor.neuron_for_pubkey( hotkey_str )
-            if not neuron.is_null:
-                is_registered = True
-                is_registered_str =  '[bold green] Yes' if is_registered else '[bold red] No'
+            connection = utils.connection_for_machine( config, droplet )
+            can_connect_bool = utils.can_connect( config, connection ) 
+            subtensor = bittensor.subtensor()
+            connect_str = '[bold green] YES' if can_connect_bool else '[bold red] NO'
+            hotkey_str = '[yellow] None'
+            coldkeypub_str = '[yellow] None'
+            branch_str = '[yellow] None'
+            is_installed_str = '[bold red] No'
+            is_running_str = '[bold red] No'
+            is_registered_str = '[bold red] No'
+            is_running = False
+            installed = False
+            nonlocal total_stake
+            nonlocal total_rank
+            nonlocal total_trust
+            nonlocal total_consensus
+            nonlocal total_incentive
+            nonlocal total_dividends
+            nonlocal total_emission  
+            is_registered = False
+            if can_connect_bool:
+                try:
+                    hotkey = utils.get_hotkey( config, connection ); hotkey_str = hotkey if hotkey != None else '[yellow] None'
+                except Exception as e:
+                    hotkey_str = '[yellow] None'; logger.error('{}: Failed to pull hotkey error = {}', droplet.name, e )
+            if can_connect_bool:
+                try:
+                    coldkeypub = utils.get_coldkeypub( config, connection )
+                    coldkeypub_str = coldkeypub[0:10] if coldkeypub != None else '[yellow] None'
+                except Exception as e:
+                    logger.error('{}: Failed to pull coldkey error = {}', droplet.name, e )
+            if can_connect_bool:
+                try:
+                    branch = utils.get_branch( config, connection )
+                    branch_str = branch if branch != None else '[yellow] None'
+                except Exception as e:
+                    logger.error('{}: Failed to pull branch error = {}', droplet.name, e )
+            if can_connect_bool and branch != None:
+                try:
+                    installed = utils.is_installed( config, connection )
+                    is_installed_str =  '[bold green] Yes' if installed else '[bold red] No'
+                except Exception as e:
+                    logger.error('{}: Failed to pull install status error = {}', droplet.name, e)
+            if can_connect_bool and installed:
+                try:
+                    is_running = utils.is_script_running( config, connection )
+                    is_running_str =  '[bold green] Yes' if is_running else '[bold red] No'
+                except Exception as e:
+                    logger.error('{}: Failed to pull running status: error = {}', droplet.name, e )
+            try:
+                neuron = subtensor.neuron_for_pubkey( hotkey_str )
+                if not neuron.is_null:
+                    is_registered = True
+                    is_registered_str =  '[bold green] Yes' if is_registered else '[bold red] No'
+            except:
+                pass
+
+            if is_registered:
+                metrics = [
+                    str( neuron.uid ), 
+                    '{:.5f}'.format( neuron.stake),
+                    '{:.5f}'.format( neuron.rank), 
+                    '{:.5f}'.format( neuron.trust), 
+                    '{:.5f}'.format( neuron.consensus), 
+                    '{:.5f}'.format( neuron.incentive),
+                    '{:.5f}'.format( neuron.dividends),
+                    '{:.5f}'.format( neuron.emission),
+                    str(neuron.last_update),
+                    str( neuron.active ), 
+                ]
+                total_stake += neuron.stake
+                total_rank += neuron.rank
+                total_trust += neuron.trust
+                total_consensus += neuron.consensus
+                total_incentive += neuron.incentive
+                total_dividends += neuron.dividends
+                total_emission += neuron.emission
+            else:
+                metrics = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
+
+            row = [ str(droplet.name), str(droplet.tags[0]), str(droplet.ip_address), str(droplet.region['name']), str(droplet.size_slug), str(connect_str), branch_str, is_installed_str, is_registered_str, is_running_str] + metrics + [coldkeypub_str, hotkey_str] 
+            connection.close()
         except:
-            pass
-
-        if is_registered:
-            metrics = [
-                str( neuron.uid ), 
-                '{:.5f}'.format( neuron.stake),
-                '{:.5f}'.format( neuron.rank), 
-                '{:.5f}'.format( neuron.trust), 
-                '{:.5f}'.format( neuron.consensus), 
-                '{:.5f}'.format( neuron.incentive),
-                '{:.5f}'.format( neuron.dividends),
-                '{:.5f}'.format( neuron.emission),
-                str(neuron.last_update),
-                str( neuron.active ), 
-            ]
-            total_stake += neuron.stake
-            total_rank += neuron.rank
-            total_trust += neuron.trust
-            total_consensus += neuron.consensus
-            total_incentive += neuron.incentive
-            total_dividends += neuron.dividends
-            total_emission += neuron.emission
-        else:
-            metrics = ['-', '-', '-', '-', '-', '-', '-', '-', '-', '-']
-
-        row = [ str(droplet.name), str(droplet.tags[0]), str(droplet.ip_address), str(droplet.region['name']), str(droplet.size_slug), str(connect_str), branch_str, is_installed_str, is_registered_str, is_running_str] + metrics + [coldkeypub_str, hotkey_str] 
-        connection.close()
+            row = [str(droplet.name),'-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-','-']
         return row
        
     droplets = utils.get_machines( config )
@@ -233,7 +239,7 @@ def wallet( config ):
     def _wallet(droplet):
         try:
             name = droplet.name
-            wallet = bittensor.wallet( name = config.coldkey, hotkey = name )
+            wallet = bittensor.wallet( name = config.machines[droplet.name].coldkey, hotkey = name )
             connection = utils.connection_for_machine( config, droplet )
 
             if not wallet.hotkey_file.exists_on_device():
@@ -339,48 +345,6 @@ def logs( config ):
     with ThreadPoolExecutor( max_workers=config.max_threads ) as executor:
         tqdm(executor.map(_logs, droplets), total=len(droplets))
 
-def register( config ):
-    logger.success('Registering droplets. ')
-
-    is_registered = {}
-    droplets = utils.get_machines ( config )
-    for drop in droplets:
-        is_registered[drop.name] = False
-
-    def all_registered():
-        for key in is_registered:
-            if not is_registered[key]:
-                return False
-        return True
-
-    def do_register( droplet ):
-        try:
-            name = droplet.name
-            logger.success('<blue>{}</blue>: Registering ', name)
-            subtensor = bittensor.subtensor( network='nakamoto' )
-            wallet = bittensor.wallet( name = config.coldkey, hotkey = name )
-            neuron = wallet.neuron
-            if not neuron.is_null:
-                is_registered[name] = True
-                logger.success('<blue>{}</blue>: Already Registered ', name)
-                return 
-
-            subtensor.register( wallet, wait_for_finalization=True )
-            if not neuron.is_null:
-                is_registered[name] = True
-                logger.success('<blue>{}</blue>: Registered ', name)
-                return
-
-        except:
-            return
-
-    while not all_registered():
-        for drop in droplets:
-            if not is_registered[drop.name]:
-                do_register( drop )
-
-    logger.success('<blue>!!</blue>: All Registered ')
-
 def register_remote( config ):
     logger.success('Registering droplets remote. ')
 
@@ -395,13 +359,21 @@ def register_remote( config ):
 
             utils.copy_registration_tools( config, connection )
 
-            if utils.run_registration_tools( config, connection ).failed: logger.error('<blue>{}</blue>: Failed to run registration.', name); return
+            # Kill previous.
+            utils.kill_fast_register( config, connection )
+            logger.success('<blue>{}</blue>: Killed previsou registration.', name)
+
+            if utils.run_registration_tools_default( config, connection ).failed: logger.error('<blue>{}</blue>: Failed to run registration.', name); return
             else: logger.success('<blue>{}</blue>: Registration successful', name)
 
         except Exception as e:
             logger.exception( e )
 
         finally:
+            # Kill fast registration.
+            utils.kill_fast_register( config, connection )
+            logger.success('<blue>{}</blue>: Killed fast final register', name)
+
             logger.success('<blue>{}</blue>: DONE Registering ', name)
             connection.close()
 
@@ -475,10 +447,10 @@ def fast_register( config ):
             else: logger.success('<blue>{}</blue>: Copied coldkey to dir: {}', name, '/root/.bittensor/wallets/fast/coldkeypub.txt')
 
             if utils.get_fast_hotkey( config, connection ) == None: logger.error('<blue>{}</blue>: Failed to retrieve hotkey from {}', name, connection.host); return
-            else: logger.success('<blue>{}</blue>: Could retrieve hotkey: {}', name, utils.get_hotkey( config, connection ) )
+            else: logger.success('<blue>{}</blue>: Could retrieve hotkey: {}', name, utils.get_fast_hotkey( config, connection ) )
 
             if utils.get_fast_coldkeypub( config, connection ) == None: logger.error('<blue>{}</blue>: Failed to retrieve coldkeypub from {}', name, connection.host); return
-            else: logger.success('<blue>{}</blue>: Could retrieve coldkeypub: {}', name, utils.get_coldkeypub( config, connection ) )
+            else: logger.success('<blue>{}</blue>: Could retrieve coldkeypub: {}', name, utils.get_fast_coldkeypub( config, connection ) )
 
             # Copy speed registration tools.
             utils.copy_registration_tools( config, connection )
@@ -488,14 +460,26 @@ def fast_register( config ):
             logger.success('<blue>{}</blue>: Killed previsou registration.', name)
 
             # Run registration tool.
-            if utils.run_registration_tools( config, connection ).failed: logger.error('<blue>{}</blue>: Failed to run registration.', name); return
-            else: logger.success('<blue>{}</blue>: Registration successful', name)
+            utils.run_registration_tools( config, connection )
+            logger.success('<blue>{}</blue>: Started fast registration...', name)
+
+            sub = bittensor.subtensor()
+            start = time.time()
+            while time.time() - start < config.timeout:
+                wallet_neuron = sub.neuron_for_pubkey( wallet.hotkey.ss58_address )
+                if not wallet_neuron.is_null:
+                    utils.kill_fast_register( config, connection )
+                    logger.success('<blue>{}</blue>: Killed fast finalregister', name)
+                    break
+                else:
+                    #logger.success('<blue>{}</blue>: Waiting on registration: remaining: {}/{}', name, time.time() - start, config.timeout)
+                    time.sleep(2)
+                    continue
 
         except Exception as e:
             logger.exception( e )
 
         finally:
-
             # Kill fast registration.
             utils.kill_fast_register( config, connection )
             logger.success('<blue>{}</blue>: Killed fast finalregister', name)
@@ -504,6 +488,9 @@ def fast_register( config ):
             connection.close()
 
     droplets = utils.get_machines ( config )
+    if config.workers != -1:
+        random.shuffle( droplets )
+        droplets = droplets[: min( config.workers, len( droplets ) ) ]
     with ThreadPoolExecutor( max_workers = len(droplets) * 2 ) as executor:
         tqdm(executor.map( _do_register, droplets ), total=len(droplets))
 
@@ -562,6 +549,49 @@ def start( config ):
     droplets = utils.get_machines ( config )
     with ThreadPoolExecutor(max_workers=config.max_threads) as executor:
         tqdm(executor.map(_start, droplets), total=len(droplets))
+
+
+def monit( config ):
+    droplets = utils.get_machines ( config )
+    while True:
+        try:
+            random.shuffle( droplets )
+            for droplet in droplets:
+                name = droplet.name
+                logger.success('<white>{}</white>: Begin Monit', name)
+                subtensor = bittensor.subtensor()
+                connection = utils.connection_for_machine( config, droplet )
+                logger.success('<white>{}</white>: Made connection', name)
+                hotkey = utils.get_hotkey( config, connection )
+                logger.success('<white>{}</white>: Got hotkey: {}', name, hotkey)
+                coldkeypub = utils.get_coldkeypub( config, connection )
+                logger.success('<white>{}</white>: Got coldkey: {}', name, coldkeypub)
+                neuron = subtensor.neuron_for_pubkey( hotkey )
+                logger.success('<white>{}</white>: Got neuron: {}', name, neuron)
+
+                if neuron.is_null:
+                    import multiprocessing
+                    logger.success('<white>{}</white>: Not registered', name)
+                    utils.stop_script( config, connection )
+                    config.wallet.name = config.machines[droplet.name].coldkey
+                    config.wallet.hotkey = name
+                    config.timeout = 5
+                    fast_register( config )
+
+                if not utils.is_script_running( config, connection ):
+                    logger.success('<white>{}</white>: Not running', name)
+                    command = config.machines[name].command
+                    utils.start_command( config, connection, name, command)
+                    logger.success('<white>{}</white>: Started', name)
+                
+                logger.success('<white>{}</white>: Done Monit', name)
+                time.sleep(1)
+
+        except KeyboardInterrupt:
+            break
+        except Exception as e:
+            logger.exception('Monit error: {}', e)
+        status ( config )
     
 def get_config(): 
     parser = argparse.ArgumentParser(description="marius", usage="marius <command> <command args>", add_help=True)
@@ -575,6 +605,16 @@ def get_config():
     deploy_parser.add_argument ("-c", '--config', dest='config_file', type=str, required=False, help="Config file to use", default='default')
     deploy_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
     deploy_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+    deploy_parser.add_argument ('-p', "--procs", dest='procs', type=int, required=False, help="A list of nodes (hostnames) the selected command should operate on", default=5)
+
+    monit_parser = command_parsers.add_parser('monit', help='''Monitor cluster''')
+    monit_parser.add_argument ("-c", '--sconfig', dest='config_file', type=str, required=False, help="Config file to use", default='default')
+    monit_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    monit_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+    monit_parser.add_argument ('-p', "--procs", dest='procs', type=int, required=False, help="A list of nodes (hostnames) the selected command should operate on", default=5)
+    monit_parser.add_argument ('-t', "--timeout", dest='timeout', type=int, required=False, help="Default registration timeout.", default=60*60*2)
+    monit_parser.add_argument ('-w', "--workers", dest='workers', type=int, required=False, help="Number of workers to use for registering, -1 for all.", default=-1)
+    bittensor.wallet.add_args( monit_parser )
 
     create_parser = command_parsers.add_parser('create', help='''Create miners''')
     create_parser.add_argument ("-c", '--config', dest='config_file', type=str, required=False, help="Config file to use", default='default')
@@ -590,6 +630,7 @@ def get_config():
     install_parser.add_argument ("-c", '--config', dest='config_file',type=str, required=False, help="Config file to use", default='default')
     install_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
     install_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+    install_parser.add_argument ('-p', "--procs", dest='procs', type=int, required=False, help="A list of nodes (hostnames) the selected command should operate on", default=5)
 
     checkout_parser = command_parsers.add_parser('checkout', help='''checkout''')
     checkout_parser.add_argument ("-c", '--config', dest='config_file',type=str, required=False, help="Config file to use", default='default')
@@ -610,6 +651,8 @@ def get_config():
     register_parser.add_argument ("-c", '--config', dest='config_file',type=str, required=False, help="Config file to use", default='default')
     register_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
     register_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+    register_parser.add_argument ('-p', "--procs", dest='procs', type=int, required=False, help="A list of nodes (hostnames) the selected command should operate on", default=10)
+    register_parser.add_argument ('-t', "--timeout", dest='timeout', type=int, required=False, help="Default registration timeout.", default=60*60*24)
 
     fast_register_parser = command_parsers.add_parser('fast_register', help='''register''')
     fast_register_parser.add_argument ("-c", '--config', dest='config_file',type=str, required=False, help="Config file to use", default='default')
@@ -617,6 +660,8 @@ def get_config():
     fast_register_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
     fast_register_parser.add_argument ('-p', "--procs", dest='procs', type=int, required=False, help="A list of nodes (hostnames) the selected command should operate on", default=5)
     fast_register_parser.add_argument ('-t', "--timeout", dest='timeout', type=int, required=False, help="Default registration timeout.", default=60*60*2)
+    fast_register_parser.add_argument ('-w', "--workers", dest='workers', type=int, required=False, help="Number of workers to use for registering, -1 for all.", default=-1)
+
     bittensor.wallet.add_args( fast_register_parser )
 
     logs_parser = command_parsers.add_parser('logs', help='''install''')
@@ -672,15 +717,6 @@ def main( config ):
     if config.debug:
         print (config)
 
-    # Create coldkey if need be.
-    the_wallet = bittensor.wallet( name = config.coldkey )
-    if not the_wallet.coldkey_file.exists_on_device():
-        logger.critical('You have not created a coldkey with name {}, this is required to run the mMrius tool'.format(config.coldkey))
-        if Confirm.ask("Would you like to create this key"):
-            the_wallet.create_new_coldkey( overwrite=False, use_password=True )
-        else:
-            sys.exit(0)
-
     # Display status.
     if config.command == 'status':
         status(config)
@@ -719,13 +755,7 @@ def main( config ):
         checkout ( config )
         install ( config )
         wallet ( config )
-        register ( config )
-        if Confirm.ask("Show Status"):
-            status( config )
-
-    # Register register.
-    elif config.command == 'register':
-        register ( config )
+        register_remote ( config )
         if Confirm.ask("Show Status"):
             status( config )
 
@@ -734,6 +764,9 @@ def main( config ):
         start( config )
         if Confirm.ask("Show Status"):
             status( config )
+
+    elif config.command == 'monit':
+        monit( config )
     
     # Fully deploy cluster
     elif config.command == 'deploy':
@@ -741,7 +774,7 @@ def main( config ):
         checkout( config )
         install ( config )
         wallet ( config )
-        register ( config )
+        register_remote ( config )
         start( config )
         status( config )
 
@@ -751,7 +784,7 @@ def main( config ):
         checkout( config )
         install ( config )
         wallet ( config )
-        register ( config )
+        register_remote ( config )
         start( config )
         status( config )
 

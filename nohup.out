@@ -1,0 +1,1847 @@
+2022-03-15 02:28:29.374 | SUCCESS  | __main__:_create:190 - X0: Droplet already exists.
+2022-03-15 02:28:29.375 | SUCCESS  | __main__:_create:194 - X0: DONE CREATE
+2022-03-15 02:28:29.376 | SUCCESS  | __main__:_create:190 - X1: Droplet already exists.
+2022-03-15 02:28:29.377 | SUCCESS  | __main__:_create:190 - X2: Droplet already exists.
+2022-03-15 02:28:29.377 | SUCCESS  | __main__:_create:194 - X1: DONE CREATE
+2022-03-15 02:28:29.377 | SUCCESS  | __main__:_create:194 - X2: DONE CREATE
+2022-03-15 02:28:29.377 | SUCCESS  | __main__:_create:190 - X3: Droplet already exists.
+2022-03-15 02:28:29.378 | SUCCESS  | __main__:_create:190 - X4: Droplet already exists.
+2022-03-15 02:28:29.378 | SUCCESS  | __main__:_create:190 - X5: Droplet already exists.
+2022-03-15 02:28:29.378 | SUCCESS  | __main__:_create:190 - X6: Droplet already exists.
+2022-03-15 02:28:29.379 | SUCCESS  | __main__:_create:190 - X7: Droplet already exists.
+2022-03-15 02:28:29.379 | SUCCESS  | __main__:_create:190 - X8: Droplet already exists.
+2022-03-15 02:28:29.379 | SUCCESS  | __main__:_create:194 - X3: DONE CREATE
+2022-03-15 02:28:29.379 | SUCCESS  | __main__:_create:190 - X9: Droplet already exists.
+2022-03-15 02:28:29.380 | SUCCESS  | __main__:_create:194 - X4: DONE CREATE
+2022-03-15 02:28:29.380 | SUCCESS  | __main__:_create:190 - X10: Droplet already exists.
+2022-03-15 02:28:29.380 | SUCCESS  | __main__:_create:194 - X5: DONE CREATE
+2022-03-15 02:28:29.381 | SUCCESS  | __main__:_create:194 - X6: DONE CREATE
+2022-03-15 02:28:29.381 | SUCCESS  | __main__:_create:190 - X11: Droplet already exists.
+2022-03-15 02:28:29.381 | SUCCESS  | __main__:_create:194 - X7: DONE CREATE
+2022-03-15 02:28:29.382 | SUCCESS  | __main__:_create:194 - X8: DONE CREATE
+2022-03-15 02:28:29.382 | SUCCESS  | __main__:_create:190 - X12: Droplet already exists.
+2022-03-15 02:28:29.383 | SUCCESS  | __main__:_create:190 - X13: Droplet already exists.
+  0%|          | 0/30 [00:00<?, ?it/s]2022-03-15 02:28:29.383 | SUCCESS  | __main__:_create:190 - X14: Droplet already exists.
+  0%|          | 0/30 [00:00<?, ?it/s]2022-03-15 02:28:29.383 | SUCCESS  | __main__:_create:194 - X9: DONE CREATE
+
+2022-03-15 02:28:29.384 | SUCCESS  | __main__:_create:190 - X15: Droplet already exists.
+2022-03-15 02:28:29.384 | SUCCESS  | __main__:_create:190 - X16: Droplet already exists.
+2022-03-15 02:28:29.384 | SUCCESS  | __main__:_create:194 - X10: DONE CREATE
+2022-03-15 02:28:29.385 | SUCCESS  | __main__:_create:190 - X17: Droplet already exists.
+2022-03-15 02:28:29.386 | SUCCESS  | __main__:_create:194 - X11: DONE CREATE
+2022-03-15 02:28:29.386 | SUCCESS  | __main__:_create:190 - X18: Droplet already exists.
+2022-03-15 02:28:29.386 | SUCCESS  | __main__:_create:190 - X19: Droplet already exists.
+2022-03-15 02:28:29.386 | SUCCESS  | __main__:_create:190 - X20: Droplet already exists.
+2022-03-15 02:28:29.386 | SUCCESS  | __main__:_create:190 - X21: Droplet already exists.
+2022-03-15 02:28:29.387 | SUCCESS  | __main__:_create:190 - X22: Droplet already exists.
+2022-03-15 02:28:29.387 | SUCCESS  | __main__:_create:190 - X23: Droplet already exists.
+2022-03-15 02:28:29.387 | SUCCESS  | __main__:_create:194 - X12: DONE CREATE
+2022-03-15 02:28:29.387 | SUCCESS  | __main__:_create:190 - X24: Droplet already exists.
+2022-03-15 02:28:29.387 | SUCCESS  | __main__:_create:194 - X13: DONE CREATE
+2022-03-15 02:28:29.388 | SUCCESS  | __main__:_create:190 - X25: Droplet already exists.
+2022-03-15 02:28:29.388 | SUCCESS  | __main__:_create:194 - X14: DONE CREATE
+2022-03-15 02:28:29.388 | SUCCESS  | __main__:_create:190 - X26: Droplet already exists.
+2022-03-15 02:28:29.388 | SUCCESS  | __main__:_create:190 - X27: Droplet already exists.
+2022-03-15 02:28:29.388 | SUCCESS  | __main__:_create:190 - X28: Droplet already exists.
+2022-03-15 02:28:29.389 | SUCCESS  | __main__:_create:194 - X15: DONE CREATE
+2022-03-15 02:28:29.389 | SUCCESS  | __main__:_create:194 - X16: DONE CREATE
+2022-03-15 02:28:29.389 | SUCCESS  | __main__:_create:190 - X29: Droplet already exists.
+2022-03-15 02:28:29.390 | SUCCESS  | __main__:_create:194 - X17: DONE CREATE
+2022-03-15 02:28:29.390 | SUCCESS  | __main__:_create:194 - X18: DONE CREATE
+2022-03-15 02:28:29.390 | SUCCESS  | __main__:_create:194 - X19: DONE CREATE
+2022-03-15 02:28:29.391 | SUCCESS  | __main__:_create:194 - X20: DONE CREATE
+2022-03-15 02:28:29.391 | SUCCESS  | __main__:_create:194 - X21: DONE CREATE
+2022-03-15 02:28:29.391 | SUCCESS  | __main__:_create:194 - X22: DONE CREATE
+2022-03-15 02:28:29.392 | SUCCESS  | __main__:_create:194 - X23: DONE CREATE
+2022-03-15 02:28:29.392 | SUCCESS  | __main__:_create:194 - X24: DONE CREATE
+2022-03-15 02:28:29.392 | SUCCESS  | __main__:_create:194 - X25: DONE CREATE
+2022-03-15 02:28:29.393 | SUCCESS  | __main__:_create:194 - X26: DONE CREATE
+2022-03-15 02:28:29.394 | SUCCESS  | __main__:_create:194 - X27: DONE CREATE
+2022-03-15 02:28:29.394 | SUCCESS  | __main__:_create:194 - X28: DONE CREATE
+2022-03-15 02:28:29.394 | SUCCESS  | __main__:_create:194 - X29: DONE CREATE
+  0%|          | 0/30 [00:00<?, ?it/s]  0%|          | 0/30 [00:00<?, ?it/s]
+2022-03-15 02:28:32.241 | SUCCESS  | __main__:_checkout:207 - X3: Made connection to droplet
+2022-03-15 02:28:32.433 | SUCCESS  | __main__:_checkout:207 - X14: Made connection to droplet
+2022-03-15 02:28:32.456 | SUCCESS  | __main__:_checkout:207 - X15: Made connection to droplet
+2022-03-15 02:28:32.647 | SUCCESS  | __main__:_checkout:210 - X3: Made bittensor dirs.
+2022-03-15 02:28:32.650 | SUCCESS  | __main__:_checkout:207 - X27: Made connection to droplet
+2022-03-15 02:28:32.764 | SUCCESS  | __main__:_checkout:207 - X21: Made connection to droplet
+2022-03-15 02:28:32.939 | SUCCESS  | __main__:_checkout:210 - X14: Made bittensor dirs.
+2022-03-15 02:28:32.982 | SUCCESS  | __main__:_checkout:210 - X15: Made bittensor dirs.
+2022-03-15 02:28:33.025 | SUCCESS  | __main__:_checkout:207 - X6: Made connection to droplet
+2022-03-15 02:28:33.085 | SUCCESS  | __main__:_checkout:213 - X3: Remove previous bittensor installation
+2022-03-15 02:28:33.105 | SUCCESS  | __main__:_checkout:207 - X0: Made connection to droplet
+2022-03-15 02:28:33.173 | SUCCESS  | __main__:_checkout:207 - X29: Made connection to droplet
+2022-03-15 02:28:33.180 | SUCCESS  | __main__:_checkout:210 - X27: Made bittensor dirs.
+2022-03-15 02:28:33.287 | SUCCESS  | __main__:_checkout:210 - X21: Made bittensor dirs.
+2022-03-15 02:28:33.331 | SUCCESS  | __main__:_checkout:207 - X23: Made connection to droplet
+2022-03-15 02:28:33.335 | SUCCESS  | __main__:_checkout:207 - X20: Made connection to droplet
+2022-03-15 02:28:33.470 | SUCCESS  | __main__:_checkout:210 - X6: Made bittensor dirs.
+2022-03-15 02:28:33.477 | SUCCESS  | __main__:_checkout:207 - X24: Made connection to droplet
+2022-03-15 02:28:33.524 | SUCCESS  | __main__:_checkout:213 - X14: Remove previous bittensor installation
+2022-03-15 02:28:33.543 | SUCCESS  | __main__:_checkout:207 - X22: Made connection to droplet
+2022-03-15 02:28:33.574 | SUCCESS  | __main__:_checkout:213 - X15: Remove previous bittensor installation
+2022-03-15 02:28:33.658 | SUCCESS  | __main__:_checkout:207 - X8: Made connection to droplet
+2022-03-15 02:28:33.739 | SUCCESS  | __main__:_checkout:207 - X17: Made connection to droplet
+2022-03-15 02:28:33.743 | SUCCESS  | __main__:_checkout:210 - X0: Made bittensor dirs.
+2022-03-15 02:28:33.767 | SUCCESS  | __main__:_checkout:213 - X27: Remove previous bittensor installation
+2022-03-15 02:28:33.779 | SUCCESS  | __main__:_checkout:210 - X29: Made bittensor dirs.
+2022-03-15 02:28:33.852 | SUCCESS  | __main__:_checkout:210 - X20: Made bittensor dirs.
+2022-03-15 02:28:33.868 | SUCCESS  | __main__:_checkout:213 - X21: Remove previous bittensor installation
+2022-03-15 02:28:33.878 | SUCCESS  | __main__:_checkout:207 - X28: Made connection to droplet
+2022-03-15 02:28:33.889 | SUCCESS  | __main__:_checkout:207 - X26: Made connection to droplet
+2022-03-15 02:28:33.895 | SUCCESS  | __main__:_checkout:207 - X4: Made connection to droplet
+2022-03-15 02:28:33.923 | SUCCESS  | __main__:_checkout:207 - X1: Made connection to droplet
+2022-03-15 02:28:33.937 | SUCCESS  | __main__:_checkout:207 - X18: Made connection to droplet
+2022-03-15 02:28:33.944 | SUCCESS  | __main__:_checkout:207 - X5: Made connection to droplet
+2022-03-15 02:28:34.035 | SUCCESS  | __main__:_checkout:207 - X2: Made connection to droplet
+2022-03-15 02:28:34.060 | SUCCESS  | __main__:_checkout:210 - X24: Made bittensor dirs.
+2022-03-15 02:28:34.067 | SUCCESS  | __main__:_checkout:210 - X23: Made bittensor dirs.
+2022-03-15 02:28:34.093 | SUCCESS  | __main__:_checkout:207 - X25: Made connection to droplet
+2022-03-15 02:28:34.117 | SUCCESS  | __main__:_checkout:210 - X8: Made bittensor dirs.
+2022-03-15 02:28:34.136 | SUCCESS  | __main__:_checkout:213 - X6: Remove previous bittensor installation
+2022-03-15 02:28:34.138 | SUCCESS  | __main__:_checkout:210 - X22: Made bittensor dirs.
+2022-03-15 02:28:34.230 | SUCCESS  | __main__:_checkout:207 - X12: Made connection to droplet
+2022-03-15 02:28:34.257 | SUCCESS  | __main__:_checkout:207 - X16: Made connection to droplet
+2022-03-15 02:28:34.307 | SUCCESS  | __main__:_checkout:210 - X17: Made bittensor dirs.
+2022-03-15 02:28:34.331 | SUCCESS  | __main__:_checkout:210 - X4: Made bittensor dirs.
+2022-03-15 02:28:34.338 | SUCCESS  | __main__:_checkout:210 - X1: Made bittensor dirs.
+2022-03-15 02:28:34.394 | SUCCESS  | __main__:_checkout:207 - X19: Made connection to droplet
+2022-03-15 02:28:34.444 | SUCCESS  | __main__:_checkout:210 - X28: Made bittensor dirs.
+2022-03-15 02:28:34.447 | SUCCESS  | __main__:_checkout:210 - X2: Made bittensor dirs.
+2022-03-15 02:28:34.457 | SUCCESS  | __main__:_checkout:213 - X20: Remove previous bittensor installation
+2022-03-15 02:28:34.460 | SUCCESS  | __main__:_checkout:210 - X26: Made bittensor dirs.
+2022-03-15 02:28:34.464 | SUCCESS  | __main__:_checkout:213 - X0: Remove previous bittensor installation
+2022-03-15 02:28:34.465 | SUCCESS  | __main__:_checkout:207 - X10: Made connection to droplet
+2022-03-15 02:28:34.478 | SUCCESS  | __main__:_checkout:213 - X29: Remove previous bittensor installation
+2022-03-15 02:28:34.548 | SUCCESS  | __main__:_checkout:210 - X5: Made bittensor dirs.
+2022-03-15 02:28:34.635 | SUCCESS  | __main__:_checkout:207 - X7: Made connection to droplet
+2022-03-15 02:28:34.657 | SUCCESS  | __main__:_checkout:213 - X24: Remove previous bittensor installation
+2022-03-15 02:28:34.710 | SUCCESS  | __main__:_checkout:210 - X18: Made bittensor dirs.
+2022-03-15 02:28:34.742 | SUCCESS  | __main__:_checkout:207 - X13: Made connection to droplet
+2022-03-15 02:28:34.748 | SUCCESS  | __main__:_checkout:213 - X22: Remove previous bittensor installation
+2022-03-15 02:28:34.797 | SUCCESS  | __main__:_checkout:210 - X12: Made bittensor dirs.
+2022-03-15 02:28:34.869 | SUCCESS  | __main__:_checkout:210 - X25: Made bittensor dirs.
+2022-03-15 02:28:34.873 | SUCCESS  | __main__:_checkout:213 - X23: Remove previous bittensor installation
+2022-03-15 02:28:34.933 | SUCCESS  | __main__:_checkout:210 - X19: Made bittensor dirs.
+2022-03-15 02:28:34.973 | SUCCESS  | __main__:_checkout:213 - X17: Remove previous bittensor installation
+2022-03-15 02:28:35.006 | SUCCESS  | __main__:_checkout:213 - X4: Remove previous bittensor installation
+2022-03-15 02:28:35.019 | SUCCESS  | __main__:_checkout:210 - X10: Made bittensor dirs.
+2022-03-15 02:28:35.022 | SUCCESS  | __main__:_checkout:210 - X16: Made bittensor dirs.
+2022-03-15 02:28:35.057 | SUCCESS  | __main__:_checkout:213 - X28: Remove previous bittensor installation
+2022-03-15 02:28:35.067 | SUCCESS  | __main__:_checkout:210 - X7: Made bittensor dirs.
+2022-03-15 02:28:35.069 | SUCCESS  | __main__:_checkout:213 - X1: Remove previous bittensor installation
+2022-03-15 02:28:35.083 | SUCCESS  | __main__:_checkout:213 - X8: Remove previous bittensor installation
+2022-03-15 02:28:35.094 | SUCCESS  | __main__:_checkout:213 - X26: Remove previous bittensor installation
+2022-03-15 02:28:35.119 | SUCCESS  | __main__:_checkout:213 - X2: Remove previous bittensor installation
+2022-03-15 02:28:35.229 | SUCCESS  | __main__:_checkout:207 - X11: Made connection to droplet
+2022-03-15 02:28:35.294 | SUCCESS  | __main__:_checkout:210 - X13: Made bittensor dirs.
+2022-03-15 02:28:35.310 | SUCCESS  | __main__:_checkout:207 - X9: Made connection to droplet
+2022-03-15 02:28:35.350 | SUCCESS  | __main__:_checkout:213 - X5: Remove previous bittensor installation
+2022-03-15 02:28:35.543 | SUCCESS  | __main__:_checkout:213 - X12: Remove previous bittensor installation
+2022-03-15 02:28:35.690 | SUCCESS  | __main__:_checkout:213 - X25: Remove previous bittensor installation
+2022-03-15 02:28:35.694 | SUCCESS  | __main__:_checkout:213 - X18: Remove previous bittensor installation
+2022-03-15 02:28:35.705 | SUCCESS  | __main__:_checkout:213 - X19: Remove previous bittensor installation
+2022-03-15 02:28:35.751 | SUCCESS  | __main__:_checkout:213 - X7: Remove previous bittensor installation
+2022-03-15 02:28:35.768 | SUCCESS  | __main__:_checkout:210 - X11: Made bittensor dirs.
+2022-03-15 02:28:35.795 | SUCCESS  | __main__:_checkout:210 - X9: Made bittensor dirs.
+2022-03-15 02:28:35.836 | SUCCESS  | __main__:_checkout:213 - X10: Remove previous bittensor installation
+2022-03-15 02:28:36.083 | SUCCESS  | __main__:_checkout:213 - X16: Remove previous bittensor installation
+2022-03-15 02:28:36.338 | SUCCESS  | __main__:_checkout:213 - X13: Remove previous bittensor installation
+2022-03-15 02:28:36.673 | SUCCESS  | __main__:_checkout:213 - X11: Remove previous bittensor installation
+2022-03-15 02:28:36.726 | SUCCESS  | __main__:_checkout:213 - X9: Remove previous bittensor installation
+/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 9 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+2022-03-15 02:29:03.908 | SUCCESS  | __main__:monit:543 - X0: Begin Monit
+2022-03-15 02:29:04.363 | SUCCESS  | __main__:monit:546 - X0: Made connection
+2022-03-15 02:29:06.172 | SUCCESS  | __main__:monit:548 - X0: Got hotkey: 5Givrvqb7Z6sBgtAMzh6ZwTR1bi9THbC3didLjNkkZN8q7UL
+2022-03-15 02:29:06.562 | SUCCESS  | __main__:monit:550 - X0: Got coldkey: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:29:09.402 | SUCCESS  | __main__:monit:552 - X0: Got neuron: namespace(version=204, ip=2412159792, port=8091, ip_type=4, uid=1552, modality=0, hotkey='5Givrvqb7Z6sBgtAMzh6ZwTR1bi9THbC3didLjNkkZN8q7UL', coldkey='5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR', active=1, last_update=948713, priority=32, stake=6.30156989, rank=0.0006989780248535324, trust=0.21330017661114647, consensus=0.05380927891092804, incentive=0.0005121269320545554, dividends=0.0002560634705999142, emission=0.025606347, bonds=[], weights=[(1552, 4294967295)], is_null=False)
+2022-03-15 02:29:10.588 | SUCCESS  | __main__:monit:569 - X0: Done Monit
+2022-03-15 02:29:11.595 | SUCCESS  | __main__:monit:543 - X9: Begin Monit
+2022-03-15 02:29:11.938 | SUCCESS  | __main__:monit:546 - X9: Made connection
+2022-03-15 02:29:14.849 | SUCCESS  | __main__:monit:548 - X9: Got hotkey: 5HU4iopditxU9p3bSUS1aq5qc9x7SAhup8bWh27UuhgE7Wcz
+2022-03-15 02:29:15.269 | SUCCESS  | __main__:monit:550 - X9: Got coldkey: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:29:18.341 | SUCCESS  | __main__:monit:552 - X9: Got neuron: namespace(version=0, ip=0, port=0, ip_type=0, uid=229, modality=0, hotkey='5HU4iopditxU9p3bSUS1aq5qc9x7SAhup8bWh27UuhgE7Wcz', coldkey='5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR', active=1, last_update=945975, priority=702, stake=0.716880924, rank=0.0008418584312943049, trust=0.26785028720464993, consensus=0.08935815820472949, incentive=0.001024307129521711, dividends=0.0005121535739066042, emission=0.051215357, bonds=[], weights=[(229, 4294967295)], is_null=False)
+2022-03-15 02:29:23.570 | SUCCESS  | __main__:monit:569 - X9: Done Monit
+2022-03-15 02:29:24.576 | SUCCESS  | __main__:monit:543 - X23: Begin Monit
+2022-03-15 02:29:24.909 | SUCCESS  | __main__:monit:546 - X23: Made connection
+2022-03-15 02:29:27.017 | SUCCESS  | __main__:monit:548 - X23: Got hotkey: 5Fvnz2UyExQ2c7Yqf44wAASw7Bt88oDHSFPsGyTugK8sirtz
+2022-03-15 02:29:27.524 | SUCCESS  | __main__:monit:550 - X23: Got coldkey: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:29:30.475 | SUCCESS  | __main__:monit:552 - X23: Got neuron: namespace(version=204, ip=2415179823, port=8091, ip_type=4, uid=262, modality=0, hotkey='5Fvnz2UyExQ2c7Yqf44wAASw7Bt88oDHSFPsGyTugK8sirtz', coldkey='5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR', active=1, last_update=948727, priority=32, stake=5.118978493, rank=0.0005987628220069338, trust=0.22499702239540353, consensus=0.0600849685567786, incentive=0.0004898663251809741, dividends=0.0002449331669643648, emission=0.024493316, bonds=[], weights=[(262, 4294967295)], is_null=False)
+2022-03-15 02:29:31.743 | SUCCESS  | __main__:monit:569 - X23: Done Monit
+2022-03-15 02:29:32.748 | SUCCESS  | __main__:monit:543 - X21: Begin Monit
+2022-03-15 02:29:33.095 | SUCCESS  | __main__:monit:546 - X21: Made connection
+2022-03-15 02:29:35.928 | SUCCESS  | __main__:monit:548 - X21: Got hotkey: 5FCpJNCGNMuktg2uiPDMLxL9T8iee4q1RKp2eP9kq6FhvNd5
+2022-03-15 02:29:37.045 | SUCCESS  | __main__:monit:550 - X21: Got coldkey: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:29:39.591 | SUCCESS  | __main__:monit:552 - X21: Got neuron: namespace(version=0, ip=0, port=0, ip_type=0, uid=1798, modality=0, hotkey='5FCpJNCGNMuktg2uiPDMLxL9T8iee4q1RKp2eP9kq6FhvNd5', coldkey='5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR', active=1, last_update=946369, priority=634, stake=0.627754245, rank=0.0004449764299033372, trust=0.2207067304534821, consensus=0.05770727665803511, incentive=0.0003496427341920293, dividends=0.00017482137021787564, emission=0.017482137, bonds=[], weights=[(1798, 4294967295)], is_null=False)
+2022-03-15 02:29:40.935 | SUCCESS  | __main__:monit:569 - X21: Done Monit
+2022-03-15 02:29:41.941 | SUCCESS  | __main__:monit:543 - X14: Begin Monit
+2022-03-15 02:29:42.275 | SUCCESS  | __main__:monit:546 - X14: Made connection
+2022-03-15 02:29:44.259 | SUCCESS  | __main__:monit:548 - X14: Got hotkey: 5CJU6sLUSp3TQhu7j1hrknkiAPhHiV1Rdz7VDkNz5SJ9gdLn
+2022-03-15 02:29:44.771 | SUCCESS  | __main__:monit:550 - X14: Got coldkey: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:29:47.309 | SUCCESS  | __main__:monit:552 - X14: Got neuron: namespace(version=204, ip=2310559434, port=8091, ip_type=4, uid=1420, modality=0, hotkey='5CJU6sLUSp3TQhu7j1hrknkiAPhHiV1Rdz7VDkNz5SJ9gdLn', coldkey='5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR', active=1, last_update=948603, priority=64, stake=5.368976006, rank=0.0006402918331304731, trust=0.25838483438958215, consensus=0.08194931492558626, incentive=0.0007144637698893117, dividends=0.00035723189132390076, emission=0.035723189, bonds=[], weights=[(1420, 4294967295)], is_null=False)
+2022-03-15 02:29:48.162 | SUCCESS  | __main__:monit:569 - X14: Done Monit
+2022-03-15 02:29:49.168 | SUCCESS  | __main__:monit:543 - X13: Begin Monit
+2022-03-15 02:29:49.511 | SUCCESS  | __main__:monit:546 - X13: Made connection
+2022-03-15 02:29:52.635 | SUCCESS  | __main__:monit:548 - X13: Got hotkey: 5Dr2PQjGn19SjN4Y5iGLBYYn4BDy9f6SPc9ec4saAEC1VHh7
+2022-03-15 02:29:53.192 | SUCCESS  | __main__:monit:550 - X13: Got coldkey: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:29:56.292 | SUCCESS  | __main__:monit:552 - X13: Got neuron: namespace(version=0, ip=0, port=0, ip_type=0, uid=1248, modality=0, hotkey='5Dr2PQjGn19SjN4Y5iGLBYYn4BDy9f6SPc9ec4saAEC1VHh7', coldkey='5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR', active=1, last_update=945750, priority=805, stake=1.370694444, rank=0.0006875988438593914, trust=0.215488657894886, consensus=0.05493446105024128, incentive=0.0005143241617113954, dividends=0.0002571620854479526, emission=0.025716208, bonds=[], weights=[(1248, 4294967295)], is_null=False)
+2022-03-15 02:30:01.118 | SUCCESS  | __main__:monit:569 - X13: Done Monit
+2022-03-15 02:30:02.123 | SUCCESS  | __main__:monit:543 - X15: Begin Monit
+2022-03-15 02:30:02.476 | SUCCESS  | __main__:monit:546 - X15: Made connection
+2022-03-15 02:30:04.376 | SUCCESS  | __main__:monit:548 - X15: Got hotkey: 5HEmqBYtW6pwCPEHuPHgBDKRgZEPHcYoZsaNSTXPTyM8S7Ba
+2022-03-15 02:30:04.868 | SUCCESS  | __main__:monit:550 - X15: Got coldkey: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:30:07.296 | SUCCESS  | __main__:monit:552 - X15: Got neuron: namespace(version=204, ip=2310561386, port=8091, ip_type=4, uid=706, modality=0, hotkey='5HEmqBYtW6pwCPEHuPHgBDKRgZEPHcYoZsaNSTXPTyM8S7Ba', coldkey='5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR', active=1, last_update=948807, priority=0, stake=3.712637112, rank=0.00039645935479480735, trust=0.13710880465408687, consensus=0.02585863224239598, incentive=0.00013959219637772004, dividends=6.979609943523918e-05, emission=0.006979609, bonds=[], weights=[(706, 4294967295)], is_null=False)
+2022-03-15 02:30:08.395 | SUCCESS  | __main__:monit:569 - X15: Done Monit
+2022-03-15 02:30:09.401 | SUCCESS  | __main__:monit:543 - X5: Begin Monit
+2022-03-15 02:30:09.744 | SUCCESS  | __main__:monit:546 - X5: Made connection
+2022-03-15 02:30:12.577 | SUCCESS  | __main__:monit:548 - X5: Got hotkey: 5DLwQzio7xw7WqQkN6aFcK7ScAGyjgA4W4daZu2Wuv6X79CE
+2022-03-15 02:30:12.989 | SUCCESS  | __main__:monit:550 - X5: Got coldkey: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:30:15.562 | SUCCESS  | __main__:monit:552 - X5: Got neuron: namespace(version=204, ip=2310555333, port=8091, ip_type=4, uid=1060, modality=0, hotkey='5DLwQzio7xw7WqQkN6aFcK7ScAGyjgA4W4daZu2Wuv6X79CE', coldkey='5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR', active=1, last_update=948714, priority=32, stake=4.870324135, rank=0.0007509587033237045, trust=0.35252065769989704, consensus=0.18621513035567805, incentive=0.0019040920570282491, dividends=0.0009520460455152242, emission=0.095204604, bonds=[], weights=[(1060, 4294967295)], is_null=False)
+2022-03-15 02:30:18.062 | SUCCESS  | __main__:monit:569 - X5: Done Monit
+2022-03-15 02:30:19.067 | SUCCESS  | __main__:monit:543 - X28: Begin Monit
+2022-03-15 02:30:19.418 | SUCCESS  | __main__:monit:546 - X28: Made connection
+2022-03-15 02:30:22.365 | SUCCESS  | __main__:monit:548 - X28: Got hotkey: 5ChpTDNejUnzNjAVvJeVy5Erc357PHEuUUpaZEeDvPkkW8WB
+2022-03-15 02:30:22.917 | SUCCESS  | __main__:monit:550 - X28: Got coldkey: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:30:25.274 | SUCCESS  | __main__:monit:552 - X28: Got neuron: namespace(version=0, ip=0, port=0, ip_type=0, uid=1610, modality=0, hotkey='5ChpTDNejUnzNjAVvJeVy5Erc357PHEuUUpaZEeDvPkkW8WB', coldkey='5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR', active=1, last_update=946575, priority=513, stake=0.084253083, rank=0.00043331192937334724, trust=0.20631469569794478, consensus=0.05036156449536445, incentive=0.0002971370311357463, dividends=0.0001485685182209256, emission=0.014856851, bonds=[], weights=[(1610, 4294967295)], is_null=False)
+2022-03-15 02:30:27.533 | SUCCESS  | __main__:monit:569 - X28: Done Monit
+2022-03-15 02:30:28.538 | SUCCESS  | __main__:monit:543 - X18: Begin Monit
+2022-03-15 02:30:28.881 | SUCCESS  | __main__:monit:546 - X18: Made connection
+2022-03-15 02:30:31.387 | SUCCESS  | __main__:monit:548 - X18: Got hotkey: 5F9Ju3p8rb8RDP4eGRKVmTBQXpg3G8F5bJw2aZEqoA8p4dXV
+2022-03-15 02:30:31.900 | SUCCESS  | __main__:monit:550 - X18: Got coldkey: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:30:34.484 | SUCCESS  | __main__:monit:552 - X18: Got neuron: namespace(version=0, ip=0, port=0, ip_type=0, uid=1981, modality=0, hotkey='5F9Ju3p8rb8RDP4eGRKVmTBQXpg3G8F5bJw2aZEqoA8p4dXV', coldkey='5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR', active=1, last_update=945585, priority=787, stake=0.200222867, rank=0.00028144362840212817, trust=0.11162979643211209, consensus=0.020159739533924026, incentive=7.725618507888071e-05, dividends=3.8628093229238914e-05, emission=0.003862809, bonds=[], weights=[(1981, 4294967295)], is_null=False)
+2022-03-15 02:30:37.053 | SUCCESS  | __main__:monit:569 - X18: Done Monit
+2022-03-15 02:30:38.060 | SUCCESS  | __main__:monit:543 - X25: Begin Monit
+2022-03-15 02:30:38.705 | SUCCESS  | __main__:monit:546 - X25: Made connection
+2022-03-15 02:30:41.990 | SUCCESS  | __main__:monit:548 - X25: Got hotkey: 5EtPxyaqoumFMNRAAVY1QUZdkd7gcVAuoFPGLWBzspx2zPdc
+2022-03-15 02:30:42.751 | SUCCESS  | __main__:monit:550 - X25: Got coldkey: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:30:46.150 | SUCCESS  | __main__:monit:552 - X25: Got neuron: namespace(version=204, ip=2310559704, port=8091, ip_type=4, uid=547, modality=0, hotkey='5EtPxyaqoumFMNRAAVY1QUZdkd7gcVAuoFPGLWBzspx2zPdc', coldkey='5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR', active=1, last_update=948647, priority=56, stake=0.370928366, rank=0.00041636607431915954, trust=0.1571248896326861, consensus=0.0314089044261827, incentive=0.00017806765721200076, dividends=8.903383019591605e-05, emission=0.008903383, bonds=[], weights=[(547, 4294967295)], is_null=False)
+2022-03-15 02:30:48.639 | SUCCESS  | __main__:monit:569 - X25: Done Monit
+2022-03-15 02:30:49.646 | SUCCESS  | __main__:monit:543 - X10: Begin Monit
+2022-03-15 02:30:50.005 | SUCCESS  | __main__:monit:546 - X10: Made connection
+2022-03-15 02:30:53.179 | SUCCESS  | __main__:monit:548 - X10: Got hotkey: 5CA8dZVWWJBg8mJGeF9nz6XBR2B8EmPt2Uo7ccjw4KqAvL69
+2022-03-15 02:30:53.721 | SUCCESS  | __main__:monit:550 - X10: Got coldkey: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:30:56.540 | SUCCESS  | __main__:monit:552 - X10: Got neuron: namespace(version=0, ip=0, port=0, ip_type=0, uid=240, modality=0, hotkey='5CA8dZVWWJBg8mJGeF9nz6XBR2B8EmPt2Uo7ccjw4KqAvL69', coldkey='5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR', active=1, last_update=945855, priority=745, stake=0.437585639, rank=0.0003403829451638503, trust=0.1327973008026241, consensus=0.024794484807014947, incentive=0.00011491581498639206, dividends=5.7457908519246775e-05, emission=0.00574579, bonds=[], weights=[(240, 4294967295)], is_null=False)
+2022-03-15 02:31:00.205 | SUCCESS  | __main__:monit:569 - X10: Done Monit
+2022-03-15 02:31:01.211 | SUCCESS  | __main__:monit:543 - X3: Begin Monit
+2022-03-15 02:31:01.986 | SUCCESS  | __main__:monit:546 - X3: Made connection
+2022-03-15 02:31:03.950 | SUCCESS  | __main__:monit:548 - X3: Got hotkey: 5GNuREMZ2JJRNUjRoYGvT1UiTXCTTr8tWK29pA9BxsTm26xZ
+2022-03-15 02:31:04.409 | SUCCESS  | __main__:monit:550 - X3: Got coldkey: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:09.353 | SUCCESS  | __main__:monit:552 - X3: Got neuron: namespace(version=204, ip=2412165205, port=8091, ip_type=4, uid=567, modality=0, hotkey='5GNuREMZ2JJRNUjRoYGvT1UiTXCTTr8tWK29pA9BxsTm26xZ', coldkey='5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR', active=1, last_update=948800, priority=0, stake=4.971739136, rank=0.0005951471973792001, trust=0.24633003390519387, consensus=0.07332511109376716, incentive=0.0005942019099907896, dividends=0.0002971009603008555, emission=0.029710096, bonds=[], weights=[(567, 4294967295)], is_null=False)
+2022-03-15 02:31:10.450 | SUCCESS  | __main__:monit:569 - X3: Done Monit
+2022-03-15 02:31:11.457 | SUCCESS  | __main__:monit:543 - X24: Begin Monit
+2022-03-15 02:31:12.248 | SUCCESS  | __main__:monit:546 - X24: Made connection
+2022-03-15 02:31:16.258 | SUCCESS  | __main__:monit:548 - X24: Got hotkey: 5F9pTyfbKJbRSqBe8ck7Phkr7EkWCuAUZFUL2teuNdLWPNjH
+2022-03-15 02:31:16.907 | SUCCESS  | __main__:monit:550 - X24: Got coldkey: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:21.723 | SUCCESS  | __main__:monit:552 - X24: Got neuron: namespace(version=204, ip=2478239100, port=8091, ip_type=4, uid=256, modality=0, hotkey='5F9pTyfbKJbRSqBe8ck7Phkr7EkWCuAUZFUL2teuNdLWPNjH', coldkey='5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR', active=1, last_update=948736, priority=33, stake=8.755690944, rank=0.0006747966062413983, trust=0.23948174759068122, consensus=0.06880562576596036, incentive=0.0006321989347493859, dividends=0.0003160994730194183, emission=0.031609947, bonds=[], weights=[(256, 4294967295)], is_null=False)
+2022-03-15 02:31:23.529 | SUCCESS  | __main__:monit:569 - X24: Done Monit
+2022-03-15 02:31:24.535 | SUCCESS  | __main__:monit:543 - X26: Begin Monit
+2022-03-15 02:31:24.975 | SUCCESS  | __main__:monit:546 - X26: Made connection
+2022-03-15 02:31:28.162 | SUCCESS  | __main__:monit:548 - X26: Got hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:28.799 | SUCCESS  | __main__:monit:550 - X26: Got coldkey: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:41.295 | SUCCESS  | __main__:monit:552 - X26: Got neuron: namespace(active=0, stake=0, rank=0, trust=0, consensus=0, incentive=0, dividends=0, emission=0, weights=[], bonds=[], version=0, modality=0, uid=0, port=0, priority=0, ip_type=0, last_update=0, ip=0, is_null=True, coldkey='000000000000000000000000000000000000000000000000', hotkey='000000000000000000000000000000000000000000000000')
+2022-03-15 02:31:41.297 | SUCCESS  | __main__:monit:556 - X26: Not registered
+2022-03-15 02:31:48.357 | SUCCESS  | __main__:_do_register:425 - X19: Registering 
+2022-03-15 02:31:48.358 | SUCCESS  | __main__:_do_register:425 - X17: Registering 
+2022-03-15 02:31:48.359 | SUCCESS  | __main__:_do_register:425 - X14: Registering 
+2022-03-15 02:31:48.361 | SUCCESS  | __main__:_do_register:425 - X11: Registering 
+2022-03-15 02:31:48.362 | SUCCESS  | __main__:_do_register:425 - X18: Registering 
+2022-03-15 02:31:48.363 | SUCCESS  | __main__:_do_register:425 - X13: Registering 
+2022-03-15 02:31:48.365 | SUCCESS  | __main__:_do_register:425 - X15: Registering 
+2022-03-15 02:31:48.369 | SUCCESS  | __main__:_do_register:425 - X12: Registering 
+2022-03-15 02:31:48.373 | SUCCESS  | __main__:_do_register:425 - X10: Registering 
+2022-03-15 02:31:48.376 | SUCCESS  | __main__:_do_register:425 - X16: Registering 
+2022-03-15 02:31:48.379 | SUCCESS  | __main__:_do_register:425 - X23: Registering 
+2022-03-15 02:31:48.382 | SUCCESS  | __main__:_do_register:425 - X29: Registering 
+2022-03-15 02:31:48.386 | SUCCESS  | __main__:_do_register:425 - X24: Registering 
+2022-03-15 02:31:48.390 | SUCCESS  | __main__:_do_register:425 - X26: Registering 
+2022-03-15 02:31:48.394 | SUCCESS  | __main__:_do_register:425 - X22: Registering 
+2022-03-15 02:31:48.398 | SUCCESS  | __main__:_do_register:425 - X28: Registering 
+2022-03-15 02:31:48.403 | SUCCESS  | __main__:_do_register:425 - X25: Registering 
+2022-03-15 02:31:48.407 | SUCCESS  | __main__:_do_register:425 - X20: Registering 
+2022-03-15 02:31:48.410 | SUCCESS  | __main__:_do_register:425 - X27: Registering 
+2022-03-15 02:31:48.420 | SUCCESS  | __main__:_do_register:425 - X21: Registering 
+2022-03-15 02:31:48.425 | SUCCESS  | __main__:_do_register:425 - X5: Registering 
+2022-03-15 02:31:48.427 | SUCCESS  | __main__:_do_register:425 - X8: Registering 
+2022-03-15 02:31:48.432 | SUCCESS  | __main__:_do_register:425 - X1: Registering 
+2022-03-15 02:31:48.433 | SUCCESS  | __main__:_do_register:425 - X0: Registering 
+2022-03-15 02:31:48.438 | SUCCESS  | __main__:_do_register:425 - X7: Registering 
+2022-03-15 02:31:48.442 | SUCCESS  | __main__:_do_register:425 - X2: Registering 
+2022-03-15 02:31:48.453 | SUCCESS  | __main__:_do_register:425 - X9: Registering 
+2022-03-15 02:31:48.458 | SUCCESS  | __main__:_do_register:425 - X4: Registering 
+2022-03-15 02:31:48.463 | SUCCESS  | __main__:_do_register:425 - X3: Registering 
+2022-03-15 02:31:48.466 | SUCCESS  | __main__:_do_register:425 - X6: Registering 
+  0%|          | 0/30 [00:00<?, ?it/s]  0%|          | 0/30 [00:00<?, ?it/s]
+2022-03-15 02:31:50.443 | SUCCESS  | __main__:_do_register:428 - X3: Made connection to droplet
+2022-03-15 02:31:50.447 | SUCCESS  | __main__:_do_register:432 - X3: Found hotkey: X3
+2022-03-15 02:31:50.448 | SUCCESS  | __main__:_do_register:435 - X3: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:50.535 | SUCCESS  | __main__:_do_register:428 - X0: Made connection to droplet
+2022-03-15 02:31:50.536 | SUCCESS  | __main__:_do_register:432 - X0: Found hotkey: X0
+2022-03-15 02:31:50.537 | SUCCESS  | __main__:_do_register:435 - X0: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:50.650 | SUCCESS  | __main__:_do_register:428 - X27: Made connection to droplet
+2022-03-15 02:31:50.651 | SUCCESS  | __main__:_do_register:432 - X27: Found hotkey: X27
+2022-03-15 02:31:50.652 | SUCCESS  | __main__:_do_register:435 - X27: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:50.871 | SUCCESS  | __main__:_do_register:428 - X21: Made connection to droplet
+2022-03-15 02:31:50.872 | SUCCESS  | __main__:_do_register:432 - X21: Found hotkey: X21
+2022-03-15 02:31:50.873 | SUCCESS  | __main__:_do_register:435 - X21: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:50.883 | SUCCESS  | __main__:_do_register:428 - X29: Made connection to droplet
+2022-03-15 02:31:50.884 | SUCCESS  | __main__:_do_register:432 - X29: Found hotkey: X29
+2022-03-15 02:31:50.885 | SUCCESS  | __main__:_do_register:435 - X29: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:50.901 | SUCCESS  | __main__:_do_register:428 - X14: Made connection to droplet
+2022-03-15 02:31:50.902 | SUCCESS  | __main__:_do_register:432 - X14: Found hotkey: X14
+2022-03-15 02:31:50.902 | SUCCESS  | __main__:_do_register:435 - X14: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.026 | SUCCESS  | __main__:_do_register:438 - X3: Created wallet directories
+2022-03-15 02:31:51.062 | SUCCESS  | __main__:_do_register:438 - X0: Created wallet directories
+2022-03-15 02:31:51.267 | SUCCESS  | __main__:_do_register:428 - X1: Made connection to droplet
+2022-03-15 02:31:51.268 | SUCCESS  | __main__:_do_register:432 - X1: Found hotkey: X1
+2022-03-15 02:31:51.269 | SUCCESS  | __main__:_do_register:435 - X1: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.389 | SUCCESS  | __main__:_do_register:438 - X27: Created wallet directories
+2022-03-15 02:31:51.392 | SUCCESS  | __main__:_do_register:428 - X7: Made connection to droplet
+2022-03-15 02:31:51.393 | SUCCESS  | __main__:_do_register:432 - X7: Found hotkey: X7
+2022-03-15 02:31:51.394 | SUCCESS  | __main__:_do_register:435 - X7: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.398 | SUCCESS  | __main__:_do_register:428 - X4: Made connection to droplet
+2022-03-15 02:31:51.398 | SUCCESS  | __main__:_do_register:432 - X4: Found hotkey: X4
+2022-03-15 02:31:51.399 | SUCCESS  | __main__:_do_register:435 - X4: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.455 | SUCCESS  | __main__:_do_register:428 - X23: Made connection to droplet
+2022-03-15 02:31:51.456 | SUCCESS  | __main__:_do_register:432 - X23: Found hotkey: X23
+2022-03-15 02:31:51.457 | SUCCESS  | __main__:_do_register:435 - X23: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.503 | SUCCESS  | __main__:_do_register:428 - X9: Made connection to droplet
+2022-03-15 02:31:51.504 | SUCCESS  | __main__:_do_register:432 - X9: Found hotkey: X9
+2022-03-15 02:31:51.506 | SUCCESS  | __main__:_do_register:435 - X9: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.514 | SUCCESS  | __main__:_do_register:428 - X15: Made connection to droplet
+2022-03-15 02:31:51.515 | SUCCESS  | __main__:_do_register:432 - X15: Found hotkey: X15
+2022-03-15 02:31:51.515 | SUCCESS  | __main__:_do_register:435 - X15: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.517 | SUCCESS  | __main__:_do_register:428 - X17: Made connection to droplet
+2022-03-15 02:31:51.518 | SUCCESS  | __main__:_do_register:432 - X17: Found hotkey: X17
+2022-03-15 02:31:51.518 | SUCCESS  | __main__:_do_register:435 - X17: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.530 | SUCCESS  | __main__:_do_register:428 - X2: Made connection to droplet
+2022-03-15 02:31:51.531 | SUCCESS  | __main__:_do_register:432 - X2: Found hotkey: X2
+2022-03-15 02:31:51.531 | SUCCESS  | __main__:_do_register:435 - X2: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.536 | SUCCESS  | __main__:_do_register:428 - X19: Made connection to droplet
+2022-03-15 02:31:51.537 | SUCCESS  | __main__:_do_register:432 - X19: Found hotkey: X19
+2022-03-15 02:31:51.537 | SUCCESS  | __main__:_do_register:435 - X19: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.565 | SUCCESS  | __main__:_do_register:428 - X22: Made connection to droplet
+2022-03-15 02:31:51.566 | SUCCESS  | __main__:_do_register:432 - X22: Found hotkey: X22
+2022-03-15 02:31:51.566 | SUCCESS  | __main__:_do_register:435 - X22: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.569 | SUCCESS  | __main__:_do_register:438 - X21: Created wallet directories
+2022-03-15 02:31:51.571 | SUCCESS  | __main__:_do_register:438 - X29: Created wallet directories
+2022-03-15 02:31:51.596 | SUCCESS  | __main__:_do_register:428 - X20: Made connection to droplet
+2022-03-15 02:31:51.597 | SUCCESS  | __main__:_do_register:432 - X20: Found hotkey: X20
+2022-03-15 02:31:51.598 | SUCCESS  | __main__:_do_register:435 - X20: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.629 | SUCCESS  | __main__:_do_register:438 - X14: Created wallet directories
+2022-03-15 02:31:51.665 | SUCCESS  | __main__:_do_register:428 - X26: Made connection to droplet
+2022-03-15 02:31:51.666 | SUCCESS  | __main__:_do_register:432 - X26: Found hotkey: X26
+2022-03-15 02:31:51.667 | SUCCESS  | __main__:_do_register:435 - X26: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.683 | SUCCESS  | __main__:_do_register:441 - X3: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:51.711 | SUCCESS  | __main__:_do_register:428 - X25: Made connection to droplet
+2022-03-15 02:31:51.712 | SUCCESS  | __main__:_do_register:432 - X25: Found hotkey: X25
+2022-03-15 02:31:51.712 | SUCCESS  | __main__:_do_register:435 - X25: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.719 | SUCCESS  | __main__:_do_register:441 - X0: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:51.811 | SUCCESS  | __main__:_do_register:428 - X16: Made connection to droplet
+2022-03-15 02:31:51.812 | SUCCESS  | __main__:_do_register:428 - X12: Made connection to droplet
+2022-03-15 02:31:51.813 | SUCCESS  | __main__:_do_register:432 - X12: Found hotkey: X12
+2022-03-15 02:31:51.813 | SUCCESS  | __main__:_do_register:432 - X16: Found hotkey: X16
+2022-03-15 02:31:51.814 | SUCCESS  | __main__:_do_register:435 - X12: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.816 | SUCCESS  | __main__:_do_register:435 - X16: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.834 | SUCCESS  | __main__:_do_register:428 - X10: Made connection to droplet
+2022-03-15 02:31:51.835 | SUCCESS  | __main__:_do_register:432 - X10: Found hotkey: X10
+2022-03-15 02:31:51.836 | SUCCESS  | __main__:_do_register:435 - X10: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.867 | SUCCESS  | __main__:_do_register:428 - X5: Made connection to droplet
+2022-03-15 02:31:51.869 | SUCCESS  | __main__:_do_register:432 - X5: Found hotkey: X5
+2022-03-15 02:31:51.869 | SUCCESS  | __main__:_do_register:435 - X5: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.879 | SUCCESS  | __main__:_do_register:428 - X13: Made connection to droplet
+2022-03-15 02:31:51.880 | SUCCESS  | __main__:_do_register:432 - X13: Found hotkey: X13
+2022-03-15 02:31:51.881 | SUCCESS  | __main__:_do_register:435 - X13: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:51.912 | SUCCESS  | __main__:_do_register:438 - X1: Created wallet directories
+2022-03-15 02:31:51.928 | SUCCESS  | __main__:_do_register:428 - X8: Made connection to droplet
+2022-03-15 02:31:51.929 | SUCCESS  | __main__:_do_register:432 - X8: Found hotkey: X8
+2022-03-15 02:31:51.929 | SUCCESS  | __main__:_do_register:435 - X8: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:52.076 | SUCCESS  | __main__:_do_register:438 - X7: Created wallet directories
+2022-03-15 02:31:52.118 | SUCCESS  | __main__:_do_register:438 - X4: Created wallet directories
+2022-03-15 02:31:52.166 | SUCCESS  | __main__:_do_register:428 - X6: Made connection to droplet
+2022-03-15 02:31:52.168 | SUCCESS  | __main__:_do_register:432 - X6: Found hotkey: X6
+2022-03-15 02:31:52.168 | SUCCESS  | __main__:_do_register:435 - X6: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:52.184 | SUCCESS  | __main__:_do_register:428 - X18: Made connection to droplet
+2022-03-15 02:31:52.185 | SUCCESS  | __main__:_do_register:432 - X18: Found hotkey: X18
+2022-03-15 02:31:52.185 | SUCCESS  | __main__:_do_register:435 - X18: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:52.202 | SUCCESS  | __main__:_do_register:438 - X9: Created wallet directories
+2022-03-15 02:31:52.211 | SUCCESS  | __main__:_do_register:438 - X2: Created wallet directories
+2022-03-15 02:31:52.216 | SUCCESS  | __main__:_do_register:441 - X27: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:52.238 | SUCCESS  | __main__:_do_register:438 - X17: Created wallet directories
+2022-03-15 02:31:52.239 | SUCCESS  | __main__:_do_register:428 - X11: Made connection to droplet
+2022-03-15 02:31:52.239 | SUCCESS  | __main__:_do_register:432 - X11: Found hotkey: X11
+2022-03-15 02:31:52.239 | SUCCESS  | __main__:_do_register:435 - X11: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:52.251 | SUCCESS  | __main__:_do_register:438 - X19: Created wallet directories
+2022-03-15 02:31:52.256 | SUCCESS  | __main__:_do_register:444 - X3: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:52.272 | SUCCESS  | __main__:_do_register:438 - X22: Created wallet directories
+2022-03-15 02:31:52.300 | SUCCESS  | __main__:_do_register:428 - X24: Made connection to droplet
+2022-03-15 02:31:52.301 | SUCCESS  | __main__:_do_register:432 - X24: Found hotkey: X24
+2022-03-15 02:31:52.301 | SUCCESS  | __main__:_do_register:435 - X24: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:52.321 | SUCCESS  | __main__:_do_register:441 - X29: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:52.323 | SUCCESS  | __main__:_do_register:438 - X23: Created wallet directories
+2022-03-15 02:31:52.326 | SUCCESS  | __main__:_do_register:428 - X28: Made connection to droplet
+2022-03-15 02:31:52.327 | SUCCESS  | __main__:_do_register:432 - X28: Found hotkey: X28
+2022-03-15 02:31:52.327 | SUCCESS  | __main__:_do_register:435 - X28: Found coldkeypub: /Users/thebes/.bittensor/wallets/x/coldkeypub.txt
+2022-03-15 02:31:52.332 | SUCCESS  | __main__:_do_register:438 - X20: Created wallet directories
+2022-03-15 02:31:52.337 | SUCCESS  | __main__:_do_register:444 - X0: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:52.339 | SUCCESS  | __main__:_do_register:441 - X21: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:52.395 | SUCCESS  | __main__:_do_register:441 - X14: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:52.402 | SUCCESS  | __main__:_do_register:438 - X15: Created wallet directories
+2022-03-15 02:31:52.417 | SUCCESS  | __main__:_do_register:438 - X26: Created wallet directories
+2022-03-15 02:31:52.450 | SUCCESS  | __main__:_do_register:438 - X25: Created wallet directories
+2022-03-15 02:31:52.473 | SUCCESS  | __main__:_do_register:438 - X16: Created wallet directories
+2022-03-15 02:31:52.494 | SUCCESS  | __main__:_do_register:438 - X12: Created wallet directories
+2022-03-15 02:31:52.494 | SUCCESS  | __main__:_do_register:438 - X8: Created wallet directories
+2022-03-15 02:31:52.499 | SUCCESS  | __main__:_do_register:438 - X10: Created wallet directories
+2022-03-15 02:31:52.553 | SUCCESS  | __main__:_do_register:441 - X1: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:52.558 | SUCCESS  | __main__:_do_register:438 - X13: Created wallet directories
+2022-03-15 02:31:52.580 | SUCCESS  | __main__:_do_register:441 - X7: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:52.648 | SUCCESS  | __main__:_do_register:438 - X5: Created wallet directories
+2022-03-15 02:31:52.685 | SUCCESS  | __main__:_do_register:441 - X4: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:52.770 | SUCCESS  | __main__:_do_register:441 - X2: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:52.771 | SUCCESS  | __main__:_do_register:441 - X9: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:52.782 | SUCCESS  | __main__:_do_register:444 - X27: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:52.807 | SUCCESS  | __main__:_do_register:438 - X11: Created wallet directories
+2022-03-15 02:31:52.863 | SUCCESS  | __main__:_do_register:438 - X6: Created wallet directories
+2022-03-15 02:31:52.886 | SUCCESS  | __main__:_do_register:441 - X19: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:52.893 | SUCCESS  | __main__:_do_register:441 - X17: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:52.918 | SUCCESS  | __main__:_do_register:444 - X29: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:52.920 | SUCCESS  | __main__:_do_register:444 - X21: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:52.940 | SUCCESS  | __main__:_do_register:441 - X22: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:52.947 | SUCCESS  | __main__:_do_register:444 - X14: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:52.972 | SUCCESS  | __main__:_do_register:441 - X20: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:53.001 | SUCCESS  | __main__:_do_register:438 - X18: Created wallet directories
+2022-03-15 02:31:53.030 | SUCCESS  | __main__:_do_register:441 - X8: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:53.046 | SUCCESS  | __main__:_do_register:444 - X1: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:53.050 | SUCCESS  | __main__:_do_register:441 - X26: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:53.074 | SUCCESS  | __main__:_do_register:444 - X7: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:53.092 | SUCCESS  | __main__:_do_register:438 - X24: Created wallet directories
+2022-03-15 02:31:53.093 | SUCCESS  | __main__:_do_register:438 - X28: Created wallet directories
+2022-03-15 02:31:53.094 | SUCCESS  | __main__:_do_register:441 - X23: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:53.119 | SUCCESS  | __main__:_do_register:441 - X25: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:53.125 | SUCCESS  | __main__:_do_register:441 - X10: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:53.126 | SUCCESS  | __main__:_do_register:441 - X12: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:53.138 | SUCCESS  | __main__:_do_register:441 - X16: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:53.155 | SUCCESS  | __main__:_do_register:447 - X3: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:53.165 | SUCCESS  | __main__:_do_register:444 - X4: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:53.211 | SUCCESS  | __main__:_do_register:441 - X13: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:53.220 | SUCCESS  | __main__:_do_register:447 - X0: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:53.236 | SUCCESS  | __main__:_do_register:444 - X2: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:53.246 | SUCCESS  | __main__:_do_register:441 - X15: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:53.360 | SUCCESS  | __main__:_do_register:444 - X9: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:53.435 | SUCCESS  | __main__:_do_register:441 - X5: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:53.465 | SUCCESS  | __main__:_do_register:444 - X17: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:53.467 | SUCCESS  | __main__:_do_register:441 - X11: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:53.501 | SUCCESS  | __main__:_do_register:444 - X19: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:53.527 | SUCCESS  | __main__:_do_register:444 - X22: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:53.529 | SUCCESS  | __main__:_do_register:444 - X20: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:53.557 | SUCCESS  | __main__:_do_register:444 - X8: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:53.643 | SUCCESS  | __main__:_do_register:444 - X26: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:53.653 | SUCCESS  | __main__:_do_register:441 - X6: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:53.709 | SUCCESS  | __main__:_do_register:444 - X10: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:53.731 | SUCCESS  | __main__:_do_register:444 - X12: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:53.761 | SUCCESS  | __main__:_do_register:444 - X16: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:53.768 | SUCCESS  | __main__:_do_register:444 - X25: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:53.814 | SUCCESS  | __main__:_do_register:444 - X23: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:53.834 | SUCCESS  | __main__:_do_register:444 - X13: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:53.911 | SUCCESS  | __main__:_do_register:441 - X18: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:53.931 | SUCCESS  | __main__:_do_register:447 - X27: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:53.961 | SUCCESS  | __main__:_do_register:441 - X24: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:53.972 | SUCCESS  | __main__:_do_register:441 - X28: Copied hotkey to dir: /root/.bittensor/wallets/fast/hotkeys/fast
+2022-03-15 02:31:54.008 | SUCCESS  | __main__:_do_register:447 - X1: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.018 | SUCCESS  | __main__:_do_register:444 - X15: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:54.027 | SUCCESS  | __main__:_do_register:447 - X14: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.029 | SUCCESS  | __main__:_do_register:450 - X3: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:54.030 | SUCCESS  | __main__:_do_register:447 - X29: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.050 | SUCCESS  | __main__:_do_register:447 - X21: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.054 | SUCCESS  | __main__:_do_register:447 - X7: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.083 | SUCCESS  | __main__:_do_register:450 - X0: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:54.107 | SUCCESS  | __main__:_do_register:444 - X11: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:54.133 | SUCCESS  | __main__:_do_register:447 - X2: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.139 | SUCCESS  | __main__:_do_register:444 - X5: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:54.173 | SUCCESS  | __main__:_do_register:447 - X4: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.350 | SUCCESS  | __main__:_do_register:444 - X6: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:54.397 | SUCCESS  | __main__:_do_register:447 - X9: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.526 | SUCCESS  | __main__:_do_register:447 - X8: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.596 | SUCCESS  | __main__:_do_register:447 - X17: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.659 | SUCCESS  | __main__:_do_register:447 - X19: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.676 | SUCCESS  | __main__:_do_register:447 - X20: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.681 | SUCCESS  | __main__:_do_register:444 - X18: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:54.683 | SUCCESS  | __main__:_do_register:447 - X22: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.778 | SUCCESS  | __main__:_do_register:447 - X26: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.786 | SUCCESS  | __main__:_do_register:447 - X10: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.790 | SUCCESS  | __main__:_do_register:444 - X28: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:54.799 | SUCCESS  | __main__:_do_register:444 - X24: Copied coldkey to dir: /root/.bittensor/wallets/fast/coldkeypub.txt
+2022-03-15 02:31:54.864 | SUCCESS  | __main__:_do_register:447 - X12: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.925 | SUCCESS  | __main__:_do_register:447 - X16: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.928 | SUCCESS  | __main__:_do_register:447 - X25: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:54.934 | SUCCESS  | __main__:_do_register:450 - X1: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:54.967 | SUCCESS  | __main__:_do_register:450 - X7: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:54.982 | SUCCESS  | __main__:_do_register:447 - X13: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:55.019 | SUCCESS  | __main__:_do_register:450 - X2: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:55.042 | SUCCESS  | __main__:_do_register:450 - X27: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:55.121 | SUCCESS  | __main__:_do_register:450 - X29: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:55.124 | SUCCESS  | __main__:_do_register:450 - X21: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:55.142 | SUCCESS  | __main__:_do_register:450 - X14: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:55.199 | SUCCESS  | __main__:_do_register:450 - X4: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:55.238 | SUCCESS  | __main__:_do_register:447 - X11: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:55.292 | SUCCESS  | __main__:_do_register:450 - X9: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:55.373 | SUCCESS  | __main__:_do_register:447 - X23: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:55.528 | SUCCESS  | __main__:_do_register:450 - X8: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:55.540 | SUCCESS  | __main__:_do_register:447 - X5: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:55.546 | SUCCESS  | __main__:_do_register:447 - X15: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:55.756 | SUCCESS  | __main__:_do_register:450 - X17: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:55.768 | SUCCESS  | __main__:_do_register:447 - X6: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:55.824 | SUCCESS  | __main__:_do_register:450 - X19: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:55.853 | SUCCESS  | __main__:_do_register:450 - X20: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:55.855 | SUCCESS  | __main__:_do_register:450 - X22: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:55.971 | SUCCESS  | __main__:_do_register:450 - X26: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:55.988 | SUCCESS  | __main__:_do_register:450 - X10: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:56.131 | SUCCESS  | __main__:_do_register:450 - X12: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:56.213 | SUCCESS  | __main__:_do_register:450 - X25: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:56.215 | SUCCESS  | __main__:_do_register:450 - X16: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:56.217 | SUCCESS  | __main__:_do_register:450 - X13: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:56.358 | SUCCESS  | __main__:_do_register:447 - X18: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:56.447 | SUCCESS  | __main__:_do_register:447 - X28: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:56.456 | SUCCESS  | __main__:_do_register:447 - X24: Could retrieve hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+2022-03-15 02:31:56.529 | SUCCESS  | __main__:_do_register:450 - X11: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:56.970 | SUCCESS  | __main__:_do_register:450 - X5: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:57.012 | SUCCESS  | __main__:_do_register:450 - X23: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:57.186 | SUCCESS  | __main__:_do_register:450 - X15: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:57.296 | SUCCESS  | __main__:_do_register:450 - X6: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:57.848 | SUCCESS  | __main__:_do_register:457 - X0: Killed previsou registration.
+2022-03-15 02:31:57.933 | SUCCESS  | __main__:_do_register:450 - X18: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:58.050 | SUCCESS  | __main__:_do_register:457 - X3: Killed previsou registration.
+2022-03-15 02:31:58.183 | SUCCESS  | __main__:_do_register:450 - X28: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:31:58.196 | SUCCESS  | __main__:_do_register:450 - X24: Could retrieve coldkeypub: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+2022-03-15 02:31:59.062 | SUCCESS  | __main__:_do_register:457 - X2: Killed previsou registration.
+2022-03-15 02:31:59.161 | SUCCESS  | __main__:_do_register:457 - X7: Killed previsou registration.
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+2022-03-15 02:31:59.568 | SUCCESS  | __main__:_do_register:457 - X1: Killed previsou registration.
+2022-03-15 02:31:59.573 | SUCCESS  | __main__:_do_register:457 - X8: Killed previsou registration.
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+2022-03-15 02:31:59.703 | SUCCESS  | __main__:_do_register:457 - X9: Killed previsou registration.
+2022-03-15 02:31:59.896 | SUCCESS  | __main__:_do_register:457 - X21: Killed previsou registration.
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+2022-03-15 02:32:00.120 | SUCCESS  | __main__:_do_register:457 - X14: Killed previsou registration.
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:00.442 | SUCCESS  | __main__:_do_register:457 - X4: Killed previsou registration.
+2022-03-15 02:32:00.450 | SUCCESS  | __main__:_do_register:457 - X29: Killed previsou registration.
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+2022-03-15 02:32:00.465 | SUCCESS  | __main__:_do_register:457 - X27: Killed previsou registration.
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+./fast_register.sh: line 9: kill: (57412) - No such process
+./fast_register.sh: line 9: kill: (57414) - No such process
+./fast_register.sh: line 9: kill: (57415) - No such process
+./fast_register.sh: line 9: kill: (57416) - No such process
+./fast_register.sh: line 9: kill: (57417) - No such process
+./fast_register.sh: line 9: kill: (57418) - No such process
+2022-03-15 02:32:00.664 | SUCCESS  | __main__:_do_register:461 - X7: Registration successful
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+./fast_register.sh: line 9: kill: (61211) - No such process
+./fast_register.sh: line 9: kill: (61213) - No such process
+./fast_register.sh: line 9: kill: (61214) - No such process
+./fast_register.sh: line 9: kill: (61215) - No such process
+./fast_register.sh: line 9: kill: (61216) - No such process
+./fast_register.sh: line 9: kill: (61217) - No such process
+2022-03-15 02:32:00.791 | SUCCESS  | __main__:_do_register:457 - X10: Killed previsou registration.
+2022-03-15 02:32:00.794 | SUCCESS  | __main__:_do_register:461 - X2: Registration successful
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:00.906 | SUCCESS  | __main__:_do_register:457 - X22: Killed previsou registration.
+./fast_register.sh: line 9: kill: (59234) - No such process
+./fast_register.sh: line 9: kill: (59237) - No such process
+./fast_register.sh: line 9: kill: (59238) - No such process
+./fast_register.sh: line 9: kill: (59239) - No such process
+./fast_register.sh: line 9: kill: (59240) - No such process
+./fast_register.sh: line 9: kill: (59241) - No such process
+2022-03-15 02:32:00.934 | SUCCESS  | __main__:_do_register:461 - X1: Registration successful
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:01.149 | SUCCESS  | __main__:_do_register:457 - X17: Killed previsou registration.
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+./fast_register.sh: line 9: kill: (58607) - No such process
+./fast_register.sh: line 9: kill: (58611) - No such process
+./fast_register.sh: line 9: kill: (58612) - No such process
+./fast_register.sh: line 9: kill: (58613) - No such process
+./fast_register.sh: line 9: kill: (58614) - No such process
+./fast_register.sh: line 9: kill: (58615) - No such process
+2022-03-15 02:32:01.225 | SUCCESS  | __main__:_do_register:461 - X14: Registration successful
+2022-03-15 02:32:01.229 | SUCCESS  | __main__:_do_register:470 - X7: Killed fast finalregister
+2022-03-15 02:32:01.230 | SUCCESS  | __main__:_do_register:472 - X7: DONE Registering 
+2022-03-15 02:32:01.351 | SUCCESS  | __main__:_do_register:457 - X25: Killed previsou registration.
+2022-03-15 02:32:01.356 | SUCCESS  | __main__:_do_register:457 - X16: Killed previsou registration.
+2022-03-15 02:32:01.366 | SUCCESS  | __main__:_do_register:457 - X13: Killed previsou registration.
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:01.386 | SUCCESS  | __main__:_do_register:470 - X2: Killed fast finalregister
+2022-03-15 02:32:01.387 | SUCCESS  | __main__:_do_register:472 - X2: DONE Registering 
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:01.467 | SUCCESS  | __main__:_do_register:457 - X20: Killed previsou registration.
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:01.485 | SUCCESS  | __main__:_do_register:457 - X19: Killed previsou registration.
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:01.507 | SUCCESS  | __main__:_do_register:470 - X1: Killed fast finalregister
+2022-03-15 02:32:01.507 | SUCCESS  | __main__:_do_register:472 - X1: DONE Registering 
+2022-03-15 02:32:01.543 | SUCCESS  | __main__:_do_register:457 - X11: Killed previsou registration.
+2022-03-15 02:32:01.558 | SUCCESS  | __main__:_do_register:457 - X26: Killed previsou registration.
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:01.686 | SUCCESS  | __main__:_do_register:457 - X12: Killed previsou registration.
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+./fast_register.sh: line 9: kill: (47672) - No such process
+./fast_register.sh: line 9: kill: (47674) - No such process
+./fast_register.sh: line 9: kill: (47675) - No such process
+./fast_register.sh: line 9: kill: (47676) - No such process
+./fast_register.sh: line 9: kill: (47677) - No such process
+./fast_register.sh: line 9: kill: (47678) - No such process
+2022-03-15 02:32:01.775 | SUCCESS  | __main__:_do_register:470 - X14: Killed fast finalregister
+2022-03-15 02:32:01.775 | SUCCESS  | __main__:_do_register:472 - X14: DONE Registering 
+2022-03-15 02:32:01.787 | SUCCESS  | __main__:_do_register:461 - X27: Registration successful
+./fast_register.sh: line 9: kill: (58005) - No such process
+./fast_register.sh: line 9: kill: (58007) - No such process
+./fast_register.sh: line 9: kill: (58008) - No such process
+./fast_register.sh: line 9: kill: (58009) - No such process
+./fast_register.sh: line 9: kill: (58010) - No such process
+./fast_register.sh: line 9: kill: (58011) - No such process
+2022-03-15 02:32:01.816 | SUCCESS  | __main__:_do_register:461 - X8: Registration successful
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+./fast_register.sh: line 9: kill: (57801) - No such process
+./fast_register.sh: line 9: kill: (57803) - No such process
+./fast_register.sh: line 9: kill: (57804) - No such process
+./fast_register.sh: line 9: kill: (57805) - No such process
+./fast_register.sh: line 9: kill: (57806) - No such process
+./fast_register.sh: line 9: kill: (57807) - No such process
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+2022-03-15 02:32:02.015 | SUCCESS  | __main__:_do_register:461 - X9: Registration successful
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+./fast_register.sh: line 9: kill: (58262) - No such process
+./fast_register.sh: line 9: kill: (58264) - No such process
+./fast_register.sh: line 9: kill: (58265) - No such process
+./fast_register.sh: line 9: kill: (58266) - No such process
+./fast_register.sh: line 9: kill: (58267) - No such process
+./fast_register.sh: line 9: kill: (58268) - No such process
+2022-03-15 02:32:02.179 | SUCCESS  | __main__:_do_register:461 - X4: Registration successful
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+./fast_register.sh: line 9: kill: (50826) - No such process
+./fast_register.sh: line 9: kill: (50828) - No such process
+./fast_register.sh: line 9: kill: (50829) - No such process
+./fast_register.sh: line 9: kill: (50830) - No such process
+./fast_register.sh: line 9: kill: (50831) - No such process
+./fast_register.sh: line 9: kill: (50832) - No such process
+2022-03-15 02:32:02.293 | SUCCESS  | __main__:_do_register:461 - X22: Registration successful
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:02.348 | SUCCESS  | __main__:_do_register:470 - X8: Killed fast finalregister
+2022-03-15 02:32:02.350 | SUCCESS  | __main__:_do_register:472 - X8: DONE Registering 
+2022-03-15 02:32:02.371 | SUCCESS  | __main__:_do_register:470 - X27: Killed fast finalregister
+2022-03-15 02:32:02.371 | SUCCESS  | __main__:_do_register:472 - X27: DONE Registering 
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+./fast_register.sh: line 9: kill: (59176) - No such process
+./fast_register.sh: line 9: kill: (59178) - No such process
+./fast_register.sh: line 9: kill: (59179) - No such process
+2022-03-15 02:32:02.580 | SUCCESS  | __main__:_do_register:470 - X9: Killed fast finalregister
+2022-03-15 02:32:02.581 | SUCCESS  | __main__:_do_register:472 - X9: DONE Registering 
+./fast_register.sh: line 9: kill: (59180) - No such process
+./fast_register.sh: line 9: kill: (59181) - No such process
+./fast_register.sh: line 9: kill: (59182) - No such process
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:02.609 | SUCCESS  | __main__:_do_register:461 - X17: Registration successful
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+./fast_register.sh: line 9: kill: (46973) - No such process
+./fast_register.sh: line 9: kill: (46975) - No such process
+./fast_register.sh: line 9: kill: (46976) - No such process
+./fast_register.sh: line 9: kill: (46977) - No such process
+./fast_register.sh: line 9: kill: (46978) - No such process
+./fast_register.sh: line 9: kill: (46979) - No such process
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:02.796 | SUCCESS  | __main__:_do_register:461 - X20: Registration successful
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:02.822 | SUCCESS  | __main__:_do_register:470 - X4: Killed fast finalregister
+2022-03-15 02:32:02.823 | SUCCESS  | __main__:_do_register:472 - X4: DONE Registering 
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+./fast_register.sh: line 9: kill: (48973) - No such process
+./fast_register.sh: line 9: kill: (48977) - No such process
+./fast_register.sh: line 9: kill: (48978) - No such process
+./fast_register.sh: line 9: kill: (48979) - No such process
+./fast_register.sh: line 9: kill: (48980) - No such process
+./fast_register.sh: line 9: kill: (48981) - No such process
+2022-03-15 02:32:02.904 | SUCCESS  | __main__:_do_register:461 - X26: Registration successful
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+./fast_register.sh: line 9: kill: (47373) - No such process
+./fast_register.sh: line 9: kill: (47375) - No such process
+./fast_register.sh: line 9: kill: (47376) - No such process
+./fast_register.sh: line 9: kill: (47377) - No such process
+./fast_register.sh: line 9: kill: (47378) - No such process
+./fast_register.sh: line 9: kill: (47379) - No such process
+./fast_register.sh: line 9: kill: (60700) - No such process
+./fast_register.sh: line 9: kill: (60704) - No such process
+./fast_register.sh: line 9: kill: (60705) - No such process
+./fast_register.sh: line 9: kill: (60706) - No such process
+./fast_register.sh: line 9: kill: (60707) - No such process
+./fast_register.sh: line 9: kill: (60708) - No such process
+2022-03-15 02:32:02.955 | SUCCESS  | __main__:_do_register:461 - X25: Registration successful
+2022-03-15 02:32:02.958 | SUCCESS  | __main__:_do_register:461 - X10: Registration successful
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+./fast_register.sh: line 9: kill: (61666) - No such process
+./fast_register.sh: line 9: kill: (61668) - No such process
+./fast_register.sh: line 9: kill: (61669) - No such process
+./fast_register.sh: line 9: kill: (61670) - No such process
+./fast_register.sh: line 9: kill: (61671) - No such process
+./fast_register.sh: line 9: kill: (61672) - No such process
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+./fast_register.sh: line 9: kill: (58486) - No such process
+./fast_register.sh: line 9: kill: (58488) - No such process
+./fast_register.sh: line 9: kill: (58489) - No such process
+2022-03-15 02:32:03.083 | SUCCESS  | __main__:_do_register:461 - X19: Registration successful
+./fast_register.sh: line 9: kill: (58490) - No such process
+./fast_register.sh: line 9: kill: (58491) - No such process
+./fast_register.sh: line 9: kill: (58492) - No such process
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:03.089 | SUCCESS  | __main__:_do_register:461 - X16: Registration successful
+2022-03-15 02:32:03.091 | SUCCESS  | __main__:_do_register:470 - X22: Killed fast finalregister
+2022-03-15 02:32:03.091 | SUCCESS  | __main__:_do_register:472 - X22: DONE Registering 
+2022-03-15 02:32:03.125 | SUCCESS  | __main__:_do_register:457 - X5: Killed previsou registration.
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+./fast_register.sh: line 9: kill: (58386) - No such process
+./fast_register.sh: line 9: kill: (58388) - No such process
+./fast_register.sh: line 9: kill: (58389) - No such process
+./fast_register.sh: line 9: kill: (58390) - No such process
+./fast_register.sh: line 9: kill: (58391) - No such process
+./fast_register.sh: line 9: kill: (58392) - No such process
+2022-03-15 02:32:03.194 | SUCCESS  | __main__:_do_register:461 - X12: Registration successful
+./fast_register.sh: line 9: kill: (65270) - No such process
+./fast_register.sh: line 9: kill: (65272) - No such process
+./fast_register.sh: line 9: kill: (65273) - No such process
+./fast_register.sh: line 9: kill: (65274) - No such process
+./fast_register.sh: line 9: kill: (65275) - No such process
+./fast_register.sh: line 9: kill: (65276) - No such process
+2022-03-15 02:32:03.306 | SUCCESS  | __main__:_do_register:461 - X13: Registration successful
+--- Logging error in Loguru Handler #1 ---
+Record was: {'elapsed': datetime.timedelta(seconds=181, microseconds=702911), 'exception': (type=<class 'invoke.exceptions.CommandTimedOut'>, value=<CommandTimedOut: cmd='./fast_register.sh ~/.bittensor/bittensor/bin/btcli fast fast 5' timeout=5>, traceback=<traceback object at 0x134252d80>), 'extra': {}, 'file': (name='marius', path='/Users/thebes/Work/marius/marius'), 'function': '_do_register', 'level': (name='ERROR', no=40, icon='❌'), 'line': 464, 'message': "Command did not complete within 5 seconds!\n\nCommand: './fast_register.sh ~/.bittensor/bittensor/bin/btcli fast fast 5'\n\nStdout: already printed\n\nStderr: already printed\n\n", 'module': 'marius', 'name': '__main__', 'process': (id=34541, name='MainProcess'), 'thread': (id=11073925120, name='ThreadPoolExecutor-0_23'), 'time': datetime(2022, 3, 15, 2, 32, 3, 337394, tzinfo=datetime.timezone(datetime.timedelta(days=-1, seconds=68400), '-05'))}
+Traceback (most recent call last):
+  File "/Users/thebes/Work/marius/marius", line 460, in _do_register
+    if utils.run_registration_tools( config, connection ).failed: logger.error('<blue>{}</blue>: Failed to run registration.', name); return
+  File "/Users/thebes/Work/marius/utils.py", line 427, in run_registration_tools
+    run_registration_result = connection.run(run_registration, warn=True, hide=False, timeout = config.timeout )
+  File "<decorator-gen-3>", line 2, in run
+  File "/opt/homebrew/lib/python3.9/site-packages/fabric/connection.py", line 30, in opens
+    return method(self, *args, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/fabric/connection.py", line 723, in run
+    return self._run(self._remote_runner(), command, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/context.py", line 102, in _run
+    return runner.run(command, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/runners.py", line 380, in run
+    return self._run_body(command, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/runners.py", line 442, in _run_body
+    return self.make_promise() if self._asynchronous else self._finish()
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/runners.py", line 507, in _finish
+    raise CommandTimedOut(result, timeout=timeout)
+invoke.exceptions.CommandTimedOut: Command did not complete within 5 seconds!
+
+Command: './fast_register.sh ~/.bittensor/bittensor/bin/btcli fast fast 5'
+
+Stdout: already printed
+
+Stderr: already printed
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.9/site-packages/loguru/_handler.py", line 175, in emit
+    self._queue.put(str_record)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 372, in put
+    obj = _ForkingPickler.dumps(obj)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+  File "/opt/homebrew/lib/python3.9/site-packages/loguru/_recattrs.py", line 68, in __reduce__
+    pickled_value = pickle.dumps(self.value)
+TypeError: cannot pickle '_cffi_backend.FFI' object
+--- End of logging error ---
+2022-03-15 02:32:03.479 | SUCCESS  | __main__:_do_register:470 - X20: Killed fast finalregister
+2022-03-15 02:32:03.479 | SUCCESS  | __main__:_do_register:472 - X20: DONE Registering 
+--- Logging error in Loguru Handler #1 ---
+Record was: {'elapsed': datetime.timedelta(seconds=181, microseconds=856861), 'exception': (type=<class 'invoke.exceptions.CommandTimedOut'>, value=<CommandTimedOut: cmd='./fast_register.sh ~/.bittensor/bittensor/bin/btcli fast fast 5' timeout=5>, traceback=<traceback object at 0x136a1ea80>), 'extra': {}, 'file': (name='marius', path='/Users/thebes/Work/marius/marius'), 'function': '_do_register', 'level': (name='ERROR', no=40, icon='❌'), 'line': 464, 'message': "Command did not complete within 5 seconds!\n\nCommand: './fast_register.sh ~/.bittensor/bittensor/bin/btcli fast fast 5'\n\nStdout: already printed\n\nStderr: already printed\n\n", 'module': 'marius', 'name': '__main__', 'process': (id=34541, name='MainProcess'), 'thread': (id=11158056960, name='ThreadPoolExecutor-0_28'), 'time': datetime(2022, 3, 15, 2, 32, 3, 491344, tzinfo=datetime.timezone(datetime.timedelta(days=-1, seconds=68400), '-05'))}
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/Users/thebes/Work/marius/marius", line 460, in _do_register
+    if utils.run_registration_tools( config, connection ).failed: logger.error('<blue>{}</blue>: Failed to run registration.', name); return
+  File "/Users/thebes/Work/marius/utils.py", line 427, in run_registration_tools
+    run_registration_result = connection.run(run_registration, warn=True, hide=False, timeout = config.timeout )
+  File "<decorator-gen-3>", line 2, in run
+  File "/opt/homebrew/lib/python3.9/site-packages/fabric/connection.py", line 30, in opens
+    return method(self, *args, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/fabric/connection.py", line 723, in run
+    return self._run(self._remote_runner(), command, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/context.py", line 102, in _run
+    return runner.run(command, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/runners.py", line 380, in run
+    return self._run_body(command, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/runners.py", line 442, in _run_body
+    return self.make_promise() if self._asynchronous else self._finish()
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/runners.py", line 507, in _finish
+    raise CommandTimedOut(result, timeout=timeout)
+invoke.exceptions.CommandTimedOut: Command did not complete within 5 seconds!
+
+Command: './fast_register.sh ~/.bittensor/bittensor/bin/btcli fast fast 5'
+
+Stdout: already printed
+
+Stderr: already printed
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.9/site-packages/loguru/_handler.py", line 175, in emit
+    self._queue.put(str_record)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 372, in put
+    obj = _ForkingPickler.dumps(obj)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+  File "/opt/homebrew/lib/python3.9/site-packages/loguru/_recattrs.py", line 68, in __reduce__
+    pickled_value = pickle.dumps(self.value)
+TypeError: cannot pickle '_cffi_backend.FFI' object
+--- End of logging error ---
+./fast_register.sh: line 9: kill: (58698) - No such process
+./fast_register.sh: line 9: kill: (58700) - No such process
+./fast_register.sh: line 9: kill: (58701) - No such process
+./fast_register.sh: line 9: kill: (58702) - No such process
+./fast_register.sh: line 9: kill: (58703) - No such process
+./fast_register.sh: line 9: kill: (58704) - No such process
+2022-03-15 02:32:03.638 | SUCCESS  | __main__:_do_register:470 - X26: Killed fast finalregister
+2022-03-15 02:32:03.638 | SUCCESS  | __main__:_do_register:472 - X26: DONE Registering 
+2022-03-15 02:32:03.646 | SUCCESS  | __main__:_do_register:461 - X11: Registration successful
+2022-03-15 02:32:03.685 | SUCCESS  | __main__:_do_register:470 - X25: Killed fast finalregister
+2022-03-15 02:32:03.685 | SUCCESS  | __main__:_do_register:472 - X25: DONE Registering 
+2022-03-15 02:32:03.686 | SUCCESS  | __main__:_do_register:470 - X10: Killed fast finalregister
+2022-03-15 02:32:03.686 | SUCCESS  | __main__:_do_register:472 - X10: DONE Registering 
+2022-03-15 02:32:03.781 | SUCCESS  | __main__:_do_register:470 - X19: Killed fast finalregister
+2022-03-15 02:32:03.782 | SUCCESS  | __main__:_do_register:472 - X19: DONE Registering 
+2022-03-15 02:32:03.784 | SUCCESS  | __main__:_do_register:470 - X16: Killed fast finalregister
+2022-03-15 02:32:03.784 | SUCCESS  | __main__:_do_register:472 - X16: DONE Registering 
+2022-03-15 02:32:03.809 | SUCCESS  | __main__:_do_register:470 - X17: Killed fast finalregister
+2022-03-15 02:32:03.810 | SUCCESS  | __main__:_do_register:472 - X17: DONE Registering 
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+2022-03-15 02:32:03.997 | SUCCESS  | __main__:_do_register:470 - X12: Killed fast finalregister
+2022-03-15 02:32:03.998 | SUCCESS  | __main__:_do_register:472 - X12: DONE Registering 
+2022-03-15 02:32:04.041 | SUCCESS  | __main__:_do_register:470 - X13: Killed fast finalregister
+2022-03-15 02:32:04.042 | SUCCESS  | __main__:_do_register:472 - X13: DONE Registering 
+2022-03-15 02:32:04.073 | SUCCESS  | __main__:_do_register:470 - X0: Killed fast finalregister
+2022-03-15 02:32:04.073 | SUCCESS  | __main__:_do_register:472 - X0: DONE Registering 
+2022-03-15 02:32:04.211 | SUCCESS  | __main__:_do_register:470 - X3: Killed fast finalregister
+2022-03-15 02:32:04.212 | SUCCESS  | __main__:_do_register:472 - X3: DONE Registering 
+2022-03-15 02:32:04.216 | SUCCESS  | __main__:_do_register:457 - X23: Killed previsou registration.
+2022-03-15 02:32:04.465 | SUCCESS  | __main__:_do_register:457 - X15: Killed previsou registration.
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:04.689 | SUCCESS  | __main__:_do_register:470 - X11: Killed fast finalregister
+2022-03-15 02:32:04.690 | SUCCESS  | __main__:_do_register:472 - X11: DONE Registering 
+./fast_register.sh: line 9: kill: (57020) - No such process
+./fast_register.sh: line 9: kill: (57022) - No such process
+./fast_register.sh: line 9: kill: (57023) - No such process
+./fast_register.sh: line 9: kill: (57024) - No such process
+./fast_register.sh: line 9: kill: (57025) - No such process
+./fast_register.sh: line 9: kill: (57026) - No such process
+2022-03-15 02:32:04.724 | SUCCESS  | __main__:_do_register:461 - X5: Registration successful
+2022-03-15 02:32:04.832 | SUCCESS  | __main__:_do_register:457 - X6: Killed previsou registration.
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+2022-03-15 02:32:05.298 | SUCCESS  | __main__:_do_register:457 - X18: Killed previsou registration.
+✅ Already Registered:
+  uid: 1310
+  hotkey: 5F9ESuPDfgGEmXibxZeV8cKf9yjeTvz2uHTnmk9DDKK6kJh1
+  coldkey: 5GeqgkyD8eXYsX8jaqiH4mxvgC8JuDYYomoRm1ikRobkQPuR
+2022-03-15 02:32:05.405 | SUCCESS  | __main__:_do_register:457 - X24: Killed previsou registration.
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:05.434 | SUCCESS  | __main__:_do_register:457 - X28: Killed previsou registration.
+2022-03-15 02:32:05.460 | SUCCESS  | __main__:_do_register:470 - X5: Killed fast finalregister
+2022-03-15 02:32:05.460 | SUCCESS  | __main__:_do_register:472 - X5: DONE Registering 
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+--- Logging error in Loguru Handler #1 ---
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Record was: {'elapsed': datetime.timedelta(seconds=183, microseconds=831157), 'exception': (type=<class 'invoke.exceptions.CommandTimedOut'>, value=<CommandTimedOut: cmd='./fast_register.sh ~/.bittensor/bittensor/bin/btcli fast fast 5' timeout=5>, traceback=<traceback object at 0x13533ca00>), 'extra': {}, 'file': (name='marius', path='/Users/thebes/Work/marius/marius'), 'function': '_do_register', 'level': (name='ERROR', no=40, icon='❌'), 'line': 464, 'message': "Command did not complete within 5 seconds!\n\nCommand: './fast_register.sh ~/.bittensor/bittensor/bin/btcli fast fast 5'\n\nStdout: already printed\n\nStderr: already printed\n\n", 'module': 'marius', 'name': '__main__', 'process': (id=34541, name='MainProcess'), 'thread': (id=11006619648, name='ThreadPoolExecutor-0_19'), 'time': datetime(2022, 3, 15, 2, 32, 5, 465640, tzinfo=datetime.timezone(datetime.timedelta(days=-1, seconds=68400), '-05'))}
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/Users/thebes/Work/marius/marius", line 460, in _do_register
+    if utils.run_registration_tools( config, connection ).failed: logger.error('<blue>{}</blue>: Failed to run registration.', name); return
+  File "/Users/thebes/Work/marius/utils.py", line 427, in run_registration_tools
+    run_registration_result = connection.run(run_registration, warn=True, hide=False, timeout = config.timeout )
+  File "<decorator-gen-3>", line 2, in run
+  File "/opt/homebrew/lib/python3.9/site-packages/fabric/connection.py", line 30, in opens
+    return method(self, *args, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/fabric/connection.py", line 723, in run
+    return self._run(self._remote_runner(), command, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/context.py", line 102, in _run
+    return runner.run(command, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/runners.py", line 380, in run
+    return self._run_body(command, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/runners.py", line 442, in _run_body
+    return self.make_promise() if self._asynchronous else self._finish()
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/runners.py", line 507, in _finish
+    raise CommandTimedOut(result, timeout=timeout)
+invoke.exceptions.CommandTimedOut: Command did not complete within 5 seconds!
+
+Command: './fast_register.sh ~/.bittensor/bittensor/bin/btcli fast fast 5'
+
+Stdout: already printed
+
+Stderr: already printed
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.9/site-packages/loguru/_handler.py", line 175, in emit
+    self._queue.put(str_record)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 372, in put
+    obj = _ForkingPickler.dumps(obj)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+  File "/opt/homebrew/lib/python3.9/site-packages/loguru/_recattrs.py", line 68, in __reduce__
+    pickled_value = pickle.dumps(self.value)
+TypeError: cannot pickle '_cffi_backend.FFI' object
+--- End of logging error ---
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+./fast_register.sh: line 9: kill: (47939) - No such process
+./fast_register.sh: line 9: kill: (47941) - No such process
+./fast_register.sh: line 9: kill: (47942) - No such process
+./fast_register.sh: line 9: kill: (47943) - No such process
+./fast_register.sh: line 9: kill: (47944) - No such process
+./fast_register.sh: line 9: kill: (47945) - No such process
+2022-03-15 02:32:05.595 | SUCCESS  | __main__:_do_register:461 - X23: Registration successful
+--- Logging error in Loguru Handler #1 ---
+Record was: {'elapsed': datetime.timedelta(seconds=184, microseconds=366894), 'exception': (type=<class 'invoke.exceptions.CommandTimedOut'>, value=<CommandTimedOut: cmd='./fast_register.sh ~/.bittensor/bittensor/bin/btcli fast fast 5' timeout=5>, traceback=<traceback object at 0x13539de40>), 'extra': {}, 'file': (name='marius', path='/Users/thebes/Work/marius/marius'), 'function': '_do_register', 'level': (name='ERROR', no=40, icon='❌'), 'line': 464, 'message': "Command did not complete within 5 seconds!\n\nCommand: './fast_register.sh ~/.bittensor/bittensor/bin/btcli fast fast 5'\n\nStdout: already printed\n\nStderr: already printed\n\n", 'module': 'marius', 'name': '__main__', 'process': (id=34541, name='MainProcess'), 'thread': (id=10872008704, name='ThreadPoolExecutor-0_11'), 'time': datetime(2022, 3, 15, 2, 32, 6, 1377, tzinfo=datetime.timezone(datetime.timedelta(days=-1, seconds=68400), '-05'))}
+Traceback (most recent call last):
+  File "/Users/thebes/Work/marius/marius", line 460, in _do_register
+    if utils.run_registration_tools( config, connection ).failed: logger.error('<blue>{}</blue>: Failed to run registration.', name); return
+  File "/Users/thebes/Work/marius/utils.py", line 427, in run_registration_tools
+    run_registration_result = connection.run(run_registration, warn=True, hide=False, timeout = config.timeout )
+  File "<decorator-gen-3>", line 2, in run
+  File "/opt/homebrew/lib/python3.9/site-packages/fabric/connection.py", line 30, in opens
+    return method(self, *args, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/fabric/connection.py", line 723, in run
+    return self._run(self._remote_runner(), command, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/context.py", line 102, in _run
+    return runner.run(command, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/runners.py", line 380, in run
+    return self._run_body(command, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/runners.py", line 442, in _run_body
+    return self.make_promise() if self._asynchronous else self._finish()
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/runners.py", line 507, in _finish
+    raise CommandTimedOut(result, timeout=timeout)
+invoke.exceptions.CommandTimedOut: Command did not complete within 5 seconds!
+
+Command: './fast_register.sh ~/.bittensor/bittensor/bin/btcli fast fast 5'
+
+Stdout: already printed
+
+Stderr: already printed
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.9/site-packages/loguru/_handler.py", line 175, in emit
+    self._queue.put(str_record)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 372, in put
+    obj = _ForkingPickler.dumps(obj)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+  File "/opt/homebrew/lib/python3.9/site-packages/loguru/_recattrs.py", line 68, in __reduce__
+    pickled_value = pickle.dumps(self.value)
+TypeError: cannot pickle '_cffi_backend.FFI' object
+--- End of logging error ---
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+2022-03-15 02:32:06.127 | SUCCESS  | __main__:_do_register:470 - X21: Killed fast finalregister
+2022-03-15 02:32:06.127 | SUCCESS  | __main__:_do_register:472 - X21: DONE Registering 
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Script: /root/.bittensor/bittensor/bin/btcli
+Coldkey: fast
+Hotkey: fast
+NProcs: 5
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:06.413 | SUCCESS  | __main__:_do_register:470 - X23: Killed fast finalregister
+2022-03-15 02:32:06.414 | SUCCESS  | __main__:_do_register:472 - X23: DONE Registering 
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:06.710 | SUCCESS  | __main__:_do_register:470 - X29: Killed fast finalregister
+2022-03-15 02:32:06.711 | SUCCESS  | __main__:_do_register:472 - X29: DONE Registering 
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+./fast_register.sh: line 9: kill: (57608) - No such process
+./fast_register.sh: line 9: kill: (57610) - No such process
+./fast_register.sh: line 9: kill: (57611) - No such process
+./fast_register.sh: line 9: kill: (57612) - No such process
+./fast_register.sh: line 9: kill: (57613) - No such process
+./fast_register.sh: line 9: kill: (57614) - No such process
+2022-03-15 02:32:06.978 | SUCCESS  | __main__:_do_register:461 - X6: Registration successful
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "check.py", line 3, in <module>
+    import bittensor
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+./fast_register.sh: line 9: kill: (57536) - No such process
+./fast_register.sh: line 9: kill: (57538) - No such process
+./fast_register.sh: line 9: kill: (57539) - No such process
+./fast_register.sh: line 9: kill: (57540) - No such process
+./fast_register.sh: line 9: kill: (57541) - No such process
+./fast_register.sh: line 9: kill: (57542) - No such process
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+Traceback (most recent call last):
+  File "/root/.bittensor/bittensor/bin/btcli", line 3, in <module>
+    import bittensor 
+ModuleNotFoundError: No module named 'bittensor'
+2022-03-15 02:32:07.073 | SUCCESS  | __main__:_do_register:461 - X18: Registration successful
+./fast_register.sh: line 9: kill: (49290) - No such process
+./fast_register.sh: line 9: kill: (49292) - No such process
+./fast_register.sh: line 9: kill: (49293) - No such process
+./fast_register.sh: line 9: kill: (49294) - No such process
+./fast_register.sh: line 9: kill: (49295) - No such process
+./fast_register.sh: line 9: kill: (49296) - No such process
+2022-03-15 02:32:07.150 | SUCCESS  | __main__:_do_register:461 - X28: Registration successful
+./fast_register.sh: line 9: kill: (47760) - No such process
+./fast_register.sh: line 9: kill: (47762) - No such process
+./fast_register.sh: line 9: kill: (47763) - No such process
+./fast_register.sh: line 9: kill: (47764) - No such process
+./fast_register.sh: line 9: kill: (47765) - No such process
+./fast_register.sh: line 9: kill: (47766) - No such process
+2022-03-15 02:32:07.272 | SUCCESS  | __main__:_do_register:461 - X24: Registration successful
+2022-03-15 02:32:07.747 | SUCCESS  | __main__:_do_register:470 - X6: Killed fast finalregister
+2022-03-15 02:32:07.748 | SUCCESS  | __main__:_do_register:472 - X6: DONE Registering 
+2022-03-15 02:32:07.897 | SUCCESS  | __main__:_do_register:470 - X18: Killed fast finalregister
+2022-03-15 02:32:07.898 | SUCCESS  | __main__:_do_register:472 - X18: DONE Registering 
+2022-03-15 02:32:08.003 | SUCCESS  | __main__:_do_register:470 - X28: Killed fast finalregister
+2022-03-15 02:32:08.003 | SUCCESS  | __main__:_do_register:472 - X28: DONE Registering 
+2022-03-15 02:32:08.116 | SUCCESS  | __main__:_do_register:470 - X24: Killed fast finalregister
+2022-03-15 02:32:08.117 | SUCCESS  | __main__:_do_register:472 - X24: DONE Registering 
+--- Logging error in Loguru Handler #1 ---
+Record was: {'elapsed': datetime.timedelta(seconds=188, microseconds=669592), 'exception': (type=<class 'invoke.exceptions.CommandTimedOut'>, value=<CommandTimedOut: cmd='./fast_register.sh ~/.bittensor/bittensor/bin/btcli fast fast 5' timeout=5>, traceback=<traceback object at 0x134fe16c0>), 'extra': {}, 'file': (name='marius', path='/Users/thebes/Work/marius/marius'), 'function': '_do_register', 'level': (name='ERROR', no=40, icon='❌'), 'line': 464, 'message': "Command did not complete within 5 seconds!\n\nCommand: './fast_register.sh ~/.bittensor/bittensor/bin/btcli fast fast 5'\n\nStdout: already printed\n\nStderr: already printed\n\n", 'module': 'marius', 'name': '__main__', 'process': (id=34541, name='MainProcess'), 'thread': (id=10787876864, name='ThreadPoolExecutor-0_6'), 'time': datetime(2022, 3, 15, 2, 32, 10, 304075, tzinfo=datetime.timezone(datetime.timedelta(days=-1, seconds=68400), '-05'))}
+Traceback (most recent call last):
+  File "/Users/thebes/Work/marius/marius", line 460, in _do_register
+    if utils.run_registration_tools( config, connection ).failed: logger.error('<blue>{}</blue>: Failed to run registration.', name); return
+  File "/Users/thebes/Work/marius/utils.py", line 427, in run_registration_tools
+    run_registration_result = connection.run(run_registration, warn=True, hide=False, timeout = config.timeout )
+  File "<decorator-gen-3>", line 2, in run
+  File "/opt/homebrew/lib/python3.9/site-packages/fabric/connection.py", line 30, in opens
+    return method(self, *args, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/fabric/connection.py", line 723, in run
+    return self._run(self._remote_runner(), command, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/context.py", line 102, in _run
+    return runner.run(command, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/runners.py", line 380, in run
+    return self._run_body(command, **kwargs)
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/runners.py", line 442, in _run_body
+    return self.make_promise() if self._asynchronous else self._finish()
+  File "/opt/homebrew/lib/python3.9/site-packages/invoke/runners.py", line 507, in _finish
+    raise CommandTimedOut(result, timeout=timeout)
+invoke.exceptions.CommandTimedOut: Command did not complete within 5 seconds!
+
+Command: './fast_register.sh ~/.bittensor/bittensor/bin/btcli fast fast 5'
+
+Stdout: already printed
+
+Stderr: already printed
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/homebrew/lib/python3.9/site-packages/loguru/_handler.py", line 175, in emit
+    self._queue.put(str_record)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 372, in put
+    obj = _ForkingPickler.dumps(obj)
+  File "/opt/homebrew/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/reduction.py", line 51, in dumps
+    cls(buf, protocol).dump(obj)
+  File "/opt/homebrew/lib/python3.9/site-packages/loguru/_recattrs.py", line 68, in __reduce__
+    pickled_value = pickle.dumps(self.value)
+TypeError: cannot pickle '_cffi_backend.FFI' object
+--- End of logging error ---
+2022-03-15 02:32:11.226 | SUCCESS  | __main__:_do_register:470 - X15: Killed fast finalregister
+2022-03-15 02:32:11.227 | SUCCESS  | __main__:_do_register:472 - X15: DONE Registering 
+2022-03-15 02:32:12.920 | SUCCESS  | __main__:monit:564 - X26: Not running
+2022-03-15 02:32:14.843 | SUCCESS  | __main__:monit:567 - X26: Started
+2022-03-15 02:32:14.844 | SUCCESS  | __main__:monit:569 - X26: Done Monit
+2022-03-15 02:32:15.848 | SUCCESS  | __main__:monit:543 - X29: Begin Monit
+2022-03-15 02:32:16.223 | SUCCESS  | __main__:monit:546 - X29: Made connection
+Socket exception: Connection reset by peer (54)
+2022-03-15 02:48:55.025 | ERROR    | __main__:monit:575 - Monit error: [Errno 54] Connection reset by peer
+Traceback (most recent call last):
+
+  File "/opt/homebrew/bin/marius", line 7, in <module>
+    exec(compile(f.read(), __file__, 'exec'))
+                 │ │       └ '/Users/thebes/Work/marius/marius'
+                 │ └ <method 'read' of '_io.TextIOWrapper' objects>
+                 └ <_io.TextIOWrapper name='/Users/thebes/Work/marius/marius' mode='r' encoding='UTF-8'>
+  File "/Users/thebes/Work/marius/marius", line 782, in <module>
+    main( config )
+    │     └ 
+    │       cluster: x
+    │       coldkey: x
+    │       command: monit
+    │       config_file: x
+    │       debug: false
+    │       machines:
+    │         X0:
+    │           args:
+    │             neuron:
+    │               model_name:...
+    └ <function main at 0x1322da940>
+  File "/Users/thebes/Work/marius/marius", line 757, in main
+    monit( config )
+    │      └ 
+    │        cluster: x
+    │        coldkey: x
+    │        command: monit
+    │        config_file: x
+    │        debug: false
+    │        machines:
+    │          X0:
+    │            args:
+    │              neuron:
+    │                model_name:...
+    └ <function monit at 0x1322da790>
+> File "/Users/thebes/Work/marius/marius", line 547, in monit
+    hotkey = utils.get_hotkey( config, connection )
+             │     │           │       └ <Connection host=137.184.87.20 user=root>
+             │     │           └ 
+             │     │             cluster: x
+             │     │             coldkey: x
+             │     │             command: monit
+             │     │             config_file: x
+             │     │             debug: false
+             │     │             machines:
+             │     │               X0:
+             │     │                 args:
+             │     │                   neuron:
+             │     │                     model_name:...
+             │     └ <function get_hotkey at 0x1322d88b0>
+             └ <module 'utils' from '/Users/thebes/Work/marius/utils.py'>
+
+  File "/Users/thebes/Work/marius/utils.py", line 306, in get_hotkey
+    cat_hotkey_result = connection.run(cat_hotkey_command, warn=True, hide=not config.debug)
+                        │          │   │                                       └ 
+                        │          │   │                                         cluster: x
+                        │          │   │                                         coldkey: x
+                        │          │   │                                         command: monit
+                        │          │   │                                         config_file: x
+                        │          │   │                                         debug: false
+                        │          │   │                                         machines:
+                        │          │   │                                           X0:
+                        │          │   │                                             args:
+                        │          │   │                                               neuron:
+                        │          │   │                                                 model_name:...
+                        │          │   └ 'cat ~/.bittensor/wallets/default/hotkeys/default'
+                        │          └ <function Connection.run at 0x1322ccc10>
+                        └ <Connection host=137.184.87.20 user=root>
+
+  File "<decorator-gen-3>", line 2, in run
+
+  File "/opt/homebrew/lib/python3.9/site-packages/fabric/connection.py", line 29, in opens
+    self.open()
+    │    └ <function Connection.open at 0x1322cc5e0>
+    └ <Connection host=137.184.87.20 user=root>
+
+  File "/opt/homebrew/lib/python3.9/site-packages/fabric/connection.py", line 636, in open
+    self.client.connect(**kwargs)
+    │    │      │         └ {'pkey': <paramiko.rsakey.RSAKey object at 0x134bdc430>, 'key_filename': ['/Users/thebes/.ssh/master'], 'username': 'root', '...
+    │    │      └ <function SSHClient.connect at 0x132238dc0>
+    │    └ <paramiko.client.SSHClient object at 0x135513970>
+    └ <Connection host=137.184.87.20 user=root>
+
+  File "/opt/homebrew/lib/python3.9/site-packages/paramiko/client.py", line 406, in connect
+    t.start_client(timeout=timeout)
+    │ │                    └ None
+    │ └ <function Transport.start_client at 0x13221fa60>
+    └ <paramiko.Transport at 0x34804700 (unconnected)>
+
+  File "/opt/homebrew/lib/python3.9/site-packages/paramiko/transport.py", line 660, in start_client
+    raise e
+          └ ConnectionResetError(54, 'Connection reset by peer')
+
+  File "/opt/homebrew/lib/python3.9/site-packages/paramiko/transport.py", line 2055, in run
+    ptype, m = self.packetizer.read_message()
+    │          │    │          └ <function Packetizer.read_message at 0x1321ff700>
+    │          │    └ <paramiko.packet.Packetizer object at 0x1355139a0>
+    │          └ <paramiko.Transport at 0x34804700 (unconnected)>
+    └ 20
+
+  File "/opt/homebrew/lib/python3.9/site-packages/paramiko/packet.py", line 459, in read_message
+    header = self.read_all(self.__block_size_in, check_rekey=True)
+             │    │        └ <paramiko.packet.Packetizer object at 0x1355139a0>
+             │    └ <function Packetizer.read_all at 0x1321ff4c0>
+             └ <paramiko.packet.Packetizer object at 0x1355139a0>
+
+  File "/opt/homebrew/lib/python3.9/site-packages/paramiko/packet.py", line 301, in read_all
+    x = self.__socket.recv(n)
+        │                  └ 8
+        └ <paramiko.packet.Packetizer object at 0x1355139a0>
+
+ConnectionResetError: [Errno 54] Connection reset by peer
+  0%|          | 0/30 [00:00<?, ?it/s]Socket exception: Connection reset by peer (54)
+  3%|▎         | 1/30 [59:38<28:49:42, 3578.72s/it]2022-03-15 04:05:21.588 | ERROR    | __main__:get_row:83 - X14: Failed to pull branch error = Timeout opening channel.
+2022-03-15 04:05:21.589 | ERROR    | __main__:get_row:77 - X17: Failed to pull coldkey error = Timeout opening channel.
+2022-03-15 04:05:21.591 | ERROR    | __main__:get_row:83 - X21: Failed to pull branch error = Timeout opening channel.
+2022-03-15 04:05:21.591 | ERROR    | __main__:get_row:83 - X15: Failed to pull branch error = Timeout opening channel.
+2022-03-15 04:05:21.592 | ERROR    | __main__:get_row:89 - X0: Failed to pull install status error = Timeout opening channel.
+Socket exception: Connection reset by peer (54)
+2022-03-15 04:05:22.006 | ERROR    | __main__:get_row:83 - X17: Failed to pull branch error = [Errno 54] Connection reset by peer
+  3%|▎         | 1/30 [1:16:24<36:55:57, 4584.74s/it]
