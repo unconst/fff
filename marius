@@ -463,9 +463,9 @@ def fast_register( config ):
             utils.run_registration_tools( config, connection )
             logger.debug('<blue>{}</blue>: Started fast registration...', name)
 
-            sub = bittensor.subtensor()
             start = time.time()
             while time.time() - start < config.timeout:
+                sub = bittensor.subtensor()
                 wallet_neuron = sub.neuron_for_pubkey( wallet.hotkey.ss58_address )
                 if not wallet_neuron.is_null:
                     utils.kill_fast_register( config, connection )
