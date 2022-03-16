@@ -556,36 +556,38 @@ def monit( config ):
     while True:
         try:
             random.shuffle( droplets )
-            for droplet in droplets:
-                name = droplet.name
-                logger.success('<white>{}</white>: Begin Monit', name)
-                subtensor = bittensor.subtensor()
-                connection = utils.connection_for_machine( config, droplet )
-                logger.debug('<white>{}</white>: Made connection', name)
-                hotkey = utils.get_hotkey( config, connection )
-                logger.debug('<white>{}</white>: Got hotkey: {}', name, hotkey)
-                coldkeypub = utils.get_coldkeypub( config, connection )
-                logger.debug('<white>{}</white>: Got coldkey: {}', name, coldkeypub)
-                neuron = subtensor.neuron_for_pubkey( hotkey )
-                logger.debug('<white>{}</white>: Got neuron: {}', name, neuron)
+            with bittensor.__console__.status(":satellite: Monitoring.") as status:
+                for i,droplet in enumerate(droplets):
+                    status.update( ":satellite: Monitoring. current: {} ({}/{})".format( droplet.name, i, len( droplets )))
+                    name = droplet.name
+                    logger.debug('<white>{}</white>: Begin Monit', name)
+                    subtensor = bittensor.subtensor()
+                    connection = utils.connection_for_machine( config, droplet )
+                    logger.debug('<white>{}</white>: Made connection', name)
+                    hotkey = utils.get_hotkey( config, connection )
+                    logger.debug('<white>{}</white>: Got hotkey: {}', name, hotkey)
+                    coldkeypub = utils.get_coldkeypub( config, connection )
+                    logger.debug('<white>{}</white>: Got coldkey: {}', name, coldkeypub)
+                    neuron = subtensor.neuron_for_pubkey( hotkey )
+                    logger.debug('<white>{}</white>: Got neuron: {}', name, neuron)
 
-                if neuron.is_null:
-                    import multiprocessing
-                    logger.debug('<white>{}</white>: Not registered', name)
-                    utils.stop_script( config, connection )
-                    config.wallet.name = config.machines[droplet.name].coldkey
-                    config.wallet.hotkey = name
-                    config.timeout = 5
-                    fast_register( config )
+                    if neuron.is_null:
+                        import multiprocessing
+                        logger.debug('<white>{}</white>: Not registered', name)
+                        utils.stop_script( config, connection )
+                        config.wallet.name = config.machines[droplet.name].coldkey
+                        config.wallet.hotkey = name
+                        config.timeout = 5
+                        fast_register( config )
 
-                if neuron.active == 0 or not not utils.is_script_running( config, connection ):
-                    utils.stop_script( config, connection )
-                    command = config.machines[name].command
-                    utils.start_command( config, connection, name, command)
-                    logger.debug('<white>{}</white>: Started', name)
-                
-                logger.debug('<white>{}</white>: Done Monit', name)
-                time.sleep(1)
+                    if neuron.active == 0 or not not utils.is_script_running( config, connection ):
+                        utils.stop_script( config, connection )
+                        command = config.machines[name].command
+                        utils.start_command( config, connection, name, command)
+                        logger.debug('<white>{}</white>: Started', name)
+                    
+                    logger.debug('<white>{}</white>: Done Monit', name)
+                    time.sleep(1)
 
         except KeyboardInterrupt:
             break
