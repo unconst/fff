@@ -436,8 +436,8 @@ def run_registration_tools_default( config, connection ):
     return run_registration_result
 
 def kill_fast_register( config, connection ):
-    kill_registration = "pkill -f fast_register && pkill -f register"
-    kill_registration_result = connection.run(kill_registration, warn=True, hide=False )
+    kill_registration_result = connection.run('pkill -f fast_register', warn=True, hide=False )
+    kill_registration_result = connection.run('pkill -f register', warn=True, hide=False )
     logger.debug(kill_registration_result)
     return kill_registration_result
 
