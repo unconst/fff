@@ -383,6 +383,36 @@ def register_remote( config ):
 
     logger.success('<blue>!!</blue>: All Registered ')
 
+def clean( config ):
+    logger.success('Cleaning droplets ')
+
+    def _do_clean( droplet ):
+        try:
+            name = droplet.name
+            logger.success('<blue>{}</blue>: Cleaning ', name)
+            connection = utils.connection_for_machine( config, droplet )
+            if not utils.can_connect( config, connection ): logger.error('<blue>{}</blue>: Failed to make connection to droplet', name); return
+            else: logger.success('<blue>{}</blue>: Made connection to droplet', name)
+            if utils.stop_script( config, connection ).failed: pass
+            else: logger.success('<blue>{}</blue>: Stopped miner.', name)
+            if not utils.clear_cache( config, connection ): logger.error('<blue>{}</blue>: Failed to clear cache', name); return
+            else: logger.success('<blue>{}</blue>: Cleared cache', name)
+            if not utils.kill_fast_register( config, connection ): logger.error('<blue>{}</blue>: Failed to reboot kill_fast_register', name); return
+            else: logger.success('<blue>{}</blue>: kill_fast_register on droplet', name)
+            if utils.start_command( config, connection, name, config.machines[droplet.name].command ).failed: logger.error('<blue>{}</blue>: Failed to start miner', name); return
+            else: logger.success('<blue>{}</blue>: Started miner', name)
+            if not utils.is_script_running( config, connection ): logger.error('Failed to start miner, script not running', name); return
+            else: logger.success('<blue>{}</blue>: Script running', name)
+        except Exception as e:
+            logger.exception( e )
+        finally:
+            logger.success('<blue>{}</blue>: DONE Cleaning ', name)
+            connection.close()
+    droplets = utils.get_machines ( config )
+    with ThreadPoolExecutor( max_workers=config.max_threads ) as executor:
+        tqdm(executor.map( _do_clean, droplets ), total=len(droplets))
+    logger.success('<blue>!!</blue>: All cleaned ')
+
 
 def reboot( config ):
     logger.success('Registering droplets remote. ')
@@ -649,6 +679,11 @@ def get_config():
     reboot_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
     reboot_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
 
+    clean_parser = command_parsers.add_parser('clean', help='''clean''')
+    clean_parser.add_argument ("-c", '--config', dest='config_file',type=str, required=False, help="Config file to use", default='default')
+    clean_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
+    clean_parser.add_argument ('-n', "--names", dest='names', type=str, nargs='*', required=False, action='store', help="A list of nodes (hostnames) the selected command should operate on")
+
     register_parser = command_parsers.add_parser('register', help='''register''')
     register_parser.add_argument ("-c", '--config', dest='config_file',type=str, required=False, help="Config file to use", default='default')
     register_parser.add_argument ('-d', '--debug', dest='debug', action='store_true', help='''Set debug''', default=False)
@@ -726,6 +761,10 @@ def main( config ):
     # Create the cluster
     elif config.command == 'create':
         create(config)
+
+    # Create the cluster
+    elif config.command == 'clean':
+        clean(config)
 
     # Show latest logs from cluster
     elif config.command == 'logs':
