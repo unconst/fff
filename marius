@@ -477,7 +477,7 @@ def fast_register( config ):
                     continue
 
         except Exception as e:
-            logger.exception( e )
+            logger.debug( e )
 
         finally:
             # Kill fast registration.
@@ -518,6 +518,9 @@ def start( config ):
 
                 if utils.stop_script( config, connection ).failed: pass
                 else: logger.success('<blue>{}</blue>: Stopped miner.', name)
+
+                utils.clear_cache( config, connection )
+                logger.success('<blue>{}</blue>: Cleared Cache.', name)
 
                 if utils.start_script( config, connection, name).failed: logger.error('<blue>{}</blue>: Failed to start miner', name); return
                 else: logger.success('<blue>{}</blue>: Started miner with args {}', name)
